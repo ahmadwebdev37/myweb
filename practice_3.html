@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application</title>
+    <style>
+        input[type="submit"], input[type="reset"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-right: 10px;
+
+        }
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+
+        }
+        input[type="reset"] {
+            background-color: #f44336;
+            color: white;
+        }
+
+    </style>
+</head>
+<body style="background-color: rgb(215, 193, 193); text-align: center;">
+
+</body>
+    <br>
+    <h1>Job Application Form</h1>
+    <h3>Instructions</h3>
+    <p style="color: red;"> complete all required fields carefully.Make sure no field is left blank.
+        <br>
+        Double-check your information before submitting the form to avoid any mistakes.</p>
+    <form style="background-color: rgba(0, 0, 0, 0.5); padding: 30px; padding-bottom: 40px; display: inline-block; border-radius: 10px;text-align: left; color: white;">
+        <label>Your name:</label>
+        <br>
+        <input type="text" placeholder="type your name">
+        <br><br>
+        <label>Your Email:</label>
+        <br>
+        <input type="text" Placeholder="type your email">
+        <br><br>
+        <label>password:</label>
+        <br>
+        <input type="text" placeholder="type your password">
+        <br><br>
+        <label>Age:</label>
+        <br>
+        <input type="text" placeholder="type your age">
+        <br><br>
+        <label>Nationality:</label>
+        <br>
+        <input type="text" placeholder="type your Nationality">
+        <br><br>
+        <label>Website URL:</label>
+        <br>
+        <input type="url" name="website" placeholder="https.//example.com">
+        <br><br>
+        <label>Educational Marks Details:</label>
+        <br><br>
+        <table border="1" style="border-collapse: collapse; width: 100%; color: white; background-color: #333; text-align: center;">
+            <thead>
+                <tr>
+                    <th style="padding: 8px;">Degree / Class</th>
+                    <th style="padding: 8px;">Total Marks</th>
+                    <th style="padding: 8px;">Obtained Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td  style="padding: 8px;">Matric</td>
+                    <td><input type="number" name="matric-total" placeholder="Total"></td>
+                    <td><input type="number" name="Matric-obtained" placeholder="Obtained"></td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 8px;">Intermediate</td>
+                        <td><input type="number" name="inter-total" placeholder="Total"></td>
+                        <td><input type="number" name="inter-obtained" placeholder="Obtained"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px;">Bachelor (BA/BSc)</td>
+                            <td><input type="number" name="bachelor-total" placeholder="Total"></td>
+                            <td><input type="number" name="bachelor-obtained" placeholder="Obtained"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br><br>
+        <label>Date of Birth:</label>
+        <br>
+        <input type="date" name="dob">
+        <br><br>
+        <label>Gender:</label>
+        <br>
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female
+        <input type="radio" name="gender" value="Other">Other
+        <br><br>
+        <label>Marital Status:</label>
+        <br>
+        <input type="radio" name="Status" value="Single">Single
+        <input type="radio" name="Status" value="Married">Married
+        <br><br>
+        <label>Education:</label>
+        <br>
+        <input type="radio" name="Education" value="Matric">Matric
+        <br>
+        <input type="radio" name="Education" value="Intermediate">Intermediate
+        <br>
+        <input type="radio" name="Education" value="Bachelor">Bachelor
+        <br>
+        <input type="radio" name="Education" value="master">Master
+        <br>
+        <input type="radio" name="Education" value="phd">phd
+        <br><br>
+        <label>Country:</label>
+        <br>
+        <input type="radio" name="country" value="country">Pakistan
+        <br>
+        <input type="radio" name="country" value="country">Malaysia
+        <br>
+        <Input type="radio" name="country" value="country">India
+            <br><br>
+            <label>Skills:</label>
+            <br>
+            <input type="checkbox" name="skills" value="Skills">Html
+            <br>
+            <input type="checkbox" name="skills" value="skills">css
+            <br>
+            <input type="checkbox" name="skills" value="skills">javascript
+            <br><br>
+            <label>Select your favorite sports:</label>
+            <br>
+            <input type="checkbox" name="sports" value="cricket">Cricket
+            <br>
+            <input type="checkbox" name="sports" value="football">Football
+            <br>
+            <input type="checkbox" name="sports" value="badminton">Badminton
+            <br><br>
+            <label>Select your City:</label>
+            <br>
+            <input type="radio" name="user-city" value="karachi"> karachi
+            <br>
+            <input type="radio" name="user-city" value="lahore"> lahore
+            <br>
+            <input type="radio" name="user-city" value="peshawer"> peshawer
+            <br><br>
+            <label for="cv">Upload your CV:</label>
+        <br>
+        <input type="file" id="cv" name="user-cv" required>
+        <br><br>
+         <label for="user-photo">Upload your Photo:</label>
+        <br>
+        <input type="file" id="user-photo" name="user-photo"accept="image" required>
+        <br><br>
+        <input type="checkbox" name="terms" required>
+        <label>I accept the terms and Conditions</label>
+        <br><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+
+
+        
+
+
+
+    </form>
+</body>
+    
+</body>
+</html>

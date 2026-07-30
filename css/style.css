@@ -1,0 +1,164 @@
+/*General*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color:#333;
+}
+/*Header*/
+header{
+    background: #0f172a;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 20px 50px;
+
+}
+.logo h1{
+    font-size:32px;
+}
+/*Navigation*/
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-size: 18px;
+
+}
+nav ul li a:hower{
+    color:#38bdf8;
+}
+/*Hero Section*/
+.hero{
+    text-align: center;
+    padding:100px 20px;
+    background: white;
+}
+.hero h2{
+    font-size:50px;
+    margin-bottom:20px;
+}
+.hero p{
+    font-size:20px;
+    margin-bottom: 30px;
+}
+.hero button{
+    background: #2563eb;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    border-radius: 10px;
+    font-size:18px;
+    cursor:pointer;
+}
+/*services*/
+.services{
+    padding:70px 20px;
+    text-align: center;
+}
+.service-box{
+    background: white;
+    width:80%;
+    margin:20px auto;
+    padding:30px;
+    border-radius: 15px;
+    box-shadow:0.5px 15px rgba(0,0,0,0.1)
+}
+
+.service-box:hover{
+    transform:translateY(-5px);
+}
+
+/*Why Us*/
+.why-us{
+    background: white;
+    padding:60px;
+    text-align:center;
+}
+.why-us u{
+    list-style:none;
+}
+
+.why-us li{
+    padding:10px;
+    font-size:18px;
+}
+/*CTA*/
+.cta{
+    background: #2563eb;
+    color:white;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.cta button{
+    background: white;
+    color:#2563eb;
+    border:none;
+    padding:15px 30px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+footer{
+    background: #111827;
+    color:white;
+    text-align: center;
+    padding:25px;
+}
+/*Form Design*/
+form{
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px
+    rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin: auto;
+    text-align: left;
+
+}
+form label{
+    font-size: 18px;
+    font-weight: bold;
+}
+form input,
+form textarea{
+    width: 100px;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+
+}
+form textarea{
+    height: 120px;
+    resize: none;
+}
+form input:focus,
+form textarea:focus{
+    outline: none;
+    border-color: #2563eb;
+}
+form button{
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+
+}
+form button:hover{
+    background: #1d4ed8;
+}

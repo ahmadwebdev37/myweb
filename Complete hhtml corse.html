@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My first complete html form</title>
+</head>
+<body style="background-color: #ffffff;text-align: center;">
+</body>
+    <br>
+    <h1> Job Application Form</h1>
+<form style="background-color: rgba(0, 0, 0, 0.5); padding: 30px; padding-bottom: 40px; display: inline-block; border-radius: 10px; text-align: left; color: white;">
+    <label>Full name</label>
+    <br>
+    <input type="text" placeholder="enter your name">
+    <br><br>
+    <label>Email</label>
+    <br>
+    <input type="text" placeholder="enter your email">
+    <br><br>
+    <label>Password</label>
+    <br>
+    <input type="text" placeholder="enter your password">
+    <br><br>
+    <label>Your Age</label>
+    <br>
+    <input type="text" placeholder="type your age">
+    <br><br>
+    <label for="phone">Phone number</label>
+    <br>
+    <input type="tel" id="phone" name="phone" placeholder="0300-1234567">
+    <br><br>
+    <label for="Address">Your address:</label>
+    <br>
+    <textarea id="address" name="address" rows="4" cols="20" placeholder="type here"required></textarea>
+    <br><br>
+    <label>Message</label>
+    <br>
+    <textarea name="message" name="message" rows="4" cols="20" placeholder="type here"required></textarea>
+    <br><br>
+    <label for="user-photo">Upload Photo</label>
+    <br>
+    <input type="file" id="user-photo" name="user-photo"accept="image" required>
+    <br><br>
+    <label>Skills:</label>
+    <br>
+    <input type="checkbox" name="skills[]" value="html">Html
+    <input type="checkbox" name="skills[]" value="css">Css
+    <input type="checkbox" name="skills[]" value="javascript">Javascript
+    <br><br>
+    <label>Country:</label>
+    <br>
+    <select name="country">
+        <option value="pakistan">Pakistan</option>
+        <option value="malaysia">Malaysia</option>
+        <option value="india">India</option>
+</select>
+<br><br>
+    <label>Gender:</label>
+    <br>
+    <input type="radio" name="gender" vaalue="Male">Male
+    <input type="radio" name="gender" value="female">Female
+    <input type="radio" name="gender" value="other">other
+    <br><br>
+    <label>Nationality:</label>
+    <br>
+    <input type="text" name="Nationality" placeholder="Enter your Nationality">
+    <br><br>
+    <label>Marital Status:</label>
+    <br>
+    <input type="radio" name="Status" value="Single">Single
+    <input type="radio" name="Status" value="Married">Married
+    <br><br>
+    <label>Education:</label>
+    <br>
+    <select name="Education">
+        <option>Matric</option>
+        <option>Intermediate</option>
+        <option>Bachelor</option>
+        <option>Master</option>
+        <option>PhD</option>
+    </select>
+    <br><br>
+    <label>Date of Birth:</label>
+    <br>
+    <input type="date" name="Dob">
+    <br><br>
+    <label>Time:</label>
+    <br>
+    <input type="time" name="time">
+    <br><br>
+    <label>Date and Time:</label>
+    <br>
+    <input type="datetime-local" name="Datetime">
+    <br><br>
+    <label>Favorite Color:</label>
+    <br>
+    <input type="color" name="color">
+    <br><br>
+    <label for="exp">Experience:</label>
+    <br>
+    <input type="range" id="exp" name="Experience" min="0" max="10" value="0">
+    <br><br>
+    <label>Search:</label>
+    <br>
+    <input type="search" name="search" placeholder="search here">
+    <br><br>
+    <label>Website URL:</label>
+    <br>
+    <input type="url" name="website" placeholder="https://example.com">
+    <br><br>
+    <input type="Hidden" name="user id" value="12345">
+        <br><br>
+        <input type="checkbox" name="terms" required>
+        <label>I accept the terms and Conditions</label>
+        <br><br>
+        <input type="reset" value="Reset">
+       
+        <button type="submit"submit>submit</button>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

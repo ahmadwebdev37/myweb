@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Salone Appointment</title>
+    <link rel="stylesheet" href="css/salon.css">
+
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1> Beauty Salon</h1>
+        </div>
+        <nav>
+            <div class="menu-toggle">☰</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#appointment">Booking</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <section id="home" class="hero reveal">
+        <div class="hero-content">
+        <h1>Wellcome to Beauty Salon</h1>
+
+        <p>Discover beauty, elegance, and professinol care.</p>
+
+        <a href="#appointment" class="btn">
+            Book Appointment
+        </a>
+
+        </div>
+        <div class="hero-image">
+            <img src="images/makeup.jpg" alt="Beauty Salon">
+
+        </div>
+
+    </section>
+
+    <section id="services" class="reveal">
+        <h2>Our Services</h2>
+        <div class="service-card">
+            <img src="images/hair-style.jpg" alt="Hair Cut">
+
+            <h3>Hair Cut</h3>
+            <p>
+                Modern haircut style by professional experts.
+            </p>
+        </div>
+        <div class="service-card">
+            <img src="images/hair-color.jpg" alt="Hair Color">
+            <h3>Hair Color</h3>
+            <p>
+                Beautiful hair color with premium products.
+            </p>
+        </div>
+        <div class="service-card">
+            <img src="images/makeup.jpg" alt="Facial">
+            <h3>Facial & Makeup</h3>
+            <p>
+                Professional facial and makeup services.
+            </p>
+    </section>
+    <section id="gallery" class="reveal">
+        <h2>Our Gallery</h2>
+
+        <div class="gallery">
+            <img src="images/bridal-makeup.jpg" alt="Bridal Makeup">
+            <img src="images/facial.jpg" alt="Facial">
+            <img src="images/manicure.jpg" alt="Manicure">
+            <img src="images/pedicure.jpg" alt="Pedicure">
+            <img src="images/spa-treatment.jpg" alt="Spa">
+            <img src="images/hair-wash.jpg" alt="Hair Wash">
+        </div>
+    </section>
+    <section id="offers" class="reveal">
+        <h2>What We Offer</h2>
+        <ul>
+            <li>Complimentary haircut and color consultations</li>
+            <li>24hr online booking</li>
+            <li>Complimentary refreshments</li>
+            <li>10% student discount / NHS / Civil servant</li>
+            <li>Wide range of Wella products</li>
+            <li>Gift vouchers</li>
+            <li>Free Wi-Fi access</li>
+        </ul>
+    </section>
+    <section id="hours" class="reveal">
+        <h2>Working Hours</h2>
+        <ul>
+            <li><span>Monday</span><span>9:00 AM-6:00 PM</span></li>
+            <li><span>Tuesday</span><span>9:00 AM-6:00 PM</span></li>
+            <li><span>Wendnesday</span><span>9:00 AM-6:00 PM</span></li>
+            <li><span>Thursday</span><span>9:00 AM-6:00 PM</span></li>
+            <li><span>Friday</span><span>9:00 AM-6:00 PM</span></li>
+            <li><span>Saturday</span><span>9:00 AM-6:00 PM</span></li>
+            <li><span>Sunday</span><span>Closed</span></li>
+        </ul>
+    </section>
+
+    <section id="appointment" class="reveal">
+        <h2>Book Your appointment</h2>
+        <form class="booking-form">
+            <label>Name</label>
+            <input type="text" id="name" placeholder="Enter Your Name" required>
+            <label>Phone Number</label>
+            <input type="text" id="phone" placeholder="Enter Your Phone Number" required>
+            <label>Select Service</label>
+            <select>
+                <option>Hair Cut</option>
+                <option>Hair Color</option>
+                <option>Facial</option>
+                <option>Makeup</option>
+            </select>
+            <label> Appointment Date</label>
+            <input type="date" id="date" required>
+            <label>Message</label>
+            <textarea id="message" placeholder="Write your message" required></textarea>
+            <button type="submit">Book Now</button>
+
+        </form>
+    </section>
+
+    <section id="contact" class="reveal">
+        <h2>Contact Us</h2>
+        <div class="contact-box">
+        <p>Email:salon@example.com</p>
+        <p>Phone:+60 123456789</p>
+        <p>Location:Kuala Lumpur,Malaysia</p>
+        </div>
+
+    </section>
+    <footer>
+        <p>2026 Beauty Salon | All Rights Reserved.</p>
+    </footer>
+    <a href="#home" class="top-btn">↑</a>
+    <script src="js/salon.js"></script>
+
+    
+</body>
+</html>
