@@ -3,76 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design Your Dream Home</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Ahmad's Portfolio</title>
+    <link rel="stylesheet" href="css/portfolio.css">
+    
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>Design Your Dream Home</h1>
+    <nav class="navbar" style="padding-right: 20px !important;">
+        <div class="logo">Ahmad</div>
+        <ul class="nav-links">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">My Skills</a></li>
+            <li><a href="#projects">My Projects</a></li>
+        </ul>
+    </nav>
+    <button id="theme-toggle">Dark/Light Mode</button>
+    <header style="text-align: center">
+        <h2>Ahmad s portfolio</h2>
+        <p>Wellcome to my personal website</p>
+        <br><div style="text-align:  center; margin-top:  15px;">
+            <img src="html.png" alt="HTML Logo" style="width: 50px; height: 50px; margin: 0 10px;">
+            <img src="css.png" alt="CSS Logo" style="width: 50px; height: 50px; margin: 0 10px;">
+            <img src="js.png" alt="JS logo" style="width: 50px; height: margin 0 10px;">
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="request-design.html">Request Design</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-
-            </ul>
-        </nav>
     </header>
-    <section class="hero">
-        <h2>Design Your Dream Home</h2>
-        <p>
-            Professional 2D Floor Plans, 3D House Designs and Custom Home Planning Services.
-        </p>
-        <a href="request design.html">
-            <button>Request Your Design</button>
-        </a>
 
+    <hr>
+    <section id="about">
+        <h3>About Me</h3>
+        <p>Hello! My name is Ahmad. I am a passionate web Developer. I am currently lerning HTML, CSS, and JavaScript to build amazing websites.</p>
     </section>
-    <section class="services">
-        <h2>Our Services</h2>
-        <div class="service-box">
-            <he>2D Floor Plan</he>
-            <p>
-                Professional architectural floor planning according to your plot.
-            </p>
-        
-        </div>
-        <div class="service-box">
-            <h3>3D Exterior Design</h3>
-            <p>
-                Modern and realistic 3D house elevation design.
-            </p>
-        </div>
-        <div class="service-box">
-            <h3>Interior Planning</h3>
-            <p>
-                Beautiful room layouts with smart space management.
-            </p>
-        </div>
-    </section>
-    <section class="why-us">
-        <h2>Why Choose Us?</h2>
+    <hr>
+
+    <section id="skills">
+        <h3>My Skills</h3>
         <ul>
-            <li>Professional House Planning</li>
-            <li>Modern 3D Design</li>
-            <li>Affordable Price</li>
-            <li>Fast Delivery</li>
-            <li>Customer Support</li>
+            <li>HTML5 (Expert inForm and Tables)</li>
+            <li>Layout planning</li>
         </ul>
     </section>
 
-    <section class="cta">
-        <h2>Ready To Build Your Dream Home?</h2>
-         <p>
-            Fill out our Design Request Form and get your custom house plan.
-         </p>
+    <hr>
+    <section id="projects">
+        <h3>My projects</h3>
+        <p>Here is the professional form I designed eith my own hands:</p>
+        <a href="practice_3.html" target="_blank">Click here to view my Job application Form</a>
+        <br>
+        <h3>Design Your Dream Home</h3>
+        <p>Professional house design website with 2D floor plans,3D exterior designs and custom home planning.</p>
+        <a href="index.html" target="_blank">click here to view Design Your Dream Home</a>
+        <h3> Beauty salon Appointment website</h3>
+        <p>Professional beauty salon website with responsiv design,
+            appointment booking form, gallery and animations.</p>
+            <a href="salon.html" target="_blank">Click here to view Beauty salon Appointment website</a>
+
     </section>
 
-    <footer>
-        <p>2026 Design Your Dream Home | All Rights Reserved</p>
-    </footer>
+    <hr>
+    <section>
+        <h3>Contact Me</h3>
+        <p>If you want to work with me. send me an email:</p>
+        <p>Email: ahmadwebdev37@gmail.com</p>
+    </section>
+    <hr>
+    <section style="text-align: center;">
+        <h3>My Digital Calculator</h3>
+        <p>Practice Project: You can use this calculator for basic math operations!</p>
+
+        <div class="calculator">
+            <input type="text" id="result" readonly placeholder="o">
+            <br><br>
+            <button onclick="clearScreen()">C</button>
+            <button onclick="appendvalue('/')">/</button>
+            <button onclick="appendvalue('*')">*</button>
+            <button onclick="appendvalue('-')">-</button>
+            <br><br>
+            <button onclick="appendvalue('7')">7</button>
+            <button onclick="appendvalue('8')">8</button>
+            <button onclick="appendvalue('9')">9</button>
+            <button onclick="appendvalue('+')">+</button>
+            <br><br>
+            <button onclick="appendvalue('4')">4</button>
+            <button onclick="appendvalue('5')">5</button>
+            <button onclick="appendvalue('6')">6</button>
+            <button onclick="calculateResult()">=</button>
+            <br><br>
+            <button onclick="appendvalue('1')">1</buttan>
+            <button onclick="appendvalue('2')">2</button>
+            <button onclick="appendvalue('3')">3</button>
+            <button onclick="appendvalue('0')">0</buttan>
+
+        </div>
+
+    </section>
+<script>
+     function appendvalue(value) {
+        document.getElementById('result').value += value;
+
+     }
+     function clearScreen() {
+        document.getElementById('result').value ='';
+
+     }
+     function calculateResult() {
+        var input = document.getElementById('result').value;
+        try{
+            var answer = eval(input);
+            document.getElementById('result').value = answer;
+        } catch (error) {
+            document.getElementById('result').value = 'Error';
+        }
+     }
+    alert("Welcome to Ahmad is personal portfolio website!");
+    const themetogglebtn = document.getElementById('theme-toggle');
+    themetogglebtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    if (document.body.classList.contains('dark-mode')) {
+        themetogglebtn.innerText = "Light Mode";
+    } else {
+        themetogglebtn.innerText = "Dark/Light Mode";
+    }
+    });
+</script>
+<footer class="footer">
+    <p>&copy; 2026 Ahmad.All Rights Reserved.</p>
+</footer>
 </body>
 </html>
