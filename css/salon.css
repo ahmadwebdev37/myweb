@@ -1,497 +1,500 @@
+/* ===================================
+   Luxury Beauty Salon - Part 1
+=================================== */
+
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
 html{
-    scroll-behavior: smooth;
+    scroll-behavior:smooth;
 }
+
 body{
-    font-family: arial, sans-serif;
-    background: #fff5f8;
-    color: #333;
-}
-/*header*/
-header{
-    background: #d63384;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-}
-#home {
-    text-align: center;
-    padding: 80px 20px;
-    background-color: #ffe4ec;
-
-}
-#home h2 {
-    font-size: 40px;
-    color: #d63384;
-}
-#home p {
-    font-size: 18px;
-    color: #555;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#fff8f5;
+    color:#333;
+    line-height:1.7;
 }
 
-.logo h1{
-    font-size: 30px;
-}
-/*Navigation*/
-nav ul{
-    list-style: none;
-    display: flex;
-    gap: 20px;
+/* ========= NAVBAR ========= */
+
+.navbar{
+
+    position:sticky;
+    top:0;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 8%;
+
+    background:#ffffff;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+    z-index:1000;
 
 }
 
-nav ul li a{
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
+.logo{
+
+    font-size:30px;
+    font-weight:bold;
+    color:#222;
 
 }
-nav ul li a:hover{
-    color: #ffd6e7;
+
+.logo span{
+
+    color:#d4a017;
+
 }
-/*hero*/
+
+.nav-links{
+
+    display:flex;
+    list-style:none;
+    gap:35px;
+
+}
+
+.nav-links a{
+
+    text-decoration:none;
+    color:#333;
+    font-weight:600;
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:#d4a017;
+
+}
+
+/* ========= HERO ========= */
 
 .hero{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 80px 50px;
-    background: white;
-    gap: 60px;
-}
 
-.hero h1{
-    font-size: 45px;
-    color: #d63384;
-    margin-bottom: 20px;
-}
+    min-height:90vh;
 
-.hero p{
-    font-size: 20px;
-    margin-bottom: 30px;
-}
+    display:flex;
 
-button{
-    background: #d63384;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 18px;
-}
+    justify-content:space-between;
 
-button:hover{
-    background: #a61e5c;
+    align-items:center;
+
+    padding:70px 8%;
+
+    background:linear-gradient(135deg,#fff,#fdeee8);
 
 }
 
-/*services*/
-#services{
-    padding: 60px 20px;
-    width: 80%;
-    margin: 20px auto;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-.service-card{
-    display: inline-block;
-    width: 27%;
-    margin: 10px;
-    padding: 20px;
-    text-align: center;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    vertical-align: top;
-}
-.service-card img{
-    width: 100%;
-    height: auto;
-    background: white;
-    border-radius: 10px;
-}
-.service-card h3{
-    color:#d63384;
+.hero-text{
+
+    width:50%;
 
 }
 
-/*booking form*/
-#appointment{
-    width: 80%;
-    margin: 50px auto;
-    background: #ffeaf3;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    max-width: 700px;
-    margin: 0 auto;
-}
-#appointment h2{
-    text-align: center;
-    color: #d63384;
-    margin-bottom: 30px;
-}
-#appointment form{
-    display: flex;
-    flex-direction: column;
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-}
+.hero-text h1{
 
-#appointment label{
-    margin-top: 15px;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
-}
+    font-size:60px;
 
-#appointment input,
-#appointment select,
-#appointment textarea{
-    padding: 14px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    transition: 0.3s;
-}
+    color:#222;
 
-textarea{
-    height: 120px;
-}
-#appointment input:focus,
-#appointment select:focus,
-#appointment textarea:focus{
-    border-color: #d63384;
-    outline: none;
-    box-shadow: 0 0 8px rgba(214,51,132,0.3);
-}
-#appointment textarea{
-    height: 120px;
-    resize: none;
-}
-#appointment button{
-    margin-top: 25px;
-    padding: 15px;
-    background: #d63384;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-#appointment button:hover{
-    background: #b8256d;
-    transform: translateY(-3px);
-}
-/*contact*/
-#contact{
-    width: 80%;
-    margin: 50px auto;
-    text-align: center;
-    background: local#fff0f6;
-    border: 3px solid #d63384;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    line-height:1.1;
 
 }
-#contact h2{
-    color: #d63384;
-    font-size: 32px;
-    margin-bottom: 25px;
-}
-.contact-box{
-    width: 90%;
-    margin: 25px auto;
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-}
-.contact-box p{
-    font-size: 18px;
-    margin: 15px 0;
+
+.hero-text p{
+
+    font-size:20px;
+
+    color:#666;
+
+    margin:25px 0;
+
+    max-width:520px;
+
 }
 
-/*footer*/
-footer{
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-.hero-content{
-    width: 50%;
-}
 .hero-image{
-    width: 45%;
+
+    width:45%;
+
 }
+
 .hero-image img{
-    width: 550px;
-    border-radius: 20px;
+
+    width:100%;
+
+    border-radius:25px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+
 }
+
+/* ========= BUTTON ========= */
+
 .btn{
-    display: inline-block;
-    background: #d63384;
-    color: white;
-    text-decoration: none;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-size: 18px;
+
+    display:inline-block;
+
+    padding:15px 35px;
+
+    background:#d4a017;
+
+    color:white;
+
+    border-radius:35px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:.3s;
+
 }
+
 .btn:hover{
-    background: #b0256b;
-}
-.hero-image img{
-    width: 500px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-.service-card img{
-    width: 100px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-#gallery{
-    width: 80%;
-    margin: 50px auto;
-    padding: 40px;
-    background: #fff0f6;
-    border-radius: 15px;
-    border: 3px solid #d63384;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-}
-.gallery{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-.gallery img{
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 12px;
-    transition: 0.4s;
-    cursor: pointer;
-}
-#gallery h2{
-    text-align: center;
-    font-size: 36px;
-    color: #d63384;
-    margin-bottom: 30px;
-}
-.gallery img:hover{
-    transform: scale(1.08);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
-#offers{
-    width: 80%;
-    margin: 50px auto;
-    padding: 30px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-#offers h2{
-    text-align: center;
-    color: #d63384;
-    margin-bottom: 25px;
+
+    background:#b8860b;
 
 }
-#offers ul{
-    list-style: none;
-    padding: 0;
-}
-#offers li{
-    padding: 15px 20px;
-    margin: 12px 0;
-    background: #fff5fa;
-    border-left: 5px solid #d63384;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-#offers li:hover{
-    background: #ffd6e8;
-    transform: translateX(8px);
-}
-#hours{
-    width: 80%;
-    margin: 50px auto;
-    padding: 30px;
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+
+/* ========= MOBILE ========= */
+
+@media(max-width:900px){
+
+.navbar{
+
+flex-direction:column;
+
+padding:20px;
 
 }
-#hours h2{
-    text-align: center;
-    color: #d63384;
-    margin-bottom: 25px;
-    font-size: 32px;
-}
-#hours ul{
-    list-style: none;
-    padding: 0;
-}
-#hours li{
-    display: flex;
-    justify-content: space-between;
-    padding: 14px 20px;
-    margin-bottom: 10px;
-    background: #fff5fa;
-    border-left: 5px solid #d63384;
-    border-radius: 10px;
-    font-size: 18px;
-}
-@media (max-width: 768px){
-    header{
-        flex-direction: column;
-        text-align: center;
-        padding: 15px;
-    }
-    nav ul{
-        flex-direction: column;
-        gap: 10px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .gallery{
-        grid-template-columns: 1fr;
-    }
-    .gallery img{
-        width: 100%;
-        height: auto;
-    }
-    .services{
-        flex-direction: column;
-    }
-    .booking-form{
-        width: 100%;
-    }
-    .hero{
-        flex-direction: column;
-        text-align: center;
-    }
-    .hero-content{
-        width: 100%;
-    }
-    .hero-image{
-        width: 100%;
-        text-align: center;
-    }
-    .hero-img img{
-        width: 90%;
-        max-width: 300px;
-        margin-top: 20px;
-        height: auto;
-    }
 
-    
+.logo{
+
+margin-bottom:15px;
+
 }
-.top-btn{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #d63384;
-    color: white;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 50px;
-    text-decoration: none;
-    font-size: 24px;
+
+.nav-links{
+
+flex-direction:column;
+
+text-align:center;
+
+gap:15px;
+
 }
-.hero-content{
-    animation: slideLeft 1s ease;
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+padding:50px 20px;
+
 }
+
+.hero-text{
+
+width:100%;
+
+}
+
 .hero-image{
-    animation: slideRight 1s ease;
-}
-@keyframes slideLeft{
-    from{
-        opacity: 0;
-        transform: translateX(-80px);
-    }
-    to{
-        opacity: 1;
-        transform: translateX(0);
-    }
-    }
-    @keyframes slideRight{
-        from{
-        opacity: 0;
-        transform: translatex(80px);
-    }
-    to{
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-.service-card{
-    transition: 0.4s;
-}
-.service-card:hover{
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-.menu-toggle{
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-    color: white;
-}
-@media (max-width:768px){
-    .menu-toggle{
-        display: block;
-    }
-    nav ul{
-        display: none;
-        flex-direction: column;
-        animation: slideDown 0.4s ease;
-    }
-    nav ul.show{
-        display: flex;
-    }
-}
-@keyframes slideDown{
-    from{
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
+
+width:100%;
+
+margin-top:40px;
+
 }
 
-.reveal{
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
+.hero-text h1{
+
+font-size:42px;
+
 }
-.reveal.active{
-    opacity: 1;
-    transform: translateY(0);
+
+.hero-text p{
+
+font-size:18px;
+
+}
+
+}
+
+/* ===================================
+   Luxury Beauty Salon - Part 2
+   Sections, Cards, Gallery, Form,
+   Contact & Footer
+=================================== */
+
+/* ===== General Sections ===== */
+
+section{
+    padding:80px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:40px;
+    color:#222;
+    margin-bottom:50px;
+}
+
+/* ===== Services ===== */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#ffffff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.3s;
+    text-align:center;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin:20px 0 10px;
+    color:#d4a017;
+}
+
+.card p{
+    padding:0 20px 25px;
+    color:#666;
+}
+
+/* ===== Gallery ===== */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:18px;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* ===== Booking Form ===== */
+
+.booking-form{
+    max-width:700px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea{
+
+    width:100%;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.booking-form textarea{
+    height:140px;
+    resize:none;
+}
+
+.booking-form button{
+
+    background:#d4a017;
+    color:#fff;
+    border:none;
+    padding:16px;
+    border-radius:35px;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.booking-form button:hover{
+    background:#b8860b;
+}
+
+/* ===== Contact ===== */
+
+.contact-box{
+    background:#ffffff;
+    max-width:600px;
+    margin:auto;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.contact-box p{
+    margin:15px 0;
+    font-size:18px;
+}
+
+/* ===== Footer ===== */
+
+footer{
+    background:#222;
+    color:#fff;
+    text-align:center;
+    padding:25px;
+    margin-top:60px;
+}
+
+/* ===== Mobile ===== */
+
+@media(max-width:768px){
+
+    section{
+        padding:60px 20px;
+    }
+
+    .section-title{
+        font-size:32px;
+    }
+
+    .card img{
+        height:220px;
+    }
+
+    .gallery img{
+        height:220px;
+    }
+
+    .contact-box{
+        padding:25px;
+    }
+
+}
+/* ===== WHAT WE OFFER ===== */
+
+.offers{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.offer-card{
+    background:#fff;
+    padding:30px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.offer-card:hover{
+    transform:translateY(-8px);
+}
+
+.offer-card h3{
+    color:#d4a017;
+    margin-bottom:15px;
+}
+
+.offer-card p{
+    color:#666;
+}
+
+/* ===== WORKING HOURS ===== */
+
+.hours-box{
+
+    max-width:700px;
+
+    margin:auto;
+
+    background:#ffffff;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.day{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:15px 0;
+
+    border-bottom:1px solid #eeeeee;
+
+    font-size:18px;
+
+}
+
+.day:last-child{
+
+    border-bottom:none;
+
+}
+
+.day span:first-child{
+
+    font-weight:bold;
+
+    color:#222;
+
+}
+
+.day span:last-child{
+
+    color:#d4a017;
+
+}
+
+@media(max-width:768px){
+
+.day{
+
+flex-direction:column;
+
+gap:8px;
+
+text-align:center;
+
+}
+
 }
