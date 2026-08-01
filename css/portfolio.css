@@ -76,9 +76,10 @@ hr {
     background-color: #22252d;
     padding: 25px;
     border-radius: 20px;
-    display: inline-block;
-    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
-    margin-top: 20px;
+    display: block;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+    margin-top: 20px auto 0 auto;
+    max-width: 340px;
 }
 #result {
     width: 250px;
