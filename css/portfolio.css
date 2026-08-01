@@ -81,6 +81,14 @@ hr {
     margin-top: 20px auto 0 auto;
     max-width: 340px;
 }
+@media (max-width: 768px) {
+    .calculator {
+        display: block !important;
+        margin: 20px auto !important;
+        max-width: 300px !important;
+        float: none !important;
+    }
+}
 #result {
     width: 250px;
     height: 60px;
