@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History - ShopEasy</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <h2>ShopEasy</h2>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="orders.html">Orders</a></li>
+        </ul>
+    </nav>
+
+    <div class="icons">
+
+        <a href="wishlist.html">
+            ❤️ Wishlist (<span id="wishlist-count">0</span>)
+        </a>
+
+        <a href="cart.html">
+            🛒 Cart (<span id="cart-count">0</span>)
+        </a>
+
+        <a href="#" id="userName">👤 Login</a>
+
+        <a href="#" id="logoutBtn" style="display:none;">
+            🚪 Logout
+        </a>
+
+    </div>
+
+</header>
+
+<section class="orders-section">
+
+    <div class="orders-container">
+
+        <h1>📦 My Order History</h1>
+
+        <p>Your previous orders will appear below.</p>
+
+        <div id="ordersList">
+
+            <p id="noOrders">
+                You have not placed any orders yet.
+            </p>
+
+        </div>
+
+        <a href="index.html" class="btn">
+            Continue Shopping
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>© 2026 ShopEasy. All Rights Reserved.</p>
+
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

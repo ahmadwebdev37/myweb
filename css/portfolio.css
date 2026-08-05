@@ -423,3 +423,251 @@ font-size:24px;
 }
 
 }
+/* ==========================
+   WEBSITE REVIEW PAGE
+========================== */
+header{
+    background:#222;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+}
+
+.logo h2{
+    color:#00bcd4;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#00bcd4;
+}
+
+.review-section{
+    padding:80px 20px;
+    background:#f5f7fa;
+    min-height:100vh;
+}
+
+.review-container{
+    max-width:700px;
+    margin:auto;
+    background:#fff;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.review-container h1{
+    text-align:center;
+    font-size:36px;
+    color:#222;
+    margin-bottom:10px;
+}
+
+.review-container p{
+    text-align:center;
+    color:#666;
+    margin-bottom:30px;
+}
+
+.review-form label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+    color:#333;
+}
+
+.review-form input,
+.review-form textarea,
+.review-form select{
+    width:100%;
+    padding:14px;
+    margin-bottom:20px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+    outline:none;
+    transition:.3s;
+}
+
+.review-form input:focus,
+.review-form textarea:focus,
+.review-form select:focus{
+    border-color:#00bcd4;
+    box-shadow:0 0 8px rgba(0,188,212,.3);
+}
+
+.review-form textarea{
+    resize:vertical;
+    min-height:140px;
+}
+
+.review-form button{
+    width:100%;
+    padding:15px;
+    background:#00bcd4;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.review-form button:hover{
+    background:#0097a7;
+}
+
+/* Review List */
+
+.review-list{
+    margin-top:40px;
+}
+
+.review-card{
+    background:#f9f9f9;
+    border-left:5px solid #00bcd4;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:8px;
+}
+
+.review-card h3{
+    color:#222;
+    margin-bottom:8px;
+}
+
+.review-card h4{
+    color:#f39c12;
+    margin-bottom:10px;
+}
+
+.review-card p{
+    color:#555;
+    line-height:1.7;
+    text-align:left;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.review-container{
+    padding:25px;
+}
+
+.review-container h1{
+    font-size:28px;
+}
+
+}
+/* ==========================
+   HOME PAGE REVIEW SECTION
+========================== */
+
+#reviews-home{
+    text-align:center;
+    padding:60px 20px;
+    background:#f8f9fa;
+}
+
+#reviews-home h2{
+    font-size:34px;
+    color:#222;
+    margin-bottom:15px;
+}
+
+#reviews-home p{
+    font-size:18px;
+    color:#555;
+    margin-bottom:30px;
+}
+
+.review-btn{
+    display:inline-block;
+    background:#00bcd4;
+    color:#fff;
+    padding:15px 35px;
+    text-decoration:none;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.review-btn:hover{
+    background:#0097a7;
+}
+/* ==========================
+   HOME RATING SECTION
+========================== */
+
+.rating-box{
+    max-width:500px;
+    margin:30px auto;
+    background:#ffffff;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+    text-align:center;
+}
+
+.rating-box h1{
+    font-size:60px;
+    color:#00bcd4;
+    margin-bottom:10px;
+}
+
+.rating-box p{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.rating-box h3{
+    font-size:22px;
+    color:#555;
+    margin-bottom:25px;
+}
+
+.rating-box .review-btn{
+    display:inline-block;
+    background:#00bcd4;
+    color:#fff;
+    padding:15px 35px;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.rating-box .review-btn:hover{
+    background:#0097a7;
+    transform:translateY(-3px);
+}
+
+@media(max-width:768px){
+
+    .rating-box{
+        width:95%;
+        padding:25px;
+    }
+
+    .rating-box h1{
+        font-size:45px;
+    }
+
+    .rating-box p{
+        font-size:24px;
+    }
+
+}

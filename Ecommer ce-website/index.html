@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Website</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header Start -->
+    <header>
+
+        <div class="logo">
+            <h2>ShopEasy</h2>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Deals</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-box">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search products...">
+
+    <button id="searchBtn">
+        Search
+    </button>
+
+</div>
+
+        <div class="icons">
+            <a href="wishlist.html">
+    ❤️ Wishlist (<span id="wishlist-count">0</span>)
+</a>
+            <a href="cart.html">
+    🛒 Cart (<span id="cart-count">0</span>)
+            </a>
+            <a href="login.html" id="userName">👤 Login</a>
+
+<a href="#" id="logoutBtn" style="display:none;">
+🚪 Logout
+</a>
+
+        </div>
+
+    </header>
+    <!-- Header End -->
+
+
+    <!-- Hero Section Start -->
+    <section class="hero">
+
+        <h1>Welcome to ShopEasy</h1>
+
+        <p>
+            Find the best products with amazing prices and fast delivery.
+        </p>
+
+        <a href="#" class="btn">Shop Now</a>
+
+    </section>
+    <!-- Hero Section End -->
+
+
+    <!-- Categories Start -->
+    <section class="categories">
+
+        <h2>Shop by Category</h2>
+
+        <div class="category-box">
+
+            <div class="category">
+                <h3>Electronics</h3>
+            </div>
+
+            <div class="category">
+                <h3>Fashion</h3>
+            </div>
+
+            <div class="category">
+                <h3>Shoes</h3>
+            </div>
+
+            <div class="category">
+                <h3>Beauty</h3>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- Categories End -->
+
+
+    <!-- Featured Products -->
+    <section class="products">
+
+        <h2>Featured Products</h2>
+
+        <div class="product-container">
+            <p id="noResults" style="display:none; text-align:center; color:red; font-size:22px;">
+    No products found.
+</p>
+                <div class="product-card" data-name="Wireless Headphones">
+               <a href="product-details.html">
+    <img src="images/product1.jpg" alt="Wireless Headphones">
+</a>
+                <h3>Wireless Headphones</h3>
+                <p>$49</p>
+                <button class="wishlist-btn" data-id="1">
+🤍 Wishlist
+</button>
+                <button
+class="add-to-cart"
+data-id="1"
+data-name="Wireless Headphones"
+data-price="49"
+data-image="images/product1.jpg">
+Add to Cart
+</button>
+            </div>
+                <div class="product-card" data-name="Smart Watch">
+                <a href="product-details.html">
+    <img src="images/product2.jpg" alt="Smart Watch">
+</a>
+                <h3>Smart Watch</h3>
+                <p>$79</p>
+                <button class="wishlist-btn" data-id="2">
+🤍 Wishlist
+</button>
+                <button
+class="add-to-cart"
+data-id="2"
+data-name="Smart Watch"
+data-price="79"
+data-image="images/product2.jpg">
+Add to Cart
+</button>
+            </div>
+                
+                <div class="product-card" data-name="Running Shoes">
+                <a href="product-details.html">
+    <img src="images/product3.jpg" alt="Running Shoes">
+</a>
+                <h3>Running Shoes</h3>
+                <p>$59</p>
+                <button class="wishlist-btn" data-id="3">
+🤍 Wishlist
+</button>
+                <button
+class="add-to-cart"
+data-id="3"
+data-name="Running Shoes"
+data-price="59"
+data-image="images/product3.jpg">
+Add to Cart
+</button>
+            </div>
+
+                <div class="product-card" data-name="Backpack">
+                <a href="product-details.html">
+    <img src="images/product4.jpg" alt="Backpack">
+</a>
+                <h3>Backpack</h3>
+                <p>$39</p>
+                <button class="wishlist-btn" data-id="4">
+🤍 Wishlist
+</button>
+                <button
+class="add-to-cart"
+data-id="4"
+data-name="Backpack"
+data-price="39"
+data-image="images/product4.jpg">
+Add to Cart
+</button>
+</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+
+        <h2>Subscribe to Our Newsletter</h2>
+
+        <input type="email" placeholder="Enter your email">
+
+        <button>Subscribe</button>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>© 2026 ShopEasy. All Rights Reserved.</p>
+
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

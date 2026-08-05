@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="checkout-container">
+
+        <h1>Checkout</h1>
+
+        <form action="order-success.html">
+
+            <input type="text" placeholder="Full Name" required>
+
+            <input type="email" placeholder="Email Address" required>
+
+            <input type="tel" placeholder="Phone Number" required>
+
+            <input type="text" placeholder="Address" required>
+
+            <input type="text" placeholder="City" required>
+
+            <input type="text" placeholder="Country" required>
+
+            <input type="text" placeholder="ZIP Code" required>
+
+            <select required>
+                <option value="">Select Payment Method</option>
+                <option>Cash on Delivery</option>
+                <option>Credit Card</option>
+                <option>Debit Card</option>
+                <option>PayPal</option>
+            </select>
+
+            <button type="submit">
+                Place Order
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

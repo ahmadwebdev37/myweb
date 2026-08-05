@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - ShopEasy</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- Header -->
+
+<header>
+
+    <div class="logo">
+        <h2>ShopEasy</h2>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="icons">
+
+        <a href="wishlist.html">
+            ❤️ Wishlist (<span id="wishlist-count">0</span>)
+        </a>
+
+        <a href="cart.html">
+            🛒 Cart (<span id="cart-count">0</span>)
+        </a>
+
+        <a href="#" id="userName">👤 Login</a>
+
+        <a href="#" id="logoutBtn" style="display:none;">
+            🚪 Logout
+        </a>
+
+    </div>
+
+</header>
+
+<!-- Profile Section -->
+
+<section class="profile-section">
+
+    <div class="profile-card">
+
+        <h1>👤 My Profile</h1>
+
+        <div class="profile-info">
+
+            <div class="profile-item">
+
+                <h3>Full Name</h3>
+
+                <p id="profileName">
+                    Loading...
+                </p>
+
+            </div>
+
+            <div class="profile-item">
+
+                <h3>Email Address</h3>
+
+                <p id="profileEmail">
+                    Loading...
+                </p>
+
+            </div>
+
+            <div class="profile-item">
+
+                <h3>Account Status</h3>
+
+                <p style="color:green;">
+                    ✅ Active
+                </p>
+
+            </div>
+
+        </div>
+
+        <a href="index.html" class="btn">
+            Back To Home
+        </a>
+
+    </div>
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+
+    <p>© 2026 ShopEasy. All Rights Reserved.</p>
+
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

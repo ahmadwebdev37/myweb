@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - ShopEasy</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <h2>ShopEasy</h2>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="icons">
+
+        <a href="wishlist.html">
+            ❤️ Wishlist (<span id="wishlist-count">0</span>)
+        </a>
+
+        <a href="cart.html">
+            🛒 Cart (<span id="cart-count">0</span>)
+        </a>
+
+    </div>
+
+</header>
+
+<section class="cart-page">
+
+    <h1>🛒 My Shopping Cart</h1>
+
+    <div id="cart-items">
+
+    </div>
+
+    <div id="emptyCart">
+
+        <h2>Your Cart is Empty</h2>
+
+        <a href="index.html" class="btn">
+            Continue Shopping
+        </a>
+
+    </div>
+    </section>
+
+    <section class="cart-summary">
+
+        <h2>Cart Summary</h2>
+
+        <p>
+            Subtotal
+            <span id="subtotal">$0</span>
+        </p>
+
+        <p>
+            Shipping
+            <span>Free</span>
+        </p>
+
+        <h3>
+            Total
+            <span id="total">$0</span>
+        </h3>
+
+        <a href="checkout.html" class="btn checkout-btn">
+    Proceed to Checkout
+</a>
+
+    </section>
+
+    <footer>
+
+        <p>© 2026 ShopEasy. All Rights Reserved.</p>
+
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
