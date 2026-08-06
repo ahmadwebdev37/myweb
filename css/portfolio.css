@@ -209,7 +209,18 @@ body.dark-mode .hero{
     background:linear-gradient(135deg,#020617,#111827);
 
 }
+body.dark-mode .project-card{
+    background: #fff;
+    color: #222;
+}
 
+body.dark-mode .project-card h4{
+    color: #222;
+}
+
+body.dark-mode .project-card p{
+    color: #555;
+}
 /* =====================
    MOBILE
 ===================== */
@@ -1015,6 +1026,7 @@ section li{
 }
 .project-card{
     background:#fff;
+    color: #222;
     padding:25px;
     margin:25px 0;
     border-radius:15px;
@@ -1024,12 +1036,14 @@ section li{
 .project-card h4{
     font-size:24px;
     margin-bottom:15px;
+    color: #222;
 }
 
 .project-card p{
     font-size:18px;
     line-height:1.8;
     margin-bottom:20px;
+    color: #555;
 }
 
 .project-btn{
