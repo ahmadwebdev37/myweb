@@ -1,21 +1,25 @@
-// ===============================
-// Portfolio Website Review System
+// =====================================
+// Ahmad Portfolio Review System
 // review.js
-// ===============================
+// =====================================
+
+// Local Storage
+let reviews = JSON.parse(localStorage.getItem("portfolioReviews")) || [];
 
 const reviewForm = document.getElementById("reviewForm");
 const reviewList = document.getElementById("reviewList");
 
-let reviews = JSON.parse(localStorage.getItem("portfolioReviews")) || [];
+// =========================
+// Show Reviews
+// =========================
 
-// Reviews دکھائیں
 function showReviews() {
 
     if (!reviewList) return;
 
     reviewList.innerHTML = "";
 
-    reviews.forEach(function(review) {
+    reviews.forEach(function(review){
 
         reviewList.innerHTML += `
 
@@ -35,31 +39,40 @@ function showReviews() {
 
 }
 
-showReviews();
-
+// =========================
 // Submit Review
-if (reviewForm) {
+// =========================
 
-    reviewForm.addEventListener("submit", function(e) {
+if(reviewForm){
+
+    reviewForm.addEventListener("submit", function(e){
 
         e.preventDefault();
 
-        const name = document.getElementById("name").value.trim();
-        const rating = document.getElementById("rating").value;
-        const message = document.getElementById("message").value.trim();
+        const name =
+        document.getElementById("name").value.trim();
 
-        if (name === "" || rating === "" || message === "") {
+        const rating =
+        document.getElementById("rating").value;
 
-            alert("Please fill in all fields.");
+        const message =
+        document.getElementById("message").value.trim();
+
+        if(name==="" || rating==="" || message===""){
+
+            alert("Please fill all fields.");
+
             return;
 
         }
 
         const review = {
 
-            name: name,
-            rating: rating,
-            message: message
+            name:name,
+
+            rating:rating,
+
+            message:message
 
         };
 
@@ -70,48 +83,57 @@ if (reviewForm) {
             JSON.stringify(reviews)
         );
 
-        alert("🎉 Thank you for your review!");
-
         reviewForm.reset();
 
         showReviews();
 
+        updateHomeRating();
+
+        alert("🎉 Thank you for your review!");
+
     });
 
 }
-// ===============================
-// HOME PAGE RATING
-// ===============================
 
-function updateHomeRating() {
+showReviews();
 
-    const averageRating = document.getElementById("averageRating");
-    const totalReviews = document.getElementById("totalReviews");
+// =========================
+// Home Rating
+// =========================
 
-    if (!averageRating || !totalReviews) return;
+function updateHomeRating(){
 
-    const reviews =
-        JSON.parse(localStorage.getItem("portfolioReviews")) || [];
+    const averageRating =
+    document.getElementById("averageRating");
+
+    const totalReviews =
+    document.getElementById("totalReviews");
+
+    if(!averageRating || !totalReviews) return;
+
+    reviews =
+    JSON.parse(localStorage.getItem("portfolioReviews")) || [];
 
     totalReviews.textContent = reviews.length;
 
-    if (reviews.length === 0) {
+    if(reviews.length===0){
 
-        averageRating.textContent = "0.0";
+        averageRating.textContent="0.0";
+
         return;
 
     }
 
-    let total = 0;
+    let total=0;
 
-    reviews.forEach(function(review) {
+    reviews.forEach(function(review){
 
-        total += parseFloat(review.rating);
+        total += Number(review.rating);
 
     });
 
     averageRating.textContent =
-        (total / reviews.length).toFixed(1);
+    (total/reviews.length).toFixed(1);
 
 }
 

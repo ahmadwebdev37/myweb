@@ -2,31 +2,45 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Portfolio Reviews</title>
 
     <link rel="stylesheet" href="css/portfolio.css">
+
 </head>
 
 <body>
 
-<header>
+<!-- ==========================
+     REVIEW HEADER
+========================== -->
+
+<header class="review-header">
 
     <div class="logo">
+
         <h2>Ahmad Portfolio</h2>
+
     </div>
 
     <nav>
+
         <a href="index.html">Home</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+
         <a href="review.html">Reviews</a>
+
     </nav>
 
 </header>
+
+<!-- ==========================
+     REVIEW FORM
+========================== -->
 
 <section class="review-section">
 
@@ -35,8 +49,11 @@
         <h1>Website Reviews</h1>
 
         <p>
+
             Thank you for visiting my portfolio.
-            Please share your feedback below.
+
+            Please share your experience.
+
         </p>
 
         <form id="reviewForm" class="review-form">
@@ -53,11 +70,16 @@
 
             <select id="rating" required>
 
-                <option value="">Select Rating</option>
+                <option value="">Choose Rating</option>
+
                 <option value="5">⭐⭐⭐⭐⭐ (5)</option>
+
                 <option value="4">⭐⭐⭐⭐ (4)</option>
+
                 <option value="3">⭐⭐⭐ (3)</option>
+
                 <option value="2">⭐⭐ (2)</option>
+
                 <option value="1">⭐ (1)</option>
 
             </select>
@@ -70,30 +92,54 @@
                 required></textarea>
 
             <button type="submit">
+
                 Submit Review
+
             </button>
 
         </form>
-
-        <div class="review-list">
-
-            <h2>Visitor Reviews</h2>
-
-            <div id="reviewList"></div>
-
-        </div>
 
     </div>
 
 </section>
 
-<footer>
+<!-- ==========================
+     VISITOR REVIEWS
+========================== -->
 
-    <p>© 2026 Ahmad Portfolio. All Rights Reserved.</p>
+<section>
+
+    <div class="review-container">
+
+        <h2 style="text-align:center;">
+
+            Visitor Reviews
+
+        </h2>
+
+        <div id="reviewList"></div>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+     FOOTER
+========================== -->
+
+<footer class="footer">
+
+    <p>
+
+        © 2026 Ahmad Portfolio.
+        All Rights Reserved.
+
+    </p>
 
 </footer>
 
 <script src="js/review.js"></script>
 
 </body>
+
 </html>

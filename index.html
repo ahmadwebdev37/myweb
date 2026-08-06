@@ -4,57 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahmad's Portfolio</title>
+
     <link rel="stylesheet" href="css/portfolio.css">
-    
 </head>
+
 <body>
-    <!-- Navigation -->
+
+<!-- ==========================
+     NAVIGATION
+========================== -->
+
 <nav class="navbar">
+
     <div class="logo">
-        Ahmad Ali <span>| Web Developer</span>
+        Ahmad Ali
+        <span>| Web Developer</span>
     </div>
 
-    <ul class="nav-links">
+    <!-- Hamburger Button -->
+    <button id="menu-btn" class="menu-btn">
+        ☰
+    </button>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links" id="nav-links">
+
         <li><a href="#about">About</a></li>
+
         <li><a href="#skills">Skills</a></li>
+
         <li><a href="#projects">Projects</a></li>
+
         <li><a href="#contact">Contact</a></li>
+
+        <li>
+            <button id="theme-toggle">
+                🌙 Dark Mode
+            </button>
+        </li>
+
     </ul>
+
 </nav>
 
-<!-- Hero Section -->
+<!-- ==========================
+     HERO SECTION
+========================== -->
+
 <header class="hero">
 
-    <h1 class="hero-title">Web Developer</h1>
+    <h1 class="hero-title">
+        Web Developer
+    </h1>
 
     <p class="hero-text">
-        Building modern and responsive websites using HTML, CSS and JavaScript.
+
+        Building modern and responsive websites
+        using HTML, CSS and JavaScript.
+
     </p>
 
     <div class="hero-icons">
+
         <img src="html.png" alt="HTML">
+
         <img src="css.png" alt="CSS">
+
         <img src="js.png" alt="JavaScript">
+
     </div>
 
 </header>
-    <hr>
-    <section id="about">
-        <h3>About Me</h3>
-        <p>Hello! My name is Ahmad. I am a passionate web Developer. I am currently learning HTML, CSS, and JavaScript to build amazing websites.</p>
-    </section>
-    <hr>
 
-    <section id="skills">
-        <h3>My Skills</h3>
-        <ul>
-            <li>HTML5 (Expert in Forms and Tables)</li>
-            <li>Layout planning</li>
-        </ul>
-    </section>
+<hr>
 
-    <hr>
-    <hr>
+<!-- ==========================
+     ABOUT
+========================== -->
+
+<section id="about">
+
+    <h3>About Me</h3>
+
+    <p>
+
+        Hello! My name is Ahmad.
+
+        I am a passionate Web Developer.
+
+        I am currently learning HTML, CSS
+        and JavaScript to build modern,
+        responsive and professional websites.
+
+    </p>
+
+</section>
+
+<hr>
+
+<!-- ==========================
+     SKILLS
+========================== -->
+
+<section id="skills">
+
+    <h3>My Skills</h3>
+
+    <ul>
+
+        <li>HTML5 (Expert in Forms & Tables)</li>
+
+        <li>CSS3 Responsive Design</li>
+
+        <li>JavaScript Fundamentals</li>
+
+        <li>Responsive Web Design</li>
+
+    </ul>
+
+</section>
+
+<hr>
+<!-- ==========================
+     VISITOR RATING
+========================== -->
 
 <section id="reviews-home">
 
@@ -62,17 +135,22 @@
 
     <div class="rating-box">
 
-        <h1 id="averageRating">5.0</h1>
+        <h1 id="averageRating">0.0</h1>
 
         <p>⭐⭐⭐⭐⭐</p>
 
         <h3>
+
             <span id="totalReviews">0</span>
+
             Reviews
+
         </h3>
 
         <a href="review.html" class="review-btn">
+
             Write a Review
+
         </a>
 
     </div>
@@ -80,111 +158,232 @@
 </section>
 
 <hr>
-    <section id="projects">
-        <h3>My projects</h3>
-        <p>Here is the professional form I designed with my own hands:</p>
-        <a href="practice_3.html" target="_blank">Click here to view my Job application Form</a>
-        <br>
-        <h3>Design Your Dream Home</h3>
-        <p>Professional house design website with 2D floor plans,3D exterior designs and custom home planning.</p>
-        <a href="home-design.html" target="_blank">click here to view Design Your Dream Home</a>
-        <h3> Beauty salon Appointment website</h3>
-        <p>Professional beauty salon website with responsive design,
-            appointment booking form, gallery and animations.</p>
-            <a href="salon.html" target="_blank">Click here to view Beauty salon Appointment website</a>
-            <h3>🛒 E-Commerce Website</h3>
 
-<p>
-Professional E-Commerce website with Login, Register,
-Wishlist, Cart, Checkout, User Profile,
-Protected Pages, Order History and Product Reviews.
-</p>
+<section id="projects">
 
-<a href="Ecommer ce-website/index.html" target="_blank">
-    Click here to view E-Commerce Website
-</a>
+    <h3>My Projects</h3>
 
-<br><br>
+    <div class="project-card">
 
-    </section>
+        <h4>📄 Job Application Form</h4>
 
-    <hr>
-    <section>
-        <h3>Contact Me</h3>
-        <p>If you want to work with me. send me an email:</p>
-        <p>Email: ahmadwebdev37@gmail.com</p>
-    </section>
-    <hr>
-    <section style="text-align: center;">
-        <h3>My Digital Calculator</h3>
-        <p>Practice Project: You can use this calculator for basic math operations!</p>
+        <p>
+            Professional Job Application Form created using HTML.
+        </p>
 
-        <div class="calculator">
-            <input type="text" id="result" readonly placeholder="o">
-            <br><br>
-            <button onclick="clearScreen()">C</button>
-            <button onclick="appendvalue('/')">/</button>
-            <button onclick="appendvalue('*')">*</button>
-            <button onclick="appendvalue('-')">-</button>
-            <br><br>
-            <button onclick="appendvalue('7')">7</button>
-            <button onclick="appendvalue('8')">8</button>
-            <button onclick="appendvalue('9')">9</button>
-            <button onclick="appendvalue('+')">+</button>
-            <br><br>
-            <button onclick="appendvalue('4')">4</button>
-            <button onclick="appendvalue('5')">5</button>
-            <button onclick="appendvalue('6')">6</button>
-            <button onclick="calculateResult()">=</button>
-            <br><br>
-            <button onclick="appendvalue('1')">1</button>
-            <button onclick="appendvalue('2')">2</button>
-            <button onclick="appendvalue('3')">3</button>
-            <button onclick="appendvalue('0')">0</button>
+        <a href="practice_3.html" target="_blank" class="project-btn">
+            View Project
+        </a>
 
-        </div>
+    </div>
 
-    </section>
+    <div class="project-card">
+
+        <h4>🏠 Design Your Dream Home</h4>
+
+        <p>
+            Professional Home Design Website with 2D Floor Plans,
+            3D Exterior Designs and Custom Home Planning.
+        </p>
+
+        <a href="home-design.html" target="_blank" class="project-btn">
+            View Project
+        </a>
+
+    </div>
+
+    <div class="project-card">
+
+        <h4>💇 Beauty Salon Website</h4>
+
+        <p>
+            Responsive Beauty Salon Website with Appointment Booking,
+            Gallery and Animation.
+        </p>
+
+        <a href="salon.html" target="_blank" class="project-btn">
+            View Project
+        </a>
+
+    </div>
+
+    <div class="project-card">
+
+        <h4>🛒 E-Commerce Website</h4>
+
+        <p>
+            Complete E-Commerce Website with Login, Register,
+            Wishlist, Shopping Cart, Checkout,
+            User Profile, Order History and Product Reviews.
+        </p>
+
+        <a href="Ecommerce-website/index.html" target="_blank" class="project-btn">
+            View Project
+        </a>
+
+    </div>
+
+</section>
+
+<hr>
+<!-- ==========================
+     CONTACT
+========================== -->
+
+<section id="contact">
+
+    <h3>Contact Me</h3>
+
+    <p>
+        If you want to work with me,
+        feel free to contact me.
+    </p>
+
+    <p>
+        <strong>Email:</strong>
+        ahmadwebdev37@gmail.com
+    </p>
+
+</section>
+
+<hr>
+
+<!-- ==========================
+     CALCULATOR
+========================== -->
+
+<section class="calculator-section">
+
+    <h3>My Digital Calculator</h3>
+
+    <p>
+        Practice Project:
+        Basic Calculator using JavaScript.
+    </p>
+
+    <div class="calculator">
+
+        <input
+            type="text"
+            id="result"
+            readonly
+            placeholder="0">
+
+        <button onclick="clearScreen()">C</button>
+        <button onclick="appendValue('/')">/</button>
+        <button onclick="appendValue('*')">*</button>
+        <button onclick="appendValue('-')">-</button>
+
+        <button onclick="appendValue('7')">7</button>
+        <button onclick="appendValue('8')">8</button>
+        <button onclick="appendValue('9')">9</button>
+        <button onclick="appendValue('+')">+</button>
+
+        <button onclick="appendValue('4')">4</button>
+        <button onclick="appendValue('5')">5</button>
+        <button onclick="appendValue('6')">6</button>
+        <button onclick="calculateResult()">=</button>
+
+        <button onclick="appendValue('1')">1</button>
+        <button onclick="appendValue('2')">2</button>
+        <button onclick="appendValue('3')">3</button>
+        <button onclick="appendValue('0')">0</button>
+
+    </div>
+
+</section>
+
+<hr>
+
+<!-- ==========================
+     FOOTER
+========================== -->
+
+<footer class="footer">
+
+    <p>
+        © 2026 Ahmad Portfolio.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+<!-- ==========================
+     JAVASCRIPT
+========================== -->
+
 <script>
-     function appendvalue(value) {
-        document.getElementById('result').value += value;
 
-     }
-     function clearScreen() {
-        document.getElementById('result').value ='';
+function appendValue(value){
 
-     }
-     function calculateResult() {
-        var input = document.getElementById('result').value;
-        try{
-            var answer = eval(input);
-            document.getElementById('result').value = answer;
-        } catch (error) {
-            document.getElementById('result').value = 'Error';
-        }
-     }
-    alert("Welcome to Ahmad is personal portfolio website!");
-    const themeToggleBtn = document.getElementById("theme-toggle");
-
-if (themeToggleBtn) {
-
-    themeToggleBtn.addEventListener("click", () => {
-
-        document.body.classList.toggle("dark-mode");
-
-        if (document.body.classList.contains("dark-mode")) {
-            themeToggleBtn.innerText = "Light Mode";
-        } else {
-            themeToggleBtn.innerText = "Dark/Light Mode";
-        }
-
-    });
+    document.getElementById("result").value += value;
 
 }
+
+function clearScreen(){
+
+    document.getElementById("result").value = "";
+
+}
+
+function calculateResult(){
+
+    try{
+
+        document.getElementById("result").value =
+        eval(document.getElementById("result").value);
+
+    }catch{
+
+        document.getElementById("result").value = "Error";
+
+    }
+
+}
+
+// Welcome Message
+alert("Welcome to Ahmad Portfolio Website!");
+
+// Dark Mode
+
+const themeToggleBtn =
+document.getElementById("theme-toggle");
+
+themeToggleBtn.addEventListener("click",function(){
+
+    document.body.classList.toggle("dark-mode");
+
+    if(document.body.classList.contains("dark-mode")){
+
+        themeToggleBtn.innerHTML="☀️ Light Mode";
+
+    }else{
+
+        themeToggleBtn.innerHTML="🌙 Dark Mode";
+
+    }
+
+});
+
 </script>
-<footer class="footer">
-    <p>&copy; 2026 Ahmad. All Rights Reserved.</p>
-</footer>
+
+<!-- Review System -->
+
 <script src="js/review.js"></script>
+<script>
+
+const menuBtn = document.getElementById("menu-btn");
+const navLinks = document.getElementById("nav-links");
+
+menuBtn.addEventListener("click", function(){
+
+    navLinks.classList.toggle("active");
+
+});
+
+</script>
 </body>
 </html>
+
+
+
