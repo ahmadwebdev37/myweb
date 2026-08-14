@@ -1139,6 +1139,292 @@
 
 <script src="js/review.js"></script>
 
+<script>
+
+/* =====================================================
+   MOBILE NAVIGATION
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuBtn = document.getElementById("menu-btn");
+    const navLinks = document.getElementById("nav-links");
+
+    if (menuBtn && navLinks) {
+
+        menuBtn.addEventListener("click", function () {
+
+            navLinks.classList.toggle("active");
+
+            const isOpen =
+                navLinks.classList.contains("active");
+
+            menuBtn.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+        });
+
+        navLinks.querySelectorAll("a").forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                navLinks.classList.remove("active");
+
+                menuBtn.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
+
+        });
+
+    }
+
+
+    /* =====================================================
+   DARK MODE
+===================================================== */
+
+const themeToggle = document.getElementById("theme-toggle");
+
+if (themeToggle) {
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        themeToggle.textContent = "☀️ Light Mode";
+    } else {
+        document.body.classList.remove("dark-mode");
+        themeToggle.textContent = "🌙 Dark Mode";
+    }
+
+    // Toggle theme
+    themeToggle.addEventListener("click", function () {
+
+        document.body.classList.toggle("dark-mode");
+
+        const isDark =
+            document.body.classList.contains("dark-mode");
+
+        if (isDark) {
+
+            themeToggle.textContent = "☀️ Light Mode";
+
+            localStorage.setItem("theme", "dark");
+
+        } else {
+
+            themeToggle.textContent = "🌙 Dark Mode";
+
+            localStorage.setItem("theme", "light");
+
+        }
+
+    });
+
+}
+
+
+    /* =================================================
+       CALCULATOR
+    ================================================= */
+
+    const display =
+        document.getElementById("result");
+
+    const buttons =
+        document.querySelectorAll(
+            ".calculator-grid button"
+        );
+
+    let expression = "";
+
+
+    if (!display || buttons.length === 0) {
+
+        console.error(
+            "Calculator elements were not found."
+        );
+
+        return;
+    }
+
+
+    buttons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const value =
+                button.getAttribute("data-value");
+
+
+            /* CLEAR */
+
+            if (value === "clear") {
+
+                expression = "";
+
+                display.value = "";
+
+                return;
+            }
+
+
+            /* EQUAL */
+
+            if (value === "=") {
+
+                if (expression === "") {
+                    return;
+                }
+
+                try {
+
+                    if (
+                        !/^[0-9+\-*/.() ]+$/.test(
+                            expression
+                        )
+                    ) {
+
+                        throw new Error(
+                            "Invalid expression"
+                        );
+
+                    }
+
+                    const answer =
+                        Function(
+                            "return (" +
+                            expression +
+                            ")"
+                        )();
+
+                    if (
+                        !Number.isFinite(answer)
+                    ) {
+
+                        throw new Error(
+                            "Invalid result"
+                        );
+
+                    }
+
+                    expression =
+                        String(answer);
+
+                    display.value =
+                        expression;
+
+                } catch (error) {
+
+                    console.error(
+                        "Calculator error:",
+                        error
+                    );
+
+                    display.value =
+                        "Error";
+
+                    expression = "";
+
+                }
+
+                return;
+            }
+
+
+            /* ADD NUMBER / OPERATOR */
+
+            expression += value;
+
+            display.value =
+                expression;
+
+        });
+
+    });
+
+
+    /* =================================================
+       KEYBOARD SUPPORT
+    ================================================= */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            const key = event.key;
+
+
+            if (
+                "0123456789+-*/.()".includes(key)
+            ) {
+
+                expression += key;
+
+                display.value =
+                    expression;
+
+                return;
+            }
+
+
+            if (key === "Enter") {
+
+                const equalButton =
+                    document.querySelector(
+                        '.calculator-grid button[data-value="="]'
+                    );
+
+                if (equalButton) {
+
+                    equalButton.click();
+
+                }
+
+                return;
+            }
+
+
+            if (key === "Escape") {
+
+                const clearButton =
+                    document.querySelector(
+                        '.calculator-grid button[data-value="clear"]'
+                    );
+
+                if (clearButton) {
+
+                    clearButton.click();
+
+                }
+
+                return;
+            }
+
+
+            if (key === "Backspace") {
+
+                expression =
+                    expression.slice(0, -1);
+
+                display.value =
+                    expression;
+
+            }
+
+        }
+    );
+
+});
+
+</script>
+
 
 </body>
 </html>
