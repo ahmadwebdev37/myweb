@@ -1,265 +1,972 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmad's Portfolio</title>
 
-    <link rel="stylesheet" href="css/portfolio.css">
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Ahmad Ali - Front-End Web Developer Portfolio. Explore modern, responsive and interactive web development projects."
+    >
+
+    <meta
+        name="theme-color"
+        content="#07111f"
+    >
+
+    <title>Ahmad Ali | Front-End Web Developer</title>
+
+    <link
+        rel="stylesheet"
+        href="css/portfolio.css"
+    >
+
 </head>
+
 
 <body>
 
-<!-- ==========================
+
+<!-- =====================================================
      NAVIGATION
-========================== -->
+===================================================== -->
 
 <nav class="navbar">
 
-    <div class="logo">
-        Ahmad Ali
-        <span>| Web Developer</span>
+    <div class="nav-container">
+
+        <a href="#" class="logo">
+
+            <span class="logo-name">
+                Ahmad Ali
+            </span>
+
+            <span class="logo-role">
+                FRONT-END DEVELOPER | WEB SOLUTIONS
+            </span>
+
+        </a>
+
+
+        <button
+            id="menu-btn"
+            class="menu-btn"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+
+        <ul
+            class="nav-links"
+            id="nav-links"
+        >
+
+            <li>
+                <a href="#about">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="#skills">
+                    Skills
+                </a>
+            </li>
+
+            <li>
+                <a href="#projects">
+                    Projects
+                </a>
+            </li>
+
+            <li>
+                <a href="#reviews-home">
+                    Reviews
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact">
+                    Contact
+                </a>
+            </li>
+
+            <li>
+
+                <button
+                    id="theme-toggle"
+                    class="theme-toggle"
+                    type="button"
+                >
+                    🌙 Dark Mode
+                </button>
+
+            </li>
+
+        </ul>
+
     </div>
-
-    <!-- Hamburger Button -->
-    <button id="menu-btn" class="menu-btn">
-        ☰
-    </button>
-
-    <!-- Navigation Links -->
-    <ul class="nav-links" id="nav-links">
-
-        <li><a href="#about">About</a></li>
-
-        <li><a href="#skills">Skills</a></li>
-
-        <li><a href="#projects">Projects</a></li>
-
-        <li><a href="#contact">Contact</a></li>
-
-        <li>
-            <button id="theme-toggle">
-                🌙 Dark Mode
-            </button>
-        </li>
-
-    </ul>
 
 </nav>
 
-<!-- ==========================
-     HERO SECTION
-========================== -->
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <header class="hero">
 
-    <h1 class="hero-title">
-        Web Developer
-    </h1>
+    <div class="hero-container">
 
-    <p class="hero-text">
 
-        Building modern and responsive websites
-        using HTML, CSS and JavaScript.
+        <div class="hero-content">
 
-    </p>
+            <span class="hero-badge">
+                ● Available for Web Projects
+            </span>
 
-    <div class="hero-icons">
 
-        <img src="html.png" alt="HTML">
+            <h1>
 
-        <img src="css.png" alt="CSS">
+                Building Modern
+                <span>Digital Experiences</span>
 
-        <img src="js.png" alt="JavaScript">
+            </h1>
+
+
+            <p class="hero-text">
+
+                I'm Ahmad Ali, a Front-End Web Developer
+                focused on creating modern, responsive and
+                user-friendly websites with HTML, CSS and
+                JavaScript.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#projects"
+                    class="primary-btn"
+                >
+                    Explore My Work
+                    <span>→</span>
+                </a>
+
+
+                <a
+                    href="#contact"
+                    class="secondary-btn"
+                >
+                    Contact Me
+                </a>
+
+            </div>
+
+
+            <div class="hero-tech">
+
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>Responsive Design</span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="hero-card">
+
+            <div class="code-window">
+
+                <div class="window-top">
+
+                    <div class="window-dots">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                    <span class="window-title">
+                        ahmad-web-dev
+                    </span>
+
+                </div>
+
+
+                <div class="code-content">
+
+<pre><code><span class="code-keyword">const</span> developer = {
+    name: <span class="code-string">"Ahmad Ali"</span>,
+    role: <span class="code-string">"Front-End Developer"</span>,
+    skills: [
+        <span class="code-string">"HTML"</span>,
+        <span class="code-string">"CSS"</span>,
+        <span class="code-string">"JavaScript"</span>
+    ],
+    focus: <span class="code-string">"Modern Web"</span>
+};</code></pre>
+
+                </div>
+
+
+                <div class="code-status">
+
+                    <span>
+                        ●
+                    </span>
+
+                    Building modern websites
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="hero-stats">
+
+        <div class="stat">
+
+            <strong>05+</strong>
+
+            <span>
+                Projects
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>03</strong>
+
+            <span>
+                Core Technologies
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>100%</strong>
+
+            <span>
+                Responsive
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>∞</strong>
+
+            <span>
+                Creativity
+            </span>
+
+        </div>
 
     </div>
 
 </header>
 
-<hr>
 
-<!-- ==========================
+
+<!-- =====================================================
      ABOUT
-========================== -->
+===================================================== -->
 
-<section id="about">
+<section
+    id="about"
+    class="section"
+>
 
-    <h3>About Me</h3>
+    <div class="section-heading">
 
-    <p>
+        <span>
+            ABOUT ME
+        </span>
 
-        Hello! My name is Ahmad.
+        <h2>
+            Turning Ideas Into
+            <strong>Modern Websites</strong>
+        </h2>
 
-        I am a passionate Web Developer.
+        <p>
+            Clean code, thoughtful design and responsive
+            experiences are at the heart of my work.
+        </p>
 
-        I am currently learning HTML, CSS
-        and JavaScript to build modern,
-        responsive and professional websites.
+    </div>
 
-    </p>
+
+    <div class="about-grid">
+
+
+        <div class="about-content">
+
+            <p>
+
+                Hello, I'm <strong>Ahmad Ali</strong>,
+                a Front-End Web Developer focused on
+                building clean, responsive and engaging
+                websites.
+
+            </p>
+
+
+            <p>
+
+                I work with HTML, CSS and JavaScript to
+                transform ideas into practical web
+                experiences with modern layouts,
+                interactive features and responsive
+                interfaces.
+
+            </p>
+
+
+            <p>
+
+                My projects focus on usability,
+                visual consistency, responsive design
+                and creating experiences that work
+                smoothly across desktop and mobile
+                devices.
+
+            </p>
+
+
+            <a
+                href="#projects"
+                class="text-link"
+            >
+                View My Projects →
+            </a>
+
+        </div>
+
+
+        <div class="about-card">
+
+            <div class="about-card-icon">
+                &lt;/&gt;
+            </div>
+
+            <h3>
+                Front-End Development
+            </h3>
+
+            <p>
+                Modern interfaces built with clean
+                structure, responsive layouts and
+                interactive JavaScript features.
+            </p>
+
+
+            <div class="about-tags">
+
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>Responsive UI</span>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
-<hr>
 
-<!-- ==========================
+
+<!-- =====================================================
      SKILLS
-========================== -->
+===================================================== -->
 
-<section id="skills">
+<section
+    id="skills"
+    class="section section-alt"
+>
 
-    <h3>My Skills</h3>
+    <div class="section-heading">
 
-    <ul>
+        <span>
+            MY SKILLS
+        </span>
 
-        <li>HTML5 (Expert in Forms & Tables)</li>
+        <h2>
+            Technologies I
+            <strong>Work With</strong>
+        </h2>
 
-        <li>CSS3 Responsive Design</li>
+        <p>
+            Building responsive and interactive web
+            experiences using modern front-end technologies.
+        </p>
 
-        <li>JavaScript Fundamentals</li>
+    </div>
 
-        <li>Responsive Web Design</li>
 
-    </ul>
+    <div class="skills-grid">
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon html-icon">
+                &lt;/&gt;
+            </div>
+
+            <h3>
+                HTML5
+            </h3>
+
+            <p>
+                Semantic structure, forms, tables,
+                accessibility and clean page architecture.
+            </p>
+
+            <div class="skill-line">
+                <span style="width: 92%;"></span>
+            </div>
+
+            <small>
+                Front-End Foundation
+            </small>
+
+        </div>
+
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon css-icon">
+                #
+            </div>
+
+            <h3>
+                CSS3
+            </h3>
+
+            <p>
+                Responsive layouts, modern UI design,
+                animations, grids, flexbox and visual styling.
+            </p>
+
+            <div class="skill-line">
+                <span style="width: 90%;"></span>
+            </div>
+
+            <small>
+                Responsive Design
+            </small>
+
+        </div>
+
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon js-icon">
+                JS
+            </div>
+
+            <h3>
+                JavaScript
+            </h3>
+
+            <p>
+                Interactive interfaces, DOM manipulation,
+                local storage and practical web functionality.
+            </p>
+
+            <div class="skill-line">
+                <span style="width: 86%;"></span>
+            </div>
+
+            <small>
+                Interactive Web
+            </small>
+
+        </div>
+
+
+
+        <div class="skill-card">
+
+            <div class="skill-icon responsive-icon">
+                ↔
+            </div>
+
+            <h3>
+                Responsive Design
+            </h3>
+
+            <p>
+                Websites designed to provide a smooth
+                experience across phones, tablets and desktops.
+            </p>
+
+            <div class="skill-line">
+                <span style="width: 94%;"></span>
+            </div>
+
+            <small>
+                Mobile First
+            </small>
+
+        </div>
+
+    </div>
 
 </section>
 
-<hr>
-<!-- ==========================
-     VISITOR RATING
-========================== -->
 
-<section id="reviews-home">
 
-    <h2>⭐ Visitor Rating</h2>
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section
+    id="projects"
+    class="section"
+>
+
+    <div class="section-heading">
+
+        <span>
+            SELECTED WORK
+        </span>
+
+        <h2>
+            Projects That
+            <strong>Show My Work</strong>
+        </h2>
+
+        <p>
+            A collection of practical web projects built
+            with a focus on design, functionality and usability.
+        </p>
+
+    </div>
+
+
+    <div class="projects-grid">
+
+
+        <!-- JOB APPLICATION -->
+
+        <article class="project-card">
+
+            <div class="project-number">
+                01
+            </div>
+
+            <div class="project-icon">
+                📄
+            </div>
+
+            <span class="project-category">
+                HTML PROJECT
+            </span>
+
+            <h3>
+                Job Application Form
+            </h3>
+
+            <p>
+                A structured and professional job application
+                form designed with clean HTML structure,
+                organized fields and user-friendly layout.
+            </p>
+
+            <div class="project-tags">
+
+                <span>HTML5</span>
+                <span>Forms</span>
+                <span>UI</span>
+
+            </div>
+
+            <a
+                href="practice_3.html"
+                target="_blank"
+                class="project-btn"
+            >
+                View Project →
+            </a>
+
+        </article>
+
+
+
+        <!-- HOME DESIGN -->
+
+        <article class="project-card">
+
+            <div class="project-number">
+                02
+            </div>
+
+            <div class="project-icon">
+                🏠
+            </div>
+
+            <span class="project-category">
+                WEB DESIGN
+            </span>
+
+            <h3>
+                Design Your Dream Home
+            </h3>
+
+            <p>
+                A home design experience featuring floor
+                plans, exterior concepts and a visually
+                focused interface for home planning.
+            </p>
+
+            <div class="project-tags">
+
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Design</span>
+
+            </div>
+
+            <a
+                href="home-design.html"
+                target="_blank"
+                class="project-btn"
+            >
+                View Project →
+            </a>
+
+        </article>
+
+
+
+        <!-- SALON -->
+
+        <article class="project-card">
+
+            <div class="project-number">
+                03
+            </div>
+
+            <div class="project-icon">
+                💇
+            </div>
+
+            <span class="project-category">
+                BUSINESS WEBSITE
+            </span>
+
+            <h3>
+                Beauty Salon Website
+            </h3>
+
+            <p>
+                A responsive beauty salon website featuring
+                services, appointment functionality, gallery
+                presentation and polished visual styling.
+            </p>
+
+            <div class="project-tags">
+
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+
+            </div>
+
+            <a
+                href="salon.html"
+                target="_blank"
+                class="project-btn"
+            >
+                View Project →
+            </a>
+
+        </article>
+
+
+
+        <!-- ECOMMERCE -->
+
+        <article class="project-card featured-project">
+
+            <div class="project-number">
+                04
+            </div>
+
+            <div class="project-icon">
+                🛒
+            </div>
+
+            <span class="project-category">
+                E-COMMERCE
+            </span>
+
+            <h3>
+                E-Commerce Website
+            </h3>
+
+            <p>
+                A complete e-commerce experience featuring
+                authentication, wishlist, shopping cart,
+                checkout, profiles, orders and product reviews.
+            </p>
+
+            <div class="project-tags">
+
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+
+            </div>
+
+            <a
+                href="Ecommerce-website/index.html"
+                target="_blank"
+                class="project-btn"
+            >
+                View Project →
+            </a>
+
+        </article>
+
+
+
+        <!-- LMS -->
+
+        <article class="project-card featured-project lms-project">
+
+            <div class="project-number">
+                05
+            </div>
+
+            <div class="project-icon">
+                🎓
+            </div>
+
+            <span class="project-category">
+                LEARNING PLATFORM
+            </span>
+
+            <h3>
+                Ahmad LMS
+            </h3>
+
+            <p>
+                A professional Learning Management System
+                featuring HTML, CSS and JavaScript courses,
+                structured lessons, progress tracking,
+                responsive design and interactive learning.
+            </p>
+
+            <div class="project-tags">
+
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>JavaScript</span>
+                <span>Local Storage</span>
+
+            </div>
+
+            <a
+                href="Ahmad.LMS/index.html"
+                target="_blank"
+                class="project-btn"
+            >
+                View Project →
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     REVIEWS
+===================================================== -->
+
+<section
+    id="reviews-home"
+    class="section section-alt"
+>
+
+    <div class="section-heading">
+
+        <span>
+            CLIENT FEEDBACK
+        </span>
+
+        <h2>
+            Visitor
+            <strong>Reviews</strong>
+        </h2>
+
+        <p>
+            See what visitors think about my work.
+        </p>
+
+    </div>
+
 
     <div class="rating-box">
 
-        <h1 id="averageRating">0.0</h1>
+        <div class="rating-main">
 
-        <p>⭐⭐⭐⭐⭐</p>
+            <strong id="averageRating">
+                0.0
+            </strong>
 
-        <h3>
+            <div class="rating-stars">
+                ⭐⭐⭐⭐⭐
+            </div>
 
-            <span id="totalReviews">0</span>
+            <p>
+                Average Rating
+            </p>
 
-            Reviews
+        </div>
 
-        </h3>
 
-        <a href="review.html" class="review-btn">
+        <div class="rating-divider"></div>
 
-            Write a Review
 
+        <div class="rating-total">
+
+            <strong id="totalReviews">
+                0
+            </strong>
+
+            <span>
+                Reviews
+            </span>
+
+        </div>
+
+
+        <a
+            href="review.html"
+            class="review-btn"
+        >
+            Write a Review →
         </a>
 
     </div>
 
 </section>
 
-<hr>
 
-<section id="projects">
 
-    <h3>My Projects</h3>
-
-    <div class="project-card">
-
-        <h4>📄 Job Application Form</h4>
-
-        <p>
-            Professional Job Application Form created using HTML.
-        </p>
-
-        <a href="practice_3.html" target="_blank" class="project-btn">
-            View Project
-        </a>
-
-    </div>
-
-    <div class="project-card">
-
-        <h4>🏠 Design Your Dream Home</h4>
-
-        <p>
-            Professional Home Design Website with 2D Floor Plans,
-            3D Exterior Designs and Custom Home Planning.
-        </p>
-
-        <a href="home-design.html" target="_blank" class="project-btn">
-            View Project
-        </a>
-
-    </div>
-
-    <div class="project-card">
-
-        <h4>💇 Beauty Salon Website</h4>
-
-        <p>
-            Responsive Beauty Salon Website with Appointment Booking,
-            Gallery and Animation.
-        </p>
-
-        <a href="salon.html" target="_blank" class="project-btn">
-            View Project
-        </a>
-
-    </div>
-
-    <div class="project-card">
-
-        <h4>🛒 E-Commerce Website</h4>
-
-        <p>
-            Complete E-Commerce Website with Login, Register,
-            Wishlist, Shopping Cart, Checkout,
-            User Profile, Order History and Product Reviews.
-        </p>
-
-        <a href="Ecommerce-website/index.html" target="_blank" class="project-btn">
-            View Project
-        </a>
-
-    </div>
-
-</section>
-
-<hr>
-<!-- ==========================
+<!-- =====================================================
      CONTACT
-========================== -->
+===================================================== -->
 
-<section id="contact">
+<section
+    id="contact"
+    class="section"
+>
 
-    <h3>Contact Me</h3>
+    <div class="contact-card">
 
-    <p>
-        If you want to work with me,
-        feel free to contact me.
-    </p>
+        <div class="contact-content">
 
-    <p>
-        <strong>Email:</strong>
-        ahmadwebdev37@gmail.com
-    </p>
+            <span class="contact-label">
+                GET IN TOUCH
+            </span>
+
+            <h2>
+                Have a project
+                <strong>in mind?</strong>
+            </h2>
+
+            <p>
+                I'm open to discussing websites, web projects
+                and creative digital ideas. Feel free to get
+                in touch.
+            </p>
+
+            <a
+                href="mailto:ahmadwebdev37@gmail.com"
+                class="contact-email"
+            >
+                ✉ ahmadwebdev37@gmail.com
+            </a>
+
+        </div>
+
+
+        <div class="contact-action">
+
+            <a
+                href="mailto:ahmadwebdev37@gmail.com"
+                class="primary-btn"
+            >
+                Let's Work Together →
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
 
-<hr>
 
-<!-- ==========================
+
+<!-- =====================================================
      CALCULATOR
-========================== -->
+===================================================== -->
 
-<section class="calculator-section">
+<section
+    class="section calculator-section"
+>
 
-    <h3>My Digital Calculator</h3>
+    <div class="section-heading">
 
-    <p>
-        Practice Project:
-        Basic Calculator using JavaScript.
-    </p>
+        <span>
+            MINI PROJECT
+        </span>
+
+        <h2>
+            Digital
+            <strong>Calculator</strong>
+        </h2>
+
+        <p>
+            A simple interactive calculator powered by JavaScript.
+        </p>
+
+    </div>
+
 
     <div class="calculator">
 
@@ -267,123 +974,171 @@
             type="text"
             id="result"
             readonly
-            placeholder="0">
+            placeholder="0"
+            aria-label="Calculator display"
+        >
 
-        <button onclick="clearScreen()">C</button>
-        <button onclick="appendValue('/')">/</button>
-        <button onclick="appendValue('*')">*</button>
-        <button onclick="appendValue('-')">-</button>
 
-        <button onclick="appendValue('7')">7</button>
-        <button onclick="appendValue('8')">8</button>
-        <button onclick="appendValue('9')">9</button>
-        <button onclick="appendValue('+')">+</button>
+        <div class="calculator-grid">
 
-        <button onclick="appendValue('4')">4</button>
-        <button onclick="appendValue('5')">5</button>
-        <button onclick="appendValue('6')">6</button>
-        <button onclick="calculateResult()">=</button>
+            <button
+                type="button"
+                class="calculator-clear"
+                data-value="clear"
+            >
+                C
+            </button>
 
-        <button onclick="appendValue('1')">1</button>
-        <button onclick="appendValue('2')">2</button>
-        <button onclick="appendValue('3')">3</button>
-        <button onclick="appendValue('0')">0</button>
+            <button
+                type="button"
+                data-value="/"
+            >
+                ÷
+            </button>
+
+            <button
+                type="button"
+                data-value="*"
+            >
+                ×
+            </button>
+
+            <button
+                type="button"
+                data-value="-"
+            >
+                −
+            </button>
+
+
+            <button type="button" data-value="7">
+                7
+            </button>
+
+            <button type="button" data-value="8">
+                8
+            </button>
+
+            <button type="button" data-value="9">
+                9
+            </button>
+
+            <button type="button" data-value="+">
+                +
+            </button>
+
+
+            <button type="button" data-value="4">
+                4
+            </button>
+
+            <button type="button" data-value="5">
+                5
+            </button>
+
+            <button type="button" data-value="6">
+                6
+            </button>
+
+            <button
+                type="button"
+                class="calculator-equal"
+                data-value="="
+            >
+                =
+            </button>
+
+
+            <button type="button" data-value="1">
+                1
+            </button>
+
+            <button type="button" data-value="2">
+                2
+            </button>
+
+            <button type="button" data-value="3">
+                3
+            </button>
+
+            <button type="button" data-value="0">
+                0
+            </button>
+
+        </div>
 
     </div>
 
 </section>
 
-<hr>
 
-<!-- ==========================
+
+<!-- =====================================================
      FOOTER
-========================== -->
+===================================================== -->
 
 <footer class="footer">
 
-    <p>
-        © 2026 Ahmad Portfolio.
-        All Rights Reserved.
-    </p>
+    <div class="footer-content">
+
+        <div>
+
+            <h3>
+                Ahmad Ali
+            </h3>
+
+            <p>
+                Front-End Web Developer
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#skills">
+                Skills
+            </a>
+
+            <a href="#projects">
+                Projects
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Ahmad Ali. All Rights Reserved.
+        </p>
+
+        <p>
+            Designed & Built with HTML, CSS & JavaScript.
+        </p>
+
+    </div>
 
 </footer>
 
-<!-- ==========================
-     JAVASCRIPT
-========================== -->
 
-<script>
 
-function appendValue(value){
-
-    document.getElementById("result").value += value;
-
-}
-
-function clearScreen(){
-
-    document.getElementById("result").value = "";
-
-}
-
-function calculateResult(){
-
-    try{
-
-        document.getElementById("result").value =
-        eval(document.getElementById("result").value);
-
-    }catch{
-
-        document.getElementById("result").value = "Error";
-
-    }
-
-}
-
-// Welcome Message
-alert("Welcome to Ahmad Portfolio Website!");
-
-// Dark Mode
-
-const themeToggleBtn =
-document.getElementById("theme-toggle");
-
-themeToggleBtn.addEventListener("click",function(){
-
-    document.body.classList.toggle("dark-mode");
-
-    if(document.body.classList.contains("dark-mode")){
-
-        themeToggleBtn.innerHTML="☀️ Light Mode";
-
-    }else{
-
-        themeToggleBtn.innerHTML="🌙 Dark Mode";
-
-    }
-
-});
-
-</script>
-
-<!-- Review System -->
+<!-- =====================================================
+     PORTFOLIO JAVASCRIPT
+===================================================== -->
 
 <script src="js/review.js"></script>
-<script>
 
-const menuBtn = document.getElementById("menu-btn");
-const navLinks = document.getElementById("nav-links");
 
-menuBtn.addEventListener("click", function(){
-
-    navLinks.classList.toggle("active");
-
-});
-
-</script>
 </body>
 </html>
-
-
-

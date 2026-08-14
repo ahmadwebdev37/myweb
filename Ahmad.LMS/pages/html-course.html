@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Learn HTML from beginner to practical level with Ahmad LMS."
+    >
+
+    <meta
+        name="author"
+        content="Ahmad LMS"
+    >
+
+    <title>HTML Course - Ahmad LMS</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/course.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     COURSE HEADER
+================================================== -->
+
+<header>
+
+    <h1>
+        HTML Course
+    </h1>
+
+    <p>
+        Learn HTML from beginner to practical level
+        with simple and practical lessons.
+    </p>
+
+</header>
+
+
+
+<!-- ==================================================
+     COURSE PROGRESS
+================================================== -->
+
+<div class="course-progress-box">
+
+    <h3>
+        Course Progress
+    </h3>
+
+    <div
+        class="progress-bar"
+        role="progressbar"
+        aria-label="HTML course progress"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+    >
+
+        <div id="course-progress"></div>
+
+    </div>
+
+    <p id="progress-text">
+        0 / 7 Lessons Completed
+    </p>
+
+</div>
+
+
+
+<!-- ==================================================
+     MAIN COURSE CONTENT
+================================================== -->
+
+<main>
+
+
+    <!-- ==================================================
+         COURSE INTRODUCTION
+    ================================================== -->
+
+    <section>
+
+        <h2>
+            About This Course
+        </h2>
+
+        <p>
+            Welcome to the HTML Course at Ahmad LMS.
+            In this course, you will learn the fundamentals
+            of HTML and how to create the basic structure
+            of a modern web page.
+        </p>
+
+        <p>
+            This course is designed for beginners.
+            You do not need previous HTML experience.
+            Follow each lesson, practice the examples,
+            and complete all seven lessons.
+        </p>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         LESSON 1
+    ================================================== -->
+
+    <section
+        class="lesson"
+        id="lesson-1"
+        data-lesson="1"
+    >
+
+        <h2>
+            Lesson 1: What is HTML?
+        </h2>
+
+        <p>
+            HTML stands for
+            <strong>HyperText Markup Language</strong>.
+            HTML is the standard markup language used
+            to create and structure content on web pages.
+        </p>
+
+        <p>
+            HTML tells the browser what different parts
+            of a web page are. For example, we can use HTML
+            to create headings, paragraphs, links, images,
+            lists, tables and forms.
+        </p>
+
+
+        <h3>
+            A Simple HTML Example
+        </h3>
+
+        <pre>&lt;h1&gt;Hello World&lt;/h1&gt;
+
+&lt;p&gt;Welcome to my website.&lt;/p&gt;</pre>
+
+
+        <h3>
+            What Does This Code Do?
+        </h3>
+
+        <p>
+            The
+            <strong>&lt;h1&gt;</strong>
+            element creates a main heading.
+            The
+            <strong>&lt;p&gt;</strong>
+            element creates a paragraph.
+        </p>
+
+
+        <h3>
+            Important Point
+        </h3>
+
+        <p>
+            HTML provides the structure of a website.
+            CSS is normally used for design and JavaScript
+            is used to add interaction and functionality.
+        </p>
+
+
+        <button
+            class="complete-btn"
+            onclick="completeLesson(1)"
+        >
+            ✓ Complete Lesson
+        </button>
+
+
+        <br><br>
+
+
+        <a href="#lesson-2">
+            Next Lesson →
+        </a>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         LESSON 2
+    ================================================== -->
+
+    <section
+        class="lesson"
+        id="lesson-2"
+        data-lesson="2"
+    >
+
+        <h2>
+            Lesson 2: HTML Document Structure
+        </h2>
+
+        <p>
+            Every normal HTML document follows a basic
+            structure. Understanding this structure is
+            one of the most important first steps in HTML.
+        </p>
+
+
+        <h3>
+            Basic HTML Structure
+        </h3>
+
+        <pre>&lt;!DOCTYPE html&gt;
+
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+
+    &lt;meta charset="UTF-8"&gt;
+
+    &lt;title&gt;My Website&lt;/title&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+
+    &lt;p&gt;This is my first web page.&lt;/p&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</pre>
+
+
+        <h3>
+            Main Parts
+        </h3>
+
+        <ul>
+
+            <li>
+                <strong>DOCTYPE:</strong>
+                Tells the browser that the document uses HTML5.
+            </li>
+
+            <li>
+                <strong>html:</strong>
+                The main root element of the document.
+            </li>
+
+            <li>
+                <strong>head:</strong>
+                Contains information about the web page.
+            </li>
+
+            <li>
+                <strong>body:</strong>
+                Contains the visible content of the page.
+            </li>
+
+        </ul>
+
+
+        <h3>
+            The Head Section
+        </h3>
+
+        <p>
+            The head section can contain the page title,
+            metadata, CSS links and other information that
+            helps the browser understand the page.
+        </p>
+
+
+        <h3>
+            The Body Section
+        </h3>
+
+        <p>
+            The body contains the content users can see,
+            such as headings, paragraphs, images, buttons,
+            links and forms.
+        </p>
+
+
+        <button
+            class="complete-btn"
+            onclick="completeLesson(2)"
+        >
+            ✓ Complete Lesson
+        </button>
+
+
+        <br><br>
+
+
+        <a href="#lesson-3">
+            Next Lesson →
+        </a>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         LESSON 3
+    ================================================== -->
+
+    <section
+        class="lesson"
+        id="lesson-3"
+        data-lesson="3"
+    >
+
+        <h2>
+            Lesson 3: Headings and Paragraphs
+        </h2>
+
+        <p>
+            Headings and paragraphs are some of the most
+            common HTML elements. They help us organize
+            information and make a web page easier to read.
+        </p>
+
+
+        <h3>
+            HTML Headings
+        </h3>
+
+        <p>
+            HTML provides six heading levels,
+            from
+            <strong>h1</strong>
+            to
+            <strong>h6</strong>.
+        </p>
+
+
+        <pre>&lt;h1&gt;Main Heading&lt;/h1&gt;
+
+&lt;h2&gt;Section Heading&lt;/h2&gt;
+
+&lt;h3&gt;Sub Heading&lt;/h3&gt;
+
+&lt;h4&gt;Heading Four&lt;/h4&gt;
+
+&lt;h5&gt;Heading Five&lt;/h5&gt;
+
+&lt;h6&gt;Heading Six&lt;/h6&gt;</pre>
+
+
+        <h3>
+            Heading Examples
+        </h3>
+
+        <h1>
+            Heading 1
+        </h1>
+
+        <h2>
+            Heading 2
+        </h2>
+
+        <h3>
+            Heading 3
+        </h3>
+
+        <h4>
+            Heading 4
+        </h4>
+
+
+        <h3>
+            Paragraphs
+        </h3>
+
+        <p>
+            Paragraphs are created using the
+            <strong>&lt;p&gt;</strong>
+            element.
+        </p>
+
+        <pre>&lt;p&gt;
+HTML is used to create the structure
+of web pages.
+&lt;/p&gt;</pre>
+
+
+        <p>
+            Use headings to organize your page and paragraphs
+            to present normal blocks of written information.
+        </p>
+
+
+        <button
+            class="complete-btn"
+            onclick="completeLesson(3)"
+        >
+            ✓ Complete Lesson
+        </button>
+
+
+        <br><br>
+
+
+        <a href="#lesson-4">
+            Next Lesson →
+        </a>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         LESSON 4
+    ================================================== -->
+
+    <section
+        class="lesson"
+        id="lesson-4"
+        data-lesson="4"
+    >
+
+        <h2>
+            Lesson 4: Links and Images
+        </h2>
+
+        <p>
+            Links allow users to move from one page to
+            another. Images allow us to display visual
+            content on a web page.
+        </p>
+
+
+        <h3>
+            HTML Links
+        </h3>
+
+        <p>
+            Links are created using the
+            <strong>&lt;a&gt;</strong>
+            element.
+        </p>
+
+
+        <pre>&lt;a href="https://www.google.com"&gt;
+    Visit Google
+&lt;/a&gt;</pre>
+
+
+        <p>
+            The
+            <strong>href</strong>
+            attribute specifies where the link should go.
+        </p>
+
+
+        <h3>
+            Opening a Link in a New Tab
+        </h3>
+
+        <pre>&lt;a
+    href="https://www.google.com"
+    target="_blank"
+&gt;
+    Visit Google
+&lt;/a&gt;</pre>
+
+
+        <p>
+            The
+            <strong>target="_blank"</strong>
+            attribute tells the browser to open the link
+            in a new browsing context.
+        </p>
+
+
+        <h3>
+            HTML Images
+        </h3>
+
+        <p>
+            Images are added using the
+            <strong>&lt;img&gt;</strong>
+            element.
+        </p>
+
+
+        <pre>&lt;img
+    src="images/photo.jpg"
+    alt="My Photo"
+&gt;</pre>
+
+
+        <p>
+            The
+            <strong>src</strong>
+            attribute specifies the image location.
+            The
+            <strong>alt</strong>
+            attribute provides alternative text describing
+            the image.
+        </p>
+
+
+        <h3>
+            Image Example
+        </h3>
+
+        <img
+            src="../images/html-logo.png"
+            alt="HTML Logo"
+        >
+
+
+        <button
+            class="complete-btn"
+            onclick="completeLesson(4)"
+        >
+            ✓ Complete Lesson
+        </button>
+
+
+        <br><br>
+
+
+        <a href="#lesson-5">
+            Next Lesson →
+        </a>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         LESSON 5
+    ================================================== -->
+
+    <section
+        class="lesson"
+        id="lesson-5"
+        data-lesson="5"
+    >
+
+        <h2>
+            Lesson 5: HTML Lists
+        </h2>
+
+        <p>
+            Lists are useful when we need to display multiple
+            related items in an organized way.
+        </p>
+
+
+        <h3>
+            Unordered List
+        </h3>
+
+        <p>
+            An unordered list normally displays items with
+            bullet points.
+        </p>
+
+
+        <pre>&lt;ul&gt;
+
+    &lt;li&gt;HTML&lt;/li&gt;
+
+    &lt;li&gt;CSS&lt;/li&gt;
+
+    &lt;li&gt;JavaScript&lt;/li&gt;
+
+&lt;/ul&gt;</pre>
+
+
+        <h3>
+            Example
+        </h3>
+
+        <ul>
+
+            <li>
+                HTML
+            </li>
+
+            <li>
+                CSS
+            </li>
+
+            <li>
+                JavaScript
+            </li>
+
+            <li>
+                Web Development
+            </li>
+
+        </ul>
+
+
+        <h3>
+            Ordered List
+        </h3>
+
+        <p>
+            An ordered list displays items in a numbered
+            sequence.
+        </p>
+
+
+        <pre>&lt;ol&gt;
+
+    &lt;li&gt;Learn HTML&lt;/li&gt;
+
+    &lt;li&gt;Practice HTML&lt;/li&gt;
+
+    &lt;li&gt;Build a Project&lt;/li&gt;
+
+&lt;/ol&gt;</pre>
+
+
+        <h3>
+            Example
+        </h3>
+
+        <ol>
+
+            <li>
+                Learn HTML
+            </li>
+
+            <li>
+                Practice HTML
+            </li>
+
+            <li>
+                Build a Project
+            </li>
+
+            <li>
+                Complete the Course
+            </li>
+
+        </ol>
+
+
+        <button
+            class="complete-btn"
+            onclick="completeLesson(5)"
+        >
+            ✓ Complete Lesson
+        </button>
+
+
+        <br><br>
+
+
+        <a href="#lesson-6">
+            Next Lesson →
+        </a>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         LESSON 6
+    ================================================== -->
+
+    <section
+        class="lesson"
+        id="lesson-6"
+        data-lesson="6"
+    >
+
+        <h2>
+            Lesson 6: HTML Tables
+        </h2>
+
+        <p>
+            HTML tables are useful for presenting structured
+            information in rows and columns.
+        </p>
+
+
+        <h3>
+            Basic Table Structure
+        </h3>
+
+        <pre>&lt;table&gt;
+
+    &lt;tr&gt;
+
+        &lt;th&gt;Name&lt;/th&gt;
+
+        &lt;th&gt;Course&lt;/th&gt;
+
+    &lt;/tr&gt;
+
+    &lt;tr&gt;
+
+        &lt;td&gt;Ahmad&lt;/td&gt;
+
+        &lt;td&gt;HTML&lt;/td&gt;
+
+    &lt;/tr&gt;
+
+&lt;/table&gt;</pre>
+
+
+        <h3>
+            Course Schedule Example
+        </h3>
+
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Lesson
+                    </th>
+
+                    <th>
+                        Topic
+                    </th>
+
+                    <th>
+                        Status
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        Lesson 1
+                    </td>
+
+                    <td>
+                        What is HTML?
+                    </td>
+
+                    <td>
+                        Available
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Lesson 2
+                    </td>
+
+                    <td>
+                        HTML Structure
+                    </td>
+
+                    <td>
+                        Available
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Lesson 3
+                    </td>
+
+                    <td>
+                        Headings and Paragraphs
+                    </td>
+
+                    <td>
+                        Available
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Lesson 4
+                    </td>
+
+                    <td>
+                        Links and Images
+                    </td>
+
+                    <td>
+                        Available
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Lesson 5
+                    </td>
+
+                    <td>
+                        HTML Lists
+                    </td>
+
+                    <td>
+                        Available
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Lesson 6
+                    </td>
+
+                    <td>
+                        HTML Tables
+                    </td>
+
+                    <td>
+                        Current
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        Lesson 7
+                    </td>
+
+                    <td>
+                        HTML Forms
+                    </td>
+
+                    <td>
+                        Next
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+
+        <h3>
+            Important Table Elements
+        </h3>
+
+        <ul>
+
+            <li>
+                <strong>&lt;table&gt;</strong>
+                creates the table.
+            </li>
+
+            <li>
+                <strong>&lt;tr&gt;</strong>
+                creates a table row.
+            </li>
+
+            <li>
+                <strong>&lt;th&gt;</strong>
+                creates a table heading cell.
+            </li>
+
+            <li>
+                <strong>&lt;td&gt;</strong>
+                creates a normal table cell.
+            </li>
+
+        </ul>
+
+
+        <button
+            class="complete-btn"
+            onclick="completeLesson(6)"
+        >
+            ✓ Complete Lesson
+        </button>
+
+
+        <br><br>
+
+
+        <a href="#lesson-7">
+            Next Lesson →
+        </a>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         LESSON 7
+    ================================================== -->
+
+    <section
+        class="lesson"
+        id="lesson-7"
+        data-lesson="7"
+    >
+
+        <h2>
+            Lesson 7: HTML Forms
+        </h2>
+
+        <p>
+            HTML forms are used to collect information from
+            users. Forms are commonly used for registration,
+            login, contact and other interactive features.
+        </p>
+
+
+        <h3>
+            Basic Form Structure
+        </h3>
+
+        <pre>&lt;form&gt;
+
+    &lt;label&gt;Name&lt;/label&gt;
+
+    &lt;input type="text"&gt;
+
+    &lt;button type="submit"&gt;
+        Submit
+    &lt;/button&gt;
+
+&lt;/form&gt;</pre>
+
+
+        <h3>
+            Student Registration Example
+        </h3>
+
+
+        <form>
+
+            <label for="student-name">
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="student-name"
+                name="student-name"
+                placeholder="Enter your full name"
+            >
+
+
+            <label for="student-email">
+                Email Address
+            </label>
+
+            <input
+                type="email"
+                id="student-email"
+                name="student-email"
+                placeholder="Enter your email"
+            >
+
+
+            <label for="student-password">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="student-password"
+                name="student-password"
+                placeholder="Create a password"
+            >
+
+
+            <button type="submit">
+                Register
+            </button>
+
+        </form>
+
+
+        <h3>
+            Common Form Elements
+        </h3>
+
+        <ul>
+
+            <li>
+                <strong>input</strong>
+                collects different types of information.
+            </li>
+
+            <li>
+                <strong>label</strong>
+                describes a form field.
+            </li>
+
+            <li>
+                <strong>textarea</strong>
+                allows users to enter longer text.
+            </li>
+
+            <li>
+                <strong>button</strong>
+                can be used to submit a form.
+            </li>
+
+        </ul>
+
+
+        <p>
+            Congratulations! You have reached the final
+            lesson of the HTML course.
+        </p>
+
+
+        <button
+            class="complete-btn"
+            onclick="completeLesson(7)"
+        >
+            ✓ Complete Lesson
+        </button>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         WHAT YOU WILL LEARN
+    ================================================== -->
+
+    <section>
+
+        <h2>
+            What You Will Learn
+        </h2>
+
+        <p>
+            After completing this course, you should have
+            a basic understanding of HTML and be able to
+            create the structure of a simple web page.
+        </p>
+
+
+        <ul>
+
+            <li>
+                Understand the purpose of HTML.
+            </li>
+
+            <li>
+                Understand the basic HTML document structure.
+            </li>
+
+            <li>
+                Create headings and paragraphs.
+            </li>
+
+            <li>
+                Add links and images.
+            </li>
+
+            <li>
+                Create ordered and unordered lists.
+            </li>
+
+            <li>
+                Create basic HTML tables.
+            </li>
+
+            <li>
+                Create basic HTML forms.
+            </li>
+
+            <li>
+                Build a simple structured web page.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         COURSE NAVIGATION
+    ================================================== -->
+
+    <section class="course-navigation">
+
+        <h2>
+            Course Navigation
+        </h2>
+
+
+        <div class="navigation-buttons">
+
+            <a href="../index.html">
+                ← Back to Courses
+            </a>
+
+
+            <a href="css-course.html">
+                Next Course: CSS →
+            </a>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer>
+
+    <p>
+        © 2026 Ahmad LMS. All Rights Reserved.
+    </p>
+
+    <p>
+        Learn. Practice. Build.
+    </p>
+
+</footer>
+
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script
+    src="../js/script.js"
+></script>
+
+
+</body>
+
+</html>

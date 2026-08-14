@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Learn CSS from beginner to practical level with Ahmad LMS."
+    >
+
+    <meta
+        name="author"
+        content="Ahmad LMS"
+    >
+
+    <title>CSS Course - Ahmad LMS</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/course.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+     COURSE HEADER
+================================================== -->
+
+<header>
+
+    <h1>
+        CSS Course
+    </h1>
+
+    <p>
+        Learn CSS from beginner to practical level
+        with simple and practical lessons.
+    </p>
+
+</header>
+
+
+
+<!-- ==================================================
+     COURSE PROGRESS
+================================================== -->
+
+<div class="course-progress-box">
+
+    <h3>
+        Course Progress
+    </h3>
+
+    <div
+        class="progress-bar"
+        role="progressbar"
+        aria-label="CSS course progress"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+    >
+
+        <div id="course-progress"></div>
+
+    </div>
+
+    <p id="progress-text">
+        0 / 7 Lessons Completed
+    </p>
+
+</div>
+
+
+
+<!-- ==================================================
+     MAIN COURSE CONTENT
+================================================== -->
+
+<main>
+
+
+    <!-- ==================================================
+         COURSE INTRODUCTION
+    ================================================== -->
+
+    <section>
+
+        <h2>
+            About This Course
+        </h2>
+
+        <p>
+            Welcome to the CSS Course at Ahmad LMS.
+            In this course, you will learn how CSS is used
+            to design and style HTML web pages.
+        </p>
+
+        <p>
+            You will start with the fundamentals of CSS
+            and gradually learn colors, spacing, typography,
+            layouts, responsive design and practical styling.
+        </p>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         LESSON 1
+    ================================================== -->
+
+    <section
+        class="lesson"
+        id="lesson-1"
+        data-lesson="1"
+    >
+
+        <h2>
+            Lesson 1: What is CSS?
+        </h2>
+
+        <p>
+            CSS stands for
+            <strong>Cascading Style Sheets</strong>.
+            CSS is used to control the appearance and layout
+            of HTML elements.
+        </p>
+
+        <p>
+            While HTML provides the structure of a web page,
+            CSS controls how that structure looks.
+        </p>
+
+
+        <h3>
+            Basic CSS Example
+        </h3>
+
+        <pre>h1 {
+    color: blue;
+    font-size: 40px;
+}</pre>
+
+
+        <h3>
+            Connecting CSS to HTML
+        </h3>
+
+        <pre>&lt;link
+    rel="stylesheet"
+    href="style.css"
+&gt;</pre>
+
+
+        <p>
+            The
+            <strong>link</strong>
+            element connects an external CSS file
+            to an HTML document.
+        </p>
+
+
+        <h3>
+            Why Do We Use CSS?
+        </h3>
+
+        <ul>
+
+            <li>
+                Change colors.
+            </li>
+
+            <li>
+                Change fonts and text styles.
+            </li>
+
+            <li>
+                Add spacing.
+            </li>
+
+            <li>
+                Create layouts.
+            </li>
+
+            <li>
+                Make websites responsive.
+            </li>
+
+        </ul>
+
+
+        <button
+            class="complete-btn"
+            onclick="completeLesson(1)"
+        >
+            ✓ Complete Lesson
+        </button>
+
+
+        <br><br>
+
+
+        <a href="#lesson-2">
+            Next Lesson →
+        </a>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         LESSON 2
+    ================================================== -->
+
+    <section
+        class="lesson"
+        id="lesson-2"
+        data-lesson="2"
+    >
+
+        <h2>
+            Lesson 2: CSS Selectors
+        </h2>
+
+        <p>
+            CSS selectors are used to select HTML elements
+            that we want to style.
+        </p>
+
+
+        <h3>
+            Element Selector
+        </h3>
+
+        <pre>p {
+    color: #334155;
+}</pre>
+
+        <p>
+            This selector targets every
+            <strong>&lt;p&gt;</strong>
+            element.
+        </p>
+
+
+        <h3>
+            Class Selector
+        </h3>
+
+        <pre>.title {
+    color: blue;
+    font-size: 30px;
+}</pre>
+
+        <p>
+            A class selector starts with a dot
+            <strong>.</strong>
+            and targets elements with that class.
+        </p>
+
+
+        <h3>
+            ID Selector
+        </h3>
+
+        <pre>#header {
+    background: black;
+    color: white;
+}</pre>
+
+        <p>
+            An ID selector starts with
+            <strong>#</strong>
+            and targets an element with a matching ID.
+        </p>
+
+
+        <h3>
+            Multiple Selectors
+        </h3>
+
+        <pre>h1,
+h2,
+h3 {
+    color: #0b5ed7;
+}</pre>
+
+
+        <h3>
+            Important Point
+        </h3>
+
+        <p>
+            Good selector usage helps keep your CSS
+            organized, readable and easier to maintain.
+        </p>
+
+
+        <button
+            class="complete-btn"
+            onclick="completeLesson(2)"
+        >
+            ✓ Complete Lesson
+        </button>
+
+
+        <br><br>
+
+
+        <a href="#lesson-3">
+            Next Lesson →
+        </a>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         LESSON 3
+    ================================================== -->
+
+    <section
+        class="lesson"
+        id="lesson-3"
+        data-lesson="3"
+    >
+
+        <h2>
+            Lesson 3: Colors, Fonts and Text
+        </h2>
+
+        <p>
+            CSS provides many properties for controlling
+            the appearance of text and other elements.
+        </p>
+
+
+        <h3>
+            Text Color
+        </h3>
+
+        <pre>body {
+    color: #334155;
+}</pre>
+
+
+        <h3>
+            Background Color
+        </h3>
+
+        <pre>body {
+    background-color: #f8fafc;
+}</pre>
+
+
+        <h3>
+            Font Size
+        </h3>
+
+        <pre>h1 {
+    font-size: 40px;
+}</pre>
+
+
+        <h3>
+            Font Weight
+        </h3>
+
+        <pre>h1 {
+    font-weight: 700;
+}</pre>
+
+
+        <h3>
+            Text Alignment
+        </h3>
+
+        <pre>h1 {
+    text-align: center;
+}</pre>
+
+
+        <h3>
+            Example
+        </h3>
+
+        <div
+            style="
+                padding: 25px;
+                border-radius: 12px;
+                background: #eff6ff;
+                text-align: center;
+                margin-top: 20px;
+            "
+        >
+
+            <h2
+                style="
+                    color: #2563eb;
+                    margin-bottom: 8px;
+                "
+            >
+                Styled Heading
+            </h2>
+
+            <p>
+                CSS can make simple HTML content
+                look professional and attractive.
+            </p>
+
+        </div>
+
+
+        <button
+            class="complete-btn"
+            onclick="completeLesson(3)"
+        >
+            ✓ Complete Lesson
+        </button>
+
+
+        <br><br>
+
+
+        <a href="#lesson-4">
+            Next Lesson →
+        </a>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         LESSON 4
+    ================================================== -->
+
+    <section
+        class="lesson"
+        id="lesson-4"
+        data-lesson="4"
+    >
+
+        <h2>
+            Lesson 4: Box Model, Margin and Padding
+        </h2>
+
+        <p>
+            The CSS box model is one of the most important
+            concepts in web design.
+        </p>
+
+        <p>
+            Every HTML element can be considered as a box
+            containing content, padding, border and margin.
+        </p>
+
+
+        <h3>
+            CSS Box Model
+        </h3>
+
+        <pre>.card {
+    width: 300px;
+
+    padding: 20px;
+
+    border: 1px solid #ddd;
+
+    margin: 30px;
+}</pre>
+
+
+        <h3>
+            Padding
+        </h3>
+
+        <p>
+            Padding creates space between the content
+            and the element's border.
+        </p>
+
+
+        <h3>
+            Margin
+        </h3>
+
+        <p>
+            Margin creates space outside the element.
+        </p>
+
+
+        <h3>
+            Border
+        </h3>
+
+        <p>
+            A border creates a visible boundary around
+            an element.
+        </p>
+
+
+        <h3>
+            Box Sizing
+        </h3>
+
+        <pre>* {
+    box-sizing: border-box;
+}</pre>
+
+
+        <p>
+            Using
+            <strong>border-box</strong>
+            makes sizing elements much easier to manage
+            in modern layouts.
+        </p>
+
+
+        <button
+            class="complete-btn"
+            onclick="completeLesson(4)"
+        >
+            ✓ Complete Lesson
+        </button>
+
+
+        <br><br>
+
+
+        <a href="#lesson-5">
+            Next Lesson →
+        </a>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         LESSON 5
+    ================================================== -->
+
+    <section
+        class="lesson"
+        id="lesson-5"
+        data-lesson="5"
+    >
+
+        <h2>
+            Lesson 5: Flexbox
+        </h2>
+
+        <p>
+            Flexbox is a powerful CSS layout system.
+            It makes it easier to arrange elements in rows
+            and columns.
+        </p>
+
+
+        <h3>
+            Basic Flexbox
+        </h3>
+
+        <pre>.container {
+    display: flex;
+}</pre>
+
+
+        <h3>
+            Horizontal Alignment
+        </h3>
+
+        <pre>.container {
+    display: flex;
+    justify-content: center;
+}</pre>
+
+
+        <h3>
+            Vertical Alignment
+        </h3>
+
+        <pre>.container {
+    display: flex;
+    align-items: center;
+}</pre>
+
+
+        <h3>
+            Space Between Elements
+        </h3>
+
+        <pre>.container {
+    display: flex;
+    justify-content: space-between;
+}</pre>
+
+
+        <h3>
+            Flex Direction
+        </h3>
+
+        <pre>.container {
+    display: flex;
+    flex-direction: column;
+}</pre>
+
+
+        <h3>
+            Practical Example
+        </h3>
+
+        <div
+            style="
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 20px;
+            "
+        >
+
+            <div
+                style="
+                    padding: 18px 25px;
+                    background: #eff6ff;
+                    border-radius: 10px;
+                    font-weight: 700;
+                    color: #2563eb;
+                "
+            >
+                Item 1
+            </div>
+
+            <div
+                style="
+                    padding: 18px 25px;
+                    background: #ecfeff;
+                    border-radius: 10px;
+                    font-weight: 700;
+                    color: #0891b2;
+                "
+            >
+                Item 2
+            </div>
+
+            <div
+                style="
+                    padding: 18px 25px;
+                    background: #f0fdf4;
+                    border-radius: 10px;
+                    font-weight: 700;
+                    color: #059669;
+                "
+            >
+                Item 3
+            </div>
+
+        </div>
+
+
+        <button
+            class="complete-btn"
+            onclick="completeLesson(5)"
+        >
+            ✓ Complete Lesson
+        </button>
+
+
+        <br><br>
+
+
+        <a href="#lesson-6">
+            Next Lesson →
+        </a>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         LESSON 6
+    ================================================== -->
+
+    <section
+        class="lesson"
+        id="lesson-6"
+        data-lesson="6"
+    >
+
+        <h2>
+            Lesson 6: CSS Grid and Responsive Design
+        </h2>
+
+        <p>
+            CSS Grid is another powerful layout system.
+            It is especially useful for creating structured
+            two-dimensional layouts.
+        </p>
+
+
+        <h3>
+            Basic Grid
+        </h3>
+
+        <pre>.container {
+    display: grid;
+    grid-template-columns:
+        repeat(3, 1fr);
+    gap: 20px;
+}</pre>
+
+
+        <h3>
+            Responsive Grid
+        </h3>
+
+        <pre>.container {
+    display: grid;
+    grid-template-columns:
+        repeat(3, 1fr);
+}
+
+
+@media (max-width: 768px) {
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+}</pre>
+
+
+        <h3>
+            What is Responsive Design?
+        </h3>
+
+        <p>
+            Responsive design means that a website can
+            automatically adapt to different screen sizes,
+            including desktops, tablets and mobile phones.
+        </p>
+
+
+        <h3>
+            Media Queries
+        </h3>
+
+        <pre>@media (max-width: 768px) {
+
+    body {
+        font-size: 15px;
+    }
+
+}</pre>
+
+
+        <h3>
+            Why Responsive Design Matters
+        </h3>
+
+        <ul>
+
+            <li>
+                Websites work better on mobile devices.
+            </li>
+
+            <li>
+                Layouts adapt to different screen sizes.
+            </li>
+
+            <li>
+                Users get a better experience.
+            </li>
+
+            <li>
+                Modern websites are expected to be responsive.
+            </li>
+
+        </ul>
+
+
+        <button
+            class="complete-btn"
+            onclick="completeLesson(6)"
+        >
+            ✓ Complete Lesson
+        </button>
+
+
+        <br><br>
+
+
+        <a href="#lesson-7">
+            Next Lesson →
+        </a>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         LESSON 7
+    ================================================== -->
+
+    <section
+        class="lesson"
+        id="lesson-7"
+        data-lesson="7"
+    >
+
+        <h2>
+            Lesson 7: Professional CSS Styling
+        </h2>
+
+        <p>
+            In this final lesson, we combine several CSS
+            techniques to create a professional-looking
+            component.
+        </p>
+
+
+        <h3>
+            Card Example
+        </h3>
+
+        <pre>.card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow:
+        0 10px 30px
+        rgba(15, 23, 42, 0.08);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}</pre>
+
+
+        <h3>
+            Professional CSS Techniques
+        </h3>
+
+        <ul>
+
+            <li>
+                Use consistent spacing.
+            </li>
+
+            <li>
+                Use a clear color system.
+            </li>
+
+            <li>
+                Use readable typography.
+            </li>
+
+            <li>
+                Use responsive layouts.
+            </li>
+
+            <li>
+                Keep CSS organized.
+            </li>
+
+            <li>
+                Avoid unnecessary repetition.
+            </li>
+
+            <li>
+                Test websites on different screen sizes.
+            </li>
+
+        </ul>
+
+
+        <h3>
+            Final Example
+        </h3>
+
+        <div
+            style="
+                padding: 30px;
+                border-radius: 18px;
+                background: white;
+                border: 1px solid #e2e8f0;
+                box-shadow:
+                    0 10px 30px
+                    rgba(15, 23, 42, 0.08);
+                text-align: center;
+                margin-top: 20px;
+            "
+        >
+
+            <h2
+                style="
+                    color: #0f172a;
+                    margin-bottom: 10px;
+                "
+            >
+                Professional Web Card
+            </h2>
+
+            <p>
+                This simple example combines colors,
+                spacing, borders, shadows and typography.
+            </p>
+
+            <button
+                style="
+                    margin-top: 15px;
+                    padding: 12px 22px;
+                    border: none;
+                    border-radius: 9px;
+                    background:
+                        linear-gradient(
+                            135deg,
+                            #2563eb,
+                            #06b6d4
+                        );
+                    color: white;
+                    font-weight: 700;
+                    cursor: pointer;
+                "
+            >
+                Learn More
+            </button>
+
+        </div>
+
+
+        <p>
+            Congratulations! You have completed all seven
+            CSS lessons. You now have the foundation needed
+            to style HTML pages and create responsive layouts.
+        </p>
+
+
+        <button
+            class="complete-btn"
+            onclick="completeLesson(7)"
+        >
+            ✓ Complete Lesson
+        </button>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         WHAT YOU WILL LEARN
+    ================================================== -->
+
+    <section>
+
+        <h2>
+            What You Will Learn
+        </h2>
+
+        <p>
+            After completing this course, you should be able
+            to style HTML pages and create clean, responsive
+            layouts.
+        </p>
+
+
+        <ul>
+
+            <li>
+                Understand the purpose of CSS.
+            </li>
+
+            <li>
+                Use CSS selectors.
+            </li>
+
+            <li>
+                Style colors, fonts and text.
+            </li>
+
+            <li>
+                Understand the CSS box model.
+            </li>
+
+            <li>
+                Use margin, padding and borders.
+            </li>
+
+            <li>
+                Create layouts with Flexbox.
+            </li>
+
+            <li>
+                Create layouts with CSS Grid.
+            </li>
+
+            <li>
+                Build responsive designs using media queries.
+            </li>
+
+            <li>
+                Create professional-looking components.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         COURSE NAVIGATION
+    ================================================== -->
+
+    <section class="course-navigation">
+
+        <h2>
+            Course Navigation
+        </h2>
+
+
+        <div class="navigation-buttons">
+
+            <a href="../index.html">
+                ← Back to Courses
+            </a>
+
+
+            <a href="javascript-course.html">
+                Next Course: JavaScript →
+            </a>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer>
+
+    <p>
+        © 2026 Ahmad LMS. All Rights Reserved.
+    </p>
+
+    <p>
+        Learn. Practice. Build.
+    </p>
+
+</footer>
+
+
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script
+    src="../js/script.js"
+></script>
+
+
+</body>
+
+</html>

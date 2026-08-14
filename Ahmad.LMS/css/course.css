@@ -1,0 +1,1574 @@
+/* ==================================================
+   Ahmad LMS
+   Professional Course Page Stylesheet
+================================================== */
+
+
+/* ==================================================
+   ROOT
+================================================== */
+
+:root {
+
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --secondary: #06b6d4;
+
+    --dark: #0f172a;
+    --dark-blue: #102a43;
+
+    --text: #334155;
+    --muted: #64748b;
+
+    --white: #ffffff;
+
+    --background: #f4f7fb;
+
+    --border: #e2e8f0;
+
+    --success: #059669;
+    --success-light: #ecfdf5;
+
+    --code-background: #0f172a;
+    --code-text: #e2e8f0;
+
+    --shadow-sm:
+        0 4px 15px rgba(15, 23, 42, 0.06);
+
+    --shadow-md:
+        0 10px 30px rgba(15, 23, 42, 0.08);
+
+    --shadow-lg:
+        0 20px 50px rgba(15, 23, 42, 0.12);
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 22px;
+
+}
+
+
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        var(--background);
+
+    color:
+        var(--text);
+
+    line-height:
+        1.7;
+
+    overflow-x:
+        hidden;
+
+}
+
+
+a {
+
+    color:
+        var(--primary);
+
+    text-decoration:
+        none;
+
+    font-weight:
+        700;
+
+    transition:
+        color 0.2s ease;
+
+}
+
+
+a:hover {
+
+    color:
+        var(--secondary-dark);
+
+}
+
+
+img {
+
+    display:
+        block;
+
+    max-width:
+        100%;
+
+}
+
+
+/* ==================================================
+   COURSE HEADER
+================================================== */
+
+header {
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #071a2f,
+            #0b3b70,
+            #0b5ed7
+        );
+
+    color:
+        white;
+
+    text-align:
+        center;
+
+    padding:
+        70px 20px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(15, 23, 42, 0.16);
+
+}
+
+
+header::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        360px;
+
+    height:
+        360px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255,255,255,0.05);
+
+    top:
+        -180px;
+
+    left:
+        -80px;
+
+}
+
+
+header::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        300px;
+
+    height:
+        300px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(6,182,212,0.08);
+
+    right:
+        -100px;
+
+    bottom:
+        -150px;
+
+}
+
+
+header h1 {
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+    color:
+        white;
+
+    font-size:
+        clamp(34px, 5vw, 52px);
+
+    line-height:
+        1.15;
+
+    margin:
+        0 0 12px;
+
+    letter-spacing:
+        -0.8px;
+
+}
+
+
+header p {
+
+    position:
+        relative;
+
+    z-index:
+        1;
+
+    color:
+        #bae6fd;
+
+    font-size:
+        17px;
+
+    margin:
+        0 auto;
+
+    max-width:
+        650px;
+
+}
+
+
+/* ==================================================
+   COURSE PROGRESS BOX
+================================================== */
+
+.course-progress-box {
+
+    width:
+        90%;
+
+    max-width:
+        1100px;
+
+    margin:
+        -25px auto 35px;
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    padding:
+        25px 30px;
+
+    background:
+        white;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        18px;
+
+    box-shadow:
+        var(--shadow-md);
+
+}
+
+
+.course-progress-box h3 {
+
+    margin:
+        0 0 15px;
+
+    color:
+        var(--dark-blue);
+
+    font-size:
+        20px;
+
+}
+
+
+.progress-bar {
+
+    width:
+        100%;
+
+    height:
+        15px;
+
+    background:
+        #e5e7eb;
+
+    border-radius:
+        50px;
+
+    overflow:
+        hidden;
+
+}
+
+
+#course-progress {
+
+    width:
+        0%;
+
+    height:
+        100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    border-radius:
+        50px;
+
+    transition:
+        width 0.6s ease;
+
+}
+
+
+#progress-text {
+
+    margin:
+        10px 0 0;
+
+    color:
+        var(--muted);
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+}
+
+
+/* ==================================================
+   MAIN COURSE AREA
+================================================== */
+
+main {
+
+    width:
+        90%;
+
+    max-width:
+        1100px;
+
+    margin:
+        45px auto 70px;
+
+}
+
+
+/* ==================================================
+   GENERAL SECTIONS
+================================================== */
+
+main section {
+
+    background:
+        white;
+
+    padding:
+        40px;
+
+    margin-bottom:
+        28px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        var(--radius-lg);
+
+    box-shadow:
+        var(--shadow-sm);
+
+}
+
+
+main section h2 {
+
+    color:
+        var(--dark-blue);
+
+    font-size:
+        29px;
+
+    line-height:
+        1.25;
+
+    margin:
+        0 0 18px;
+
+}
+
+
+main section h3 {
+
+    color:
+        var(--primary);
+
+    font-size:
+        21px;
+
+    margin:
+        28px 0 12px;
+
+}
+
+
+main section p {
+
+    color:
+        var(--muted);
+
+    font-size:
+        16px;
+
+}
+
+
+/* ==================================================
+   ABOUT COURSE
+================================================== */
+
+main > section:first-of-type {
+
+    position:
+        relative;
+
+}
+
+
+main > section:first-of-type::before {
+
+    content:
+        "COURSE OVERVIEW";
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        12px;
+
+    color:
+        var(--primary);
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        2px;
+
+}
+
+
+/* ==================================================
+   LESSON
+================================================== */
+
+.lesson {
+
+    scroll-margin-top:
+        25px;
+
+    transition:
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+
+.lesson:hover {
+
+    border-color:
+        #bfdbfe;
+
+    box-shadow:
+        var(--shadow-md);
+
+}
+
+
+.lesson h2 {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        12px;
+
+}
+
+
+.lesson h2::first-letter {
+
+    color:
+        var(--primary);
+
+}
+
+
+/* ==================================================
+   LESSON LABEL
+================================================== */
+
+.lesson::before {
+
+    content:
+        "LESSON";
+
+    display:
+        inline-block;
+
+    padding:
+        5px 10px;
+
+    margin-bottom:
+        12px;
+
+    border-radius:
+        30px;
+
+    background:
+        #eff6ff;
+
+    color:
+        var(--primary);
+
+    font-size:
+        10px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+/* ==================================================
+   CODE BLOCKS
+================================================== */
+
+pre {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    overflow-x:
+        auto;
+
+    margin:
+        22px 0;
+
+    padding:
+        24px;
+
+    border-radius:
+        14px;
+
+    background:
+        var(--code-background);
+
+    color:
+        var(--code-text);
+
+    border:
+        1px solid
+        #1e293b;
+
+    box-shadow:
+        0 10px 25px
+        rgba(15,23,42,0.14);
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size:
+        14px;
+
+    line-height:
+        1.7;
+
+    white-space:
+        pre;
+
+}
+
+
+code {
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+}
+
+
+/* ==================================================
+   INLINE CODE
+================================================== */
+
+p code,
+li code {
+
+    padding:
+        2px 6px;
+
+    border-radius:
+        5px;
+
+    background:
+        #eef2ff;
+
+    color:
+        #4338ca;
+
+    font-size:
+        0.92em;
+
+}
+
+
+/* ==================================================
+   LINKS INSIDE LESSONS
+================================================== */
+
+.lesson a:not(.complete-btn) {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    color:
+        var(--primary);
+
+    font-size:
+        14px;
+
+}
+
+
+.lesson a:not(.complete-btn):hover {
+
+    color:
+        var(--secondary-dark);
+
+}
+
+
+/* ==================================================
+   IMAGES
+================================================== */
+
+main section img {
+
+    display:
+        block;
+
+    max-width:
+        300px;
+
+    width:
+        100%;
+
+    height:
+        auto;
+
+    margin:
+        25px auto;
+
+    border-radius:
+        15px;
+
+    border:
+        1px solid
+        var(--border);
+
+    box-shadow:
+        var(--shadow-md);
+
+}
+
+
+/* ==================================================
+   LISTS
+================================================== */
+
+main section ul,
+main section ol {
+
+    padding-left:
+        25px;
+
+    margin:
+        15px 0;
+
+}
+
+
+main section li {
+
+    color:
+        #475569;
+
+    font-size:
+        15px;
+
+    margin-bottom:
+        9px;
+
+}
+
+
+/* ==================================================
+   TABLE
+================================================== */
+
+table {
+
+    width:
+        100%;
+
+    border-collapse:
+        separate;
+
+    border-spacing:
+        0;
+
+    overflow:
+        hidden;
+
+    margin:
+        25px 0;
+
+    background:
+        white;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        12px;
+
+}
+
+
+th {
+
+    background:
+        #102a43;
+
+    color:
+        white;
+
+    padding:
+        14px 15px;
+
+    text-align:
+        left;
+
+    font-size:
+        14px;
+
+}
+
+
+td {
+
+    padding:
+        13px 15px;
+
+    border-top:
+        1px solid
+        var(--border);
+
+    color:
+        #475569;
+
+    font-size:
+        14px;
+
+}
+
+
+tr:nth-child(even) td {
+
+    background:
+        #f8fafc;
+
+}
+
+
+tr:hover td {
+
+    background:
+        #eff6ff;
+
+}
+
+
+/* ==================================================
+   COURSE FORM
+================================================== */
+
+main form {
+
+    max-width:
+        650px;
+
+    margin:
+        25px auto;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        10px;
+
+}
+
+
+main form label {
+
+    color:
+        var(--dark-blue);
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+
+    margin-top:
+        7px;
+
+}
+
+
+main form input,
+main form textarea,
+main form select {
+
+    width:
+        100%;
+
+    padding:
+        13px 15px;
+
+    border:
+        1px solid
+        #cbd5e1;
+
+    border-radius:
+        9px;
+
+    background:
+        #f8fafc;
+
+    color:
+        var(--dark);
+
+    font-size:
+        15px;
+
+    outline:
+        none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+}
+
+
+main form input {
+
+    min-height:
+        48px;
+
+}
+
+
+main form textarea {
+
+    min-height:
+        120px;
+
+    resize:
+        vertical;
+
+}
+
+
+main form input:focus,
+main form textarea:focus,
+main form select:focus {
+
+    background:
+        white;
+
+    border-color:
+        var(--primary);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(37,99,235,0.09);
+
+}
+
+
+/* ==================================================
+   BUTTONS
+================================================== */
+
+button,
+.btn,
+.complete-btn {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        8px;
+
+    border:
+        none;
+
+    border-radius:
+        9px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    color:
+        white;
+
+    padding:
+        12px 22px;
+
+    font-size:
+        14px;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.25s ease;
+
+}
+
+
+button:hover,
+.btn:hover,
+.complete-btn:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(37,99,235,0.20);
+
+}
+
+
+/* ==================================================
+   COMPLETE LESSON BUTTON
+================================================== */
+
+.complete-btn {
+
+    margin-top:
+        18px;
+
+}
+
+
+.complete-btn.completed {
+
+    background:
+        linear-gradient(
+            135deg,
+            #059669,
+            #10b981
+        );
+
+}
+
+
+.complete-btn:disabled {
+
+    cursor:
+        default;
+
+    opacity:
+        0.9;
+
+    transform:
+        none;
+
+    box-shadow:
+        none;
+
+}
+
+
+/* ==================================================
+   COURSE NAVIGATION
+================================================== */
+
+.course-navigation {
+
+    text-align:
+        center;
+
+}
+
+
+.course-navigation h2 {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        25px;
+
+}
+
+
+.navigation-buttons {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+}
+
+
+.navigation-buttons a {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-width:
+        190px;
+
+    padding:
+        13px 20px;
+
+    border-radius:
+        10px;
+
+    background:
+        #102a43;
+
+    color:
+        white;
+
+    font-size:
+        14px;
+
+    font-weight:
+        800;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.navigation-buttons a:hover {
+
+    background:
+        var(--primary);
+
+    color:
+        white;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(37,99,235,0.20);
+
+}
+
+
+/* ==================================================
+   COURSE COMPLETION STATE
+================================================== */
+
+.course-complete-message {
+
+    padding:
+        25px;
+
+    margin:
+        20px 0;
+
+    border-radius:
+        14px;
+
+    background:
+        var(--success-light);
+
+    border:
+        1px solid
+        #a7f3d0;
+
+    color:
+        #047857;
+
+    text-align:
+        center;
+
+    font-weight:
+        700;
+
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+
+    background:
+        #071a2f;
+
+    color:
+        white;
+
+    text-align:
+        center;
+
+    padding:
+        35px 20px;
+
+    margin-top:
+        60px;
+
+}
+
+
+footer p {
+
+    color:
+        #94a3b8;
+
+    font-size:
+        13px;
+
+    margin:
+        4px 0;
+
+}
+
+
+/* ==================================================
+   NOTIFICATION
+================================================== */
+
+.lms-notification {
+
+    max-width:
+        calc(100vw - 40px);
+
+    text-align:
+        center;
+
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 800px) {
+
+    main {
+
+        width:
+            94%;
+
+        margin-top:
+            30px;
+
+    }
+
+
+    main section {
+
+        padding:
+            30px 25px;
+
+    }
+
+
+    .course-progress-box {
+
+        width:
+            94%;
+
+        padding:
+            22px;
+
+    }
+
+
+    .navigation-buttons {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .navigation-buttons a {
+
+        width:
+            100%;
+
+        max-width:
+            450px;
+
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+    header {
+
+        padding:
+            50px 18px;
+
+    }
+
+
+    header h1 {
+
+        font-size:
+            32px;
+
+    }
+
+
+    header p {
+
+        font-size:
+            15px;
+
+    }
+
+
+    .course-progress-box {
+
+        margin-top:
+            -18px;
+
+        padding:
+            20px;
+
+        border-radius:
+            14px;
+
+    }
+
+
+    .progress-bar {
+
+        height:
+            12px;
+
+    }
+
+
+    main {
+
+        width:
+            95%;
+
+        margin:
+            25px auto 50px;
+
+    }
+
+
+    main section {
+
+        padding:
+            25px 18px;
+
+        border-radius:
+            15px;
+
+        margin-bottom:
+            20px;
+
+    }
+
+
+    main section h2 {
+
+        font-size:
+            25px;
+
+    }
+
+
+    main section h3 {
+
+        font-size:
+            19px;
+
+    }
+
+
+    main section p {
+
+        font-size:
+            15px;
+
+    }
+
+
+    pre {
+
+        padding:
+            18px;
+
+        font-size:
+            12px;
+
+        border-radius:
+            10px;
+
+    }
+
+
+    table {
+
+        display:
+            block;
+
+        overflow-x:
+            auto;
+
+        white-space:
+            nowrap;
+
+    }
+
+
+    th,
+    td {
+
+        padding:
+            10px 12px;
+
+        font-size:
+            12px;
+
+    }
+
+
+    .complete-btn,
+    button,
+    .btn {
+
+        width:
+            100%;
+
+    }
+
+
+    .navigation-buttons {
+
+        gap:
+            12px;
+
+    }
+
+
+    .navigation-buttons a {
+
+        min-width:
+            0;
+
+        width:
+            100%;
+
+    }
+
+
+    footer {
+
+        margin-top:
+            40px;
+
+    }
+
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+================================================== */
+
+@media (max-width: 400px) {
+
+    header h1 {
+
+        font-size:
+            28px;
+
+    }
+
+
+    main section {
+
+        padding:
+            22px 15px;
+
+    }
+
+
+    main section h2 {
+
+        font-size:
+            23px;
+
+    }
+
+
+    pre {
+
+        font-size:
+            11px;
+
+        padding:
+            15px;
+
+    }
+
+
+    .course-progress-box h3 {
+
+        font-size:
+            18px;
+
+    }
+
+
+    #progress-text {
+
+        font-size:
+            12px;
+
+    }
+
+}
