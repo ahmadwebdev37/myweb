@@ -3,194 +3,743 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Application</title>
-    <style>
+    <title>Job Application Form</title>
 
-        form{
-            width: 100%;
-            max-width: 500px;
+    <style>
+        * {
             box-sizing: border-box;
-            padding: 20px;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px 15px;
+            background-color: rgb(215, 193, 193);
+            font-family: Arial, sans-serif;
+            color: #222;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .page-header h1 {
+            margin-bottom: 10px;
+        }
+
+        .instructions {
+            max-width: 700px;
             margin: 0 auto;
         }
+
+        .instructions h2 {
+            font-size: 20px;
+        }
+
+        .instructions p {
+            color: red;
+            line-height: 1.6;
+        }
+
+        .form {
+            width: 100%;
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            color: white;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .form-section h2 {
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            font-size: 22px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group > label,
+        .form-group legend {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
         input[type="text"],
         input[type="email"],
-        input[type="tel"],
-        select,
-        textarea {
+        input[type="password"],
+        input[type="number"],
+        input[type="url"],
+        input[type="date"],
+        input[type="file"] {
             width: 100%;
-            box-sizing: border-box;
             padding: 10px;
-            margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            font-size: 15px;
         }
-        input[type="submit"], input[type="reset"] {
-            padding: 10px 20px;
-            font-size: 16px;
+
+        input[type="file"] {
+            background-color: white;
+            color: #222;
+        }
+
+        fieldset {
+            margin: 0 0 18px;
+            padding: 0;
+            border: none;
+        }
+
+        legend {
+            padding: 0;
+        }
+
+        .option-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-group label,
+        .terms label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-weight: normal;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            margin: 0;
+        }
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            border-radius: 6px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .education-table {
+            width: 100%;
+            min-width: 520px;
+            border-collapse: collapse;
+            background-color: #333;
+            color: white;
+        }
+
+        .education-table th,
+        .education-table td {
+            padding: 8px;
+            border: 1px solid #777;
+            text-align: center;
+        }
+
+        .education-table th {
             font-weight: bold;
+        }
+
+        .education-table input[type="number"] {
+            width: 100%;
+            min-width: 100px;
+            padding: 8px;
+            margin: 0;
+        }
+
+        .terms {
+            margin-bottom: 25px;
+        }
+
+        .form-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .form-actions button {
+            padding: 10px 20px;
             border: none;
             border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
-            margin-right: 10px;
-
         }
-        input[type="submit"] {
+
+        .submit-btn {
             background-color: #4caf50;
             color: white;
-
         }
-        input[type="reset"] {
+
+        .reset-btn {
             background-color: #f44336;
             color: white;
         }
 
+        .form-message {
+            display: none;
+            margin-bottom: 20px;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .form-message.success {
+            display: block;
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .form-message.error {
+            display: block;
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .error {
+            border-color: #ff4d4d !important;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .form {
+                padding: 20px 15px;
+            }
+
+            .page-header h1 {
+                font-size: 28px;
+            }
+
+            .instructions p {
+                font-size: 14px;
+            }
+
+            .form-section h2 {
+                font-size: 20px;
+            }
+
+            .table-container {
+                margin-right: 0;
+                padding-bottom: 5px;
+            }
+
+            .education-table {
+                min-width: 480px;
+            }
+
+            .education-table th,
+            .education-table td {
+                padding: 6px;
+                font-size: 13px;
+            }
+
+            .education-table input[type="number"] {
+                min-width: 85px;
+                padding: 7px;
+                font-size: 13px;
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+
+            .form-actions button {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .form {
+                padding: 18px 12px;
+            }
+
+            .education-table {
+                min-width: 440px;
+            }
+        }
     </style>
 </head>
-<body style="background-color: rgb(215, 193, 193); text-align: center;">
 
-</body>
-    <br>
-    <h1>Job Application Form</h1>
-    <h3>Instructions</h3>
-    <p style="color: red;"> complete all required fields carefully.Make sure no field is left blank.
-        <br>
-        Double-check your information before submitting the form to avoid any mistakes.</p>
-    <form style="background-color: rgba(0, 0, 0, 0.5); padding: 30px; padding-bottom: 40px; display: inline-block; border-radius: 10px;text-align: left; color: white;">
-        <label>Your name:</label>
-        <br>
-        <input type="text" placeholder="type your name">
-        <br><br>
-        <label>Your Email:</label>
-        <br>
-        <input type="text" Placeholder="type your email">
-        <br><br>
-        <label>password:</label>
-        <br>
-        <input type="text" placeholder="type your password">
-        <br><br>
-        <label>Age:</label>
-        <br>
-        <input type="text" placeholder="type your age">
-        <br><br>
-        <label>Nationality:</label>
-        <br>
-        <input type="text" placeholder="type your Nationality">
-        <br><br>
-        <label>Website URL:</label>
-        <br>
-        <input type="url" name="website" placeholder="https.//example.com">
-        <br><br>
-        <label>Educational Marks Details:</label>
-        <br><br>
-        <table border="1" style="border-collapse: collapse; width: 100%; color: white; background-color: #333; text-align: center;">
-            <thead>
-                <tr>
-                    <th style="padding: 8px;">Degree / Class</th>
-                    <th style="padding: 8px;">Total Marks</th>
-                    <th style="padding: 8px;">Obtained Marks</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td  style="padding: 8px;">Matric</td>
-                    <td><input type="number" name="matric-total" placeholder="Total"></td>
-                    <td><input type="number" name="Matric-obtained" placeholder="Obtained"></td>
-                    </tr>
-                     <tr>
-                        <td style="padding: 8px;">Intermediate</td>
-                        <td><input type="number" name="inter-total" placeholder="Total"></td>
-                        <td><input type="number" name="inter-obtained" placeholder="Obtained"></td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 8px;">Bachelor (BA/BSc)</td>
-                            <td><input type="number" name="bachelor-total" placeholder="Total"></td>
-                            <td><input type="number" name="bachelor-obtained" placeholder="Obtained"></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <br><br>
-        <label>Date of Birth:</label>
-        <br>
-        <input type="date" name="dob">
-        <br><br>
-        <label>Gender:</label>
-        <br>
-        <input type="radio" name="gender" value="Male">Male
-        <input type="radio" name="gender" value="Female">Female
-        <input type="radio" name="gender" value="Other">Other
-        <br><br>
-        <label>Marital Status:</label>
-        <br>
-        <input type="radio" name="Status" value="Single">Single
-        <input type="radio" name="Status" value="Married">Married
-        <br><br>
-        <label>Education:</label>
-        <br>
-        <input type="radio" name="Education" value="Matric">Matric
-        <br>
-        <input type="radio" name="Education" value="Intermediate">Intermediate
-        <br>
-        <input type="radio" name="Education" value="Bachelor">Bachelor
-        <br>
-        <input type="radio" name="Education" value="master">Master
-        <br>
-        <input type="radio" name="Education" value="phd">phd
-        <br><br>
-        <label>Country:</label>
-        <br>
-        <input type="radio" name="country" value="country">Pakistan
-        <br>
-        <input type="radio" name="country" value="country">Malaysia
-        <br>
-        <Input type="radio" name="country" value="country">India
-            <br><br>
-            <label>Skills:</label>
-            <br>
-            <input type="checkbox" name="skills" value="Skills">Html
-            <br>
-            <input type="checkbox" name="skills" value="skills">css
-            <br>
-            <input type="checkbox" name="skills" value="skills">javascript
-            <br><br>
-            <label>Select your favorite sports:</label>
-            <br>
-            <input type="checkbox" name="sports" value="cricket">Cricket
-            <br>
-            <input type="checkbox" name="sports" value="football">Football
-            <br>
-            <input type="checkbox" name="sports" value="badminton">Badminton
-            <br><br>
-            <label>Select your City:</label>
-            <br>
-            <input type="radio" name="user-city" value="karachi"> karachi
-            <br>
-            <input type="radio" name="user-city" value="lahore"> lahore
-            <br>
-            <input type="radio" name="user-city" value="peshawer"> peshawer
-            <br><br>
-            <label for="cv">Upload your CV:</label>
-        <br>
-        <input type="file" id="cv" name="user-cv" required>
-        <br><br>
-         <label for="user-photo">Upload your Photo:</label>
-        <br>
-        <input type="file" id="user-photo" name="user-photo"accept="image" required>
-        <br><br>
-        <input type="checkbox" name="terms" required>
-        <label>I accept the terms and Conditions</label>
-        <br><br>
-        <input type="submit" value="Submit">
-        <input type="reset" value="Reset">
+<body>
 
+    <header class="page-header">
+        <h1>Job Application Form</h1>
 
+        <div class="instructions">
+            <h2>Instructions</h2>
+            <p>
+                Complete all required fields carefully. Make sure no field is left blank.
+                Double-check your information before submitting the form to avoid any mistakes.
+            </p>
+        </div>
+    </header>
 
-        
+    <main>
+        <form class="form" id="jobForm" novalidate>
 
+            <div id="formMessage" class="form-message"></div>
 
+            <section class="form-section">
+                <h2>Personal Information</h2>
 
-    </form>
-</body>
-    
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Type your name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Type your email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Type your password"
+                        minlength="6"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input
+                        type="number"
+                        id="age"
+                        name="age"
+                        placeholder="Type your age"
+                        min="1"
+                        max="120"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="nationality">Nationality:</label>
+                    <input
+                        type="text"
+                        id="nationality"
+                        name="nationality"
+                        placeholder="Type your nationality"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="website">Website URL:</label>
+                    <input
+                        type="url"
+                        id="website"
+                        name="website"
+                        placeholder="https://example.com"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth:</label>
+                    <input
+                        type="date"
+                        id="dob"
+                        name="dob"
+                        required
+                    >
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Educational Information</h2>
+
+                <div class="form-group">
+                    <label>Educational Marks Details:</label>
+
+                    <div class="table-container">
+                        <table class="education-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Degree / Class</th>
+                                    <th scope="col">Total Marks</th>
+                                    <th scope="col">Obtained Marks</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Matric</th>
+                                    <td>
+                                        <input
+                                            type="number"
+                                            name="matric-total"
+                                            placeholder="Total"
+                                            min="0"
+                                        >
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="number"
+                                            name="matric-obtained"
+                                            placeholder="Obtained"
+                                            min="0"
+                                        >
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">Intermediate</th>
+                                    <td>
+                                        <input
+                                            type="number"
+                                            name="intermediate-total"
+                                            placeholder="Total"
+                                            min="0"
+                                        >
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="number"
+                                            name="intermediate-obtained"
+                                            placeholder="Obtained"
+                                            min="0"
+                                        >
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th scope="row">Bachelor (BA/BSc)</th>
+                                    <td>
+                                        <input
+                                            type="number"
+                                            name="bachelor-total"
+                                            placeholder="Total"
+                                            min="0"
+                                        >
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="number"
+                                            name="bachelor-obtained"
+                                            placeholder="Obtained"
+                                            min="0"
+                                        >
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <fieldset class="form-group">
+                    <legend>Education:</legend>
+
+                    <div class="option-group">
+                        <label>
+                            <input type="radio" name="education" value="matric" required>
+                            Matric
+                        </label>
+
+                        <label>
+                            <input type="radio" name="education" value="intermediate">
+                            Intermediate
+                        </label>
+
+                        <label>
+                            <input type="radio" name="education" value="bachelor">
+                            Bachelor
+                        </label>
+
+                        <label>
+                            <input type="radio" name="education" value="master">
+                            Master
+                        </label>
+
+                        <label>
+                            <input type="radio" name="education" value="phd">
+                            PhD
+                        </label>
+                    </div>
+                </fieldset>
+            </section>
+
+            <section class="form-section">
+                <h2>Additional Information</h2>
+
+                <fieldset class="form-group">
+                    <legend>Gender:</legend>
+
+                    <div class="option-group">
+                        <label>
+                            <input type="radio" name="gender" value="male" required>
+                            Male
+                        </label>
+
+                        <label>
+                            <input type="radio" name="gender" value="female">
+                            Female
+                        </label>
+
+                        <label>
+                            <input type="radio" name="gender" value="other">
+                            Other
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <legend>Marital Status:</legend>
+
+                    <div class="option-group">
+                        <label>
+                            <input type="radio" name="status" value="single" required>
+                            Single
+                        </label>
+
+                        <label>
+                            <input type="radio" name="status" value="married">
+                            Married
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <legend>Country:</legend>
+
+                    <div class="option-group">
+                        <label>
+                            <input type="radio" name="country" value="pakistan" required>
+                            Pakistan
+                        </label>
+
+                        <label>
+                            <input type="radio" name="country" value="malaysia">
+                            Malaysia
+                        </label>
+
+                        <label>
+                            <input type="radio" name="country" value="india">
+                            India
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <legend>Skills:</legend>
+
+                    <div class="option-group">
+                        <label>
+                            <input type="checkbox" name="skills" value="html">
+                            HTML
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="skills" value="css">
+                            CSS
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="skills" value="javascript">
+                            JavaScript
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <legend>Select Your Favorite Sports:</legend>
+
+                    <div class="option-group">
+                        <label>
+                            <input type="checkbox" name="sports" value="cricket">
+                            Cricket
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="sports" value="football">
+                            Football
+                        </label>
+
+                        <label>
+                            <input type="checkbox" name="sports" value="badminton">
+                            Badminton
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <legend>Select Your City:</legend>
+
+                    <div class="option-group">
+                        <label>
+                            <input type="radio" name="city" value="karachi" required>
+                            Karachi
+                        </label>
+
+                        <label>
+                            <input type="radio" name="city" value="lahore">
+                            Lahore
+                        </label>
+
+                        <label>
+                            <input type="radio" name="city" value="peshawar">
+                            Peshawar
+                        </label>
+                    </div>
+                </fieldset>
+            </section>
+
+            <section class="form-section">
+                <h2>Documents</h2>
+
+                <div class="form-group">
+                    <label for="cv">Upload Your CV:</label>
+                    <input
+                        type="file"
+                        id="cv"
+                        name="cv"
+                        accept=".pdf,.doc,.docx"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="photo">Upload Your Photo:</label>
+                    <input
+                        type="file"
+                        id="photo"
+                        name="photo"
+                        accept="image/*"
+                        required
+                    >
+                </div>
+            </section>
+
+            <div class="terms">
+                <label for="terms">
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        name="terms"
+                        required
+                    >
+                    I accept the terms and conditions.
+                </label>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn">Submit</button>
+                <button type="reset" class="reset-btn">Reset</button>
+            </div>
+
+        </form>
+    </main>
+
+    <script>
+        const form = document.getElementById("jobForm");
+        const message = document.getElementById("formMessage");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const fields = form.querySelectorAll("input[required]");
+            let valid = true;
+
+            fields.forEach(function (field) {
+                field.classList.remove("error");
+
+                if (!field.checkValidity()) {
+                    field.classList.add("error");
+                    valid = false;
+                }
+            });
+
+            const markFields = [
+                ["matric-total", "matric-obtained"],
+                ["intermediate-total", "intermediate-obtained"],
+                ["bachelor-total", "bachelor-obtained"]
+            ];
+
+            markFields.forEach(function (pair) {
+                const total = form.querySelector(`[name="${pair[0]}"]`);
+                const obtained = form.querySelector(`[name="${pair[1]}"]`);
+
+                total.classList.remove("error");
+                obtained.classList.remove("error");
+
+                if (
+                    total.value !== "" &&
+                    obtained.value !== "" &&
+                    Number(obtained.value) > Number(total.value)
+                ) {
+                    total.classList.add("error");
+                    obtained.classList.add("error");
+                    valid = false;
+                }
+            });
+
+            if (!valid) {
+                message.textContent = "Please check the highlighted fields and correct the information.";
+                message.className = "form-message error";
+
+                const firstError = form.querySelector(".error");
+
+                if (firstError) {
+                    firstError.focus();
+                }
+
+                return;
+            }
+
+            message.textContent = "Your application has been submitted successfully.";
+            message.className = "form-message success";
+        });
+
+        form.addEventListener("reset", function () {
+            setTimeout(function () {
+                message.textContent = "";
+                message.className = "form-message";
+
+                form.querySelectorAll(".error").forEach(function (field) {
+                    field.classList.remove("error");
+                });
+            }, 0);
+        });
+
+        form.querySelectorAll("input").forEach(function (input) {
+            input.addEventListener("input", function () {
+                this.classList.remove("error");
+
+                if (this.checkValidity()) {
+                    this.classList.remove("error");
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>

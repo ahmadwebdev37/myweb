@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -28,15 +27,8 @@
     >
 
     <style>
-
-        /* =====================================================
-           REVIEW PAGE
-        ===================================================== */
-
         .review-page {
-
             min-height: 100vh;
-
             background:
                 radial-gradient(
                     circle at 10% 10%,
@@ -44,148 +36,74 @@
                     transparent 30%
                 ),
                 var(--bg);
-
         }
-
-
-        /* =====================================================
-           REVIEW NAVIGATION
-        ===================================================== */
 
         .review-nav {
-
             position: sticky;
-
             top: 0;
-
             z-index: 1000;
-
-            background:
-                rgba(7, 17, 31, 0.94);
-
+            background: rgba(7, 17, 31, 0.94);
             backdrop-filter: blur(16px);
-
             -webkit-backdrop-filter: blur(16px);
-
-            border-bottom:
-                1px solid
-                rgba(255,255,255,0.08);
-
-            box-shadow:
-                0 8px 30px
-                rgba(0,0,0,0.12);
-
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         }
-
 
         .review-nav-container {
-
-            width: min(
-                calc(100% - 40px),
-                var(--container)
-            );
-
+            width: min(calc(100% - 40px), var(--container));
             min-height: 78px;
-
             margin: auto;
-
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
             gap: 25px;
-
         }
-
 
         .review-logo {
-
             display: flex;
-
             flex-direction: column;
-
             line-height: 1.1;
-
         }
-
 
         .review-logo strong {
-
             color: #ffffff;
-
             font-size: 24px;
-
             font-weight: 800;
-
         }
-
 
         .review-logo span {
-
             color: var(--primary);
-
             font-size: 11px;
-
             font-weight: 700;
-
             letter-spacing: 1px;
-
             text-transform: uppercase;
-
             margin-top: 5px;
-
         }
-
 
         .review-nav-links {
-
             display: flex;
-
             align-items: center;
-
             gap: 22px;
-
         }
-
 
         .review-nav-links a {
-
             color: #dbeafe;
-
             font-size: 14px;
-
             font-weight: 700;
-
-            transition:
-                color var(--transition);
-
+            transition: color var(--transition);
         }
-
 
         .review-nav-links a:hover {
-
             color: var(--primary);
-
         }
 
-
-        /* =====================================================
-           REVIEW HERO
-        ===================================================== */
-
         .review-hero {
-
             text-align: center;
-
-            padding:
-                90px 20px 70px;
-
+            padding: 90px 20px 70px;
             background:
                 radial-gradient(
                     circle at 50% 0%,
-                    rgba(56,189,248,0.16),
+                    rgba(56, 189, 248, 0.16),
                     transparent 45%
                 ),
                 linear-gradient(
@@ -194,896 +112,517 @@
                     #0a192c,
                     #0d1d35
                 );
-
             color: #ffffff;
-
         }
-
 
         .review-badge {
-
             display: inline-block;
-
             padding: 8px 15px;
-
             border-radius: 999px;
-
-            border:
-                1px solid
-                rgba(56,189,248,0.30);
-
-            background:
-                rgba(56,189,248,0.08);
-
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            background: rgba(56, 189, 248, 0.08);
             color: #bae6fd;
-
             font-size: 11px;
-
             font-weight: 800;
-
             letter-spacing: 1.5px;
-
             margin-bottom: 20px;
-
         }
-
 
         .review-hero h1 {
-
-            font-size:
-                clamp(38px, 6vw, 62px);
-
+            font-size: clamp(38px, 6vw, 62px);
             line-height: 1.1;
-
             letter-spacing: -2px;
-
             margin-bottom: 18px;
-
         }
-
 
         .review-hero h1 span {
-
             display: block;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #38bdf8,
-                    #67e8f9,
-                    #818cf8
-                );
-
+            background: linear-gradient(
+                90deg,
+                #38bdf8,
+                #67e8f9,
+                #818cf8
+            );
             -webkit-background-clip: text;
-
             background-clip: text;
-
             -webkit-text-fill-color: transparent;
-
         }
-
 
         .review-hero p {
-
             max-width: 650px;
-
             margin: auto;
-
             color: #b7c8db;
-
             font-size: 16px;
-
             line-height: 1.8;
-
         }
-
-
-        /* =====================================================
-           REVIEW CONTENT
-        ===================================================== */
 
         .review-main {
-
-            width: min(
-                calc(100% - 40px),
-                900px
-            );
-
+            width: min(calc(100% - 40px), 900px);
             margin: auto;
-
-            padding:
-                80px 0 100px;
-
+            padding: 80px 0 100px;
         }
-
-
-        /* =====================================================
-           FORM CARD
-        ===================================================== */
 
         .review-form-card {
-
             padding: 40px;
-
             background: var(--surface);
-
-            border:
-                1px solid
-                var(--border);
-
+            border: 1px solid var(--border);
             border-radius: var(--radius-lg);
-
             box-shadow: var(--shadow);
-
             margin-bottom: 45px;
-
         }
-
 
         .review-form-heading {
-
             text-align: center;
-
             margin-bottom: 30px;
-
         }
 
-
-        .review-form-heading span {
-
+        .review-form-heading span,
+        .visitor-heading span {
             color: var(--primary-dark);
-
             font-size: 11px;
-
             font-weight: 900;
-
             letter-spacing: 2px;
-
         }
 
-
-        body.dark-mode
-        .review-form-heading span {
-
+        body.dark-mode .review-form-heading span,
+        body.dark-mode .visitor-heading span {
             color: var(--primary);
-
         }
-
 
         .review-form-heading h2 {
-
             font-size: 32px;
-
-            margin:
-                8px 0 8px;
-
+            margin: 8px 0;
         }
-
 
         .review-form-heading p {
-
             color: var(--text-muted);
-
             font-size: 14px;
-
         }
-
 
         .review-form {
-
             display: grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
-
         }
-
 
         .review-field {
-
             display: flex;
-
             flex-direction: column;
-
         }
-
 
         .review-field.full {
-
-            grid-column:
-                1 / -1;
-
+            grid-column: 1 / -1;
         }
-
 
         .review-field label {
-
             color: var(--text);
-
             font-size: 13px;
-
             font-weight: 800;
-
             margin-bottom: 8px;
-
         }
-
 
         .review-field input,
         .review-field select,
         .review-field textarea {
-
             width: 100%;
-
             padding: 14px 15px;
-
-            border:
-                1px solid
-                var(--border);
-
+            border: 1px solid var(--border);
             border-radius: 10px;
-
             background: var(--bg);
-
             color: var(--text);
-
             outline: none;
-
             transition:
                 border-color var(--transition),
                 box-shadow var(--transition),
                 background var(--transition);
-
         }
-
 
         .review-field textarea {
-
             min-height: 150px;
-
             resize: vertical;
-
         }
-
 
         .review-field input:focus,
         .review-field select:focus,
         .review-field textarea:focus {
-
-            border-color:
-                var(--primary);
-
-            box-shadow:
-                0 0 0 3px
-                rgba(56,189,248,0.12);
-
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.12);
         }
-
 
         .review-submit {
-
-            grid-column:
-                1 / -1;
-
+            grid-column: 1 / -1;
             display: flex;
-
             justify-content: center;
-
             margin-top: 5px;
-
         }
-
 
         .review-submit button {
-
             min-height: 50px;
-
-            padding:
-                0 28px;
-
+            padding: 0 28px;
             border: none;
-
             border-radius: 11px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--primary),
-                    var(--primary-dark)
-                );
-
+            background: linear-gradient(
+                135deg,
+                var(--primary),
+                var(--primary-dark)
+            );
             color: #ffffff;
-
             font-size: 14px;
-
             font-weight: 800;
-
             transition:
                 transform var(--transition),
                 box-shadow var(--transition);
-
         }
-
 
         .review-submit button:hover {
-
-            transform:
-                translateY(-3px);
-
-            box-shadow:
-                0 15px 30px
-                rgba(14,165,233,0.25);
-
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(14, 165, 233, 0.25);
         }
-
-
-        /* =====================================================
-           VISITOR REVIEWS
-        ===================================================== */
 
         .visitor-reviews {
-
             margin-top: 20px;
-
         }
-
 
         .visitor-heading {
-
             text-align: center;
-
             margin-bottom: 30px;
-
         }
-
-
-        .visitor-heading span {
-
-            color: var(--primary-dark);
-
-            font-size: 11px;
-
-            font-weight: 900;
-
-            letter-spacing: 2px;
-
-        }
-
-
-        body.dark-mode
-        .visitor-heading span {
-
-            color: var(--primary);
-
-        }
-
 
         .visitor-heading h2 {
-
             font-size: 34px;
-
             margin-top: 8px;
-
         }
-
 
         #reviewList {
-
             display: grid;
-
             gap: 18px;
-
         }
 
-
         .review-card {
-
             position: relative;
-
             padding: 25px;
-
             background: var(--surface);
-
-            border:
-                1px solid
-                var(--border);
-
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
             border-radius: var(--radius);
-
             box-shadow: var(--shadow-sm);
-
-            border-left:
-                4px solid
-                var(--primary);
-
             transition:
                 transform var(--transition),
                 box-shadow var(--transition);
-
         }
-
 
         .review-card:hover {
-
-            transform:
-                translateY(-4px);
-
-            box-shadow:
-                var(--shadow);
-
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
         }
-
 
         .review-card h3 {
-
             color: var(--text);
-
             font-size: 18px;
-
             margin-bottom: 8px;
-
         }
-
 
         .review-card p {
-
             color: var(--text-muted);
-
             font-size: 14px;
-
             line-height: 1.8;
-
             margin-bottom: 6px;
-
         }
-
-
-        /* =====================================================
-           FOOTER
-        ===================================================== */
 
         .review-footer {
-
             background: #040b14;
-
             color: #ffffff;
-
             text-align: center;
-
             padding: 28px 20px;
-
         }
-
 
         .review-footer strong {
-
             display: block;
-
             font-size: 17px;
-
             margin-bottom: 5px;
-
         }
-
 
         .review-footer p {
-
             color: #64748b;
-
             font-size: 11px;
-
         }
-
-
-        /* =====================================================
-           MOBILE
-        ===================================================== */
 
         @media (max-width: 700px) {
-
             .review-nav-container {
-
-                width:
-                    calc(100% - 30px);
-
+                width: calc(100% - 30px);
                 min-height: 70px;
-
             }
-
 
             .review-nav-links {
-
                 gap: 12px;
-
             }
-
 
             .review-nav-links a {
-
                 font-size: 12px;
-
             }
-
 
             .review-hero {
-
-                padding:
-                    70px 18px 55px;
-
+                padding: 70px 18px 55px;
             }
-
 
             .review-hero h1 {
-
                 font-size: 39px;
-
             }
-
 
             .review-main {
-
-                width:
-                    calc(100% - 30px);
-
-                padding:
-                    55px 0 70px;
-
+                width: calc(100% - 30px);
+                padding: 55px 0 70px;
             }
-
 
             .review-form-card {
-
                 padding: 25px 20px;
-
             }
-
 
             .review-form {
-
-                grid-template-columns:
-                    1fr;
-
+                grid-template-columns: 1fr;
             }
 
-
-            .review-field.full {
-
-                grid-column: auto;
-
-            }
-
-
+            .review-field.full,
             .review-submit {
-
                 grid-column: auto;
-
             }
-
 
             .review-submit button {
-
                 width: 100%;
-
             }
-
 
             .visitor-heading h2 {
-
                 font-size: 29px;
-
             }
-
         }
-
 
         @media (max-width: 480px) {
-
             .review-logo strong {
-
                 font-size: 20px;
-
             }
-
 
             .review-logo span {
-
                 font-size: 9px;
-
             }
-
 
             .review-nav-links {
-
                 gap: 9px;
-
             }
-
 
             .review-nav-links a {
-
                 font-size: 10px;
-
             }
-
 
             .review-form-heading h2 {
-
                 font-size: 27px;
-
             }
-
 
             .review-card {
-
                 padding: 20px;
-
             }
-
         }
-
     </style>
-
 </head>
-
 
 <body class="review-page">
 
+    <nav class="review-nav">
+        <div class="review-nav-container">
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
-
-<nav class="review-nav">
-
-    <div class="review-nav-container">
-
-        <a
-            href="index.html"
-            class="review-logo"
-        >
-
-            <strong>
-                Ahmad Ali
-            </strong>
-
-            <span>
-                Front-End Developer | Web Solutions
-            </span>
-
-        </a>
-
-
-        <div class="review-nav-links">
-
-            <a href="index.html">
-                Home
+            <a href="index.html" class="review-logo">
+                <strong>Ahmad Ali</strong>
+                <span>Front-End Developer | Web Solutions</span>
             </a>
 
-            <a href="review.html">
-                Reviews
-            </a>
+            <div class="review-nav-links">
 
-            <button
-                id="theme-toggle"
-                class="theme-toggle"
-                type="button"
-            >
-                🌙 Dark Mode
-            </button>
+                <a href="index.html">Home</a>
 
-        </div>
+                <a href="review.html">Reviews</a>
 
-    </div>
-
-</nav>
-
-
-<!-- =====================================================
-     REVIEW HERO
-===================================================== -->
-
-<header class="review-hero">
-
-    <span class="review-badge">
-        ● VISITOR FEEDBACK
-    </span>
-
-
-    <h1>
-
-        Share Your
-        <span>Experience</span>
-
-    </h1>
-
-
-    <p>
-
-        Thank you for visiting Ahmad Ali's portfolio.
-        Your feedback helps improve future projects
-        and digital experiences.
-
-    </p>
-
-</header>
-
-
-<!-- =====================================================
-     MAIN
-===================================================== -->
-
-<main class="review-main">
-
-
-    <!-- REVIEW FORM -->
-
-    <section class="review-form-card">
-
-        <div class="review-form-heading">
-
-            <span>
-                LEAVE A REVIEW
-            </span>
-
-            <h2>
-                Tell Me What You Think
-            </h2>
-
-            <p>
-                Your feedback is greatly appreciated.
-            </p>
-
-        </div>
-
-
-        <form
-            id="reviewForm"
-            class="review-form"
-        >
-
-
-            <div class="review-field">
-
-                <label for="name">
-                    Your Name
-                </label>
-
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Enter your name"
-                    autocomplete="name"
-                    required
+                <button
+                    id="theme-toggle"
+                    class="theme-toggle"
+                    type="button"
                 >
-
-            </div>
-
-
-            <div class="review-field">
-
-                <label for="rating">
-                    Your Rating
-                </label>
-
-                <select
-                    id="rating"
-                    required
-                >
-
-                    <option value="">
-                        Choose Rating
-                    </option>
-
-                    <option value="5">
-                        ⭐⭐⭐⭐⭐ — 5/5
-                    </option>
-
-                    <option value="4">
-                        ⭐⭐⭐⭐ — 4/5
-                    </option>
-
-                    <option value="3">
-                        ⭐⭐⭐ — 3/5
-                    </option>
-
-                    <option value="2">
-                        ⭐⭐ — 2/5
-                    </option>
-
-                    <option value="1">
-                        ⭐ — 1/5
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <div class="review-field full">
-
-                <label for="message">
-                    Your Review
-                </label>
-
-                <textarea
-                    id="message"
-                    placeholder="Write your experience..."
-                    required
-                ></textarea>
-
-            </div>
-
-
-            <div class="review-submit">
-
-                <button type="submit">
-
-                    Submit Review →
-
+                    🌙 Dark Mode
                 </button>
 
             </div>
 
-
-        </form>
-
-    </section>
-
-
-    <!-- VISITOR REVIEWS -->
-
-    <section class="visitor-reviews">
-
-        <div class="visitor-heading">
-
-            <span>
-                COMMUNITY FEEDBACK
-            </span>
-
-            <h2>
-                Visitor Reviews
-            </h2>
-
         </div>
+    </nav>
 
+    <header class="review-hero">
 
-        <div id="reviewList"></div>
+        <span class="review-badge">
+            ● VISITOR FEEDBACK
+        </span>
 
-    </section>
+        <h1>
+            Share Your
+            <span>Experience</span>
+        </h1>
 
+        <p>
+            Thank you for visiting Ahmad Ali's portfolio.
+            Your feedback helps improve future projects
+            and digital experiences.
+        </p>
 
-</main>
+    </header>
 
+    <main class="review-main">
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+        <section class="review-form-card">
 
-<footer class="review-footer">
+            <div class="review-form-heading">
 
-    <strong>
-        Ahmad Ali
-    </strong>
+                <span>LEAVE A REVIEW</span>
 
-    <p>
-        Front-End Developer | Web Solutions
-    </p>
+                <h2>Tell Me What You Think</h2>
 
-    <p>
-        © 2026 Ahmad Ali. All Rights Reserved.
-    </p>
+                <p>Your feedback is greatly appreciated.</p>
 
-</footer>
+            </div>
 
+            <form id="reviewForm" class="review-form">
 
-<!-- =====================================================
-     REVIEW JAVASCRIPT
-===================================================== -->
+                <div class="review-field">
 
-<script src="js/review.js"></script>
+                    <label for="name">
+                        Your Name
+                    </label>
 
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+                <div class="review-field">
+
+                    <label for="rating">
+                        Your Rating
+                    </label>
+
+                    <select id="rating" required>
+
+                        <option value="">
+                            Choose Rating
+                        </option>
+
+                        <option value="5">
+                            ⭐⭐⭐⭐⭐ — 5/5
+                        </option>
+
+                        <option value="4">
+                            ⭐⭐⭐⭐ — 4/5
+                        </option>
+
+                        <option value="3">
+                            ⭐⭐⭐ — 3/5
+                        </option>
+
+                        <option value="2">
+                            ⭐⭐ — 2/5
+                        </option>
+
+                        <option value="1">
+                            ⭐ — 1/5
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="review-field full">
+
+                    <label for="message">
+                        Your Review
+                    </label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Write your experience..."
+                        required
+                    ></textarea>
+
+                </div>
+
+                <div class="review-submit">
+
+                    <button type="submit">
+                        Submit Review →
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+        <section class="visitor-reviews">
+
+            <div class="visitor-heading">
+
+                <span>COMMUNITY FEEDBACK</span>
+
+                <h2>Visitor Reviews</h2>
+
+            </div>
+
+            <div id="reviewList"></div>
+
+        </section>
+
+    </main>
+
+    <footer class="review-footer">
+
+        <strong>Ahmad Ali</strong>
+
+        <p>
+            Front-End Developer | Web Solutions
+        </p>
+
+        <p>
+            © 2026 Ahmad Ali. All Rights Reserved.
+        </p>
+
+    </footer>
+
+    <script type="module" src="js/review.js"></script>
+
+    <script>
+        const themeToggle = document.getElementById("theme-toggle");
+
+        if (themeToggle) {
+            const savedTheme = localStorage.getItem("theme");
+
+            if (savedTheme === "dark") {
+                document.body.classList.add("dark-mode");
+                themeToggle.textContent = "☀️ Light Mode";
+            }
+
+            themeToggle.addEventListener("click", () => {
+                const isDark = document.body.classList.toggle("dark-mode");
+
+                localStorage.setItem(
+                    "theme",
+                    isDark ? "dark" : "light"
+                );
+
+                themeToggle.textContent = isDark
+                    ? "☀️ Light Mode"
+                    : "🌙 Dark Mode";
+            });
+        }
+    </script>
 
 </body>
 

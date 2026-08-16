@@ -1,68 +1,42 @@
-const form=
-document.querySelector(".booking-form");
+const bookingForm = document.querySelector(".booking-form");
 
-form.addEventListener("submit",function(event) {event
-    .preventDefault();
-    const name=
-    document.getElementById("name").value;
-    const phone=
-    document.getElementById("phone").value;
-    const date=
-    document.getElementById("date").value;
-    const message=
-    document.getElementById("message").value;
-    if (name===""){
-        alert("Please enter your name");
-        return;
-    }
-        if (phone.length < 10) {
-        alert("Please enter a valid phone number.");
-        return;
-    }
-    if (date==="") {
-        alert("please select an appointment date,");
-        return;
-    }
-    if (message==="") {
-        alert("Please write your message.");
-        return;
-    }
+if (bookingForm) {
+    bookingForm.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-    
-    alert("Thank you! Your Appointment has been booked successfully.")
-    form.reset();
-});
+        const name = bookingForm.querySelector('input[type="text"]');
+        const phone = bookingForm.querySelector('input[type="tel"]');
+        const date = bookingForm.querySelector('input[type="date"]');
+        const message = bookingForm.querySelector("textarea");
 
-const menuToggle=
-document.querySelector(".menu-toggle");
-const navMenu=
-document.querySelector("nav ul");
-menuToggle.addEventListener("click",function () {
-    navMenu.classList.toggle("show");
-});
-const navLinks =
-document.querySelectorAll("nav ul li a");
-
-navLinks.forEach(function(link) {
-    link.addEventListener("click",function() {
-
-        navMenu.classList.remove("show");
-    });
-});
-
-const reveals =
-document.querySelectorAll(".reveal");
-window.addEventListener("scroll",function () {
-
-    reveals.forEach(function (reveal) {
-
-        const windowHeight = window.innerHeight;
-        const revealTop =
-        reveal.getBoundingClientRect().top;
-
-        const revealPoint = 100;
-        if (revealTop < windowHeight-revealPoint) {
-            reveal.classList.add("active");
+        if (!name.value.trim()) {
+            alert("Please enter your name.");
+            name.focus();
+            return;
         }
-    })
-})
+
+        if (phone.value.trim().length < 10) {
+            alert("Please enter a valid phone number.");
+            phone.focus();
+            return;
+        }
+
+        if (!date.value) {
+            alert("Please select an appointment date.");
+            date.focus();
+            return;
+        }
+
+        if (!message.value.trim()) {
+            alert("Please write your message.");
+            message.focus();
+            return;
+        }
+
+        alert(
+            "Thank you! Your appointment has been booked successfully."
+        );
+
+        bookingForm.reset();
+    });
+}

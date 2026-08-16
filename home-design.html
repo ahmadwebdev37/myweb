@@ -1,83 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Professional 2D floor plans, 3D house designs, and custom home planning services."
+    >
     <title>Design Your Dream Home</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+
     <header>
         <div class="logo">
-            <h1>Design Your Dream Home</h1>
+            <a href="index.html">Design Your Dream Home</a>
         </div>
-        <nav>
+
+        <nav aria-label="Main navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="request-design.html">Request Design</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
-
             </ul>
         </nav>
     </header>
-   
-    <section class="hero">
-        <h2>Design Your Dream Home</h2>
-        <img src="images/hero-house.jpg" alt="Modern House">
-        <p>
-            Professional 2D Floor Plans, 3D House Designs and Custom Home Planning Services.
-        </p>
-        <a href="request-design.html">
-            <button>Request Your Design</button>
-        </a>
 
-    </section>
-    <section class="services">
-        <h2>Our Services</h2>
-        <div class="service-box">
-            <img src="images/floor-plan-2d.jpg" alt="2d Floor Plan">
-            <h3>2D Floor Plan</h3>
-            <p>
-                Professional architectural floor planning according to your plot.
-            </p>
-        
-        </div>
-        <div class="service-box">
-            <img src="images/exterior-design-3d.jpg" alt="3D Exterior Design">
-            <h3>3D Exterior Design</h3>
-            <p>
-                High-quality 3D exterior visualization with modern architecture and realistic details.
-            </p>
-        </div>
-        <div class="service-box">
-            <img src="images/interior-design.jpg" alt="Interior Planning">
-            <h3>Interior Planning</h3>
-            <p>
-                Beautiful room layouts with smart space management.
-            </p>
-        </div>
-    </section>
-    <section class="why-us">
-        <h2>Why Choose Us?</h2>
-        <ul>
-            <li>Professional House Planning</li>
-            <li>Modern 3D Design</li>
-            <li>Affordable Price</li>
-            <li>Fast Delivery</li>
-            <li>Customer Support</li>
-        </ul>
-    </section>
+    <main>
 
-    <section class="cta">
-        <h2>Ready To Build Your Dream Home?</h2>
-         <p>
-            Fill out our Design Request Form and get your custom house plan.
-         </p>
-    </section>
+        <section class="hero">
+            <h1>Design Your Dream Home</h1>
+
+            <img
+                src="images/hero-house.jpg"
+                alt="Modern house exterior"
+            >
+
+            <p>
+                Professional 2D floor plans, 3D house designs,
+                and custom home planning services.
+            </p>
+
+            <a href="request-design.html">
+                <button type="button">Request Your Design</button>
+            </a>
+        </section>
+
+        <section class="services" aria-labelledby="services-title">
+            <h2 id="services-title">Our Services</h2>
+
+            <div class="service-box">
+                <img
+                    src="images/floor-plan-2d.jpg"
+                    alt="2D floor plan"
+                >
+
+                <h3>2D Floor Plan</h3>
+
+                <p>
+                    Professional architectural floor planning
+                    according to your plot.
+                </p>
+            </div>
+
+            <div class="service-box">
+                <img
+                    src="images/exterior-design-3d.jpg"
+                    alt="3D exterior house design"
+                >
+
+                <h3>3D Exterior Design</h3>
+
+                <p>
+                    High-quality 3D exterior visualization with
+                    modern architecture and realistic details.
+                </p>
+            </div>
+
+            <div class="service-box">
+                <img
+                    src="images/interior-design.jpg"
+                    alt="Interior home planning"
+                >
+
+                <h3>Interior Planning</h3>
+
+                <p>
+                    Beautiful room layouts with smart
+                    space management.
+                </p>
+            </div>
+        </section>
+
+        <section class="why-us" aria-labelledby="why-us-title">
+            <h2 id="why-us-title">Why Choose Us?</h2>
+
+            <ul>
+                <li>Professional House Planning</li>
+                <li>Modern 3D Design</li>
+                <li>Affordable Pricing</li>
+                <li>Fast Delivery</li>
+                <li>Customer Support</li>
+            </ul>
+        </section>
+
+        <section class="cta" aria-labelledby="cta-title">
+            <h2 id="cta-title">Ready to Build Your Dream Home?</h2>
+
+            <p>
+                Fill out our design request form and get
+                your custom house plan.
+            </p>
+
+            <a href="request-design.html">
+                <button type="button">Request a Design</button>
+            </a>
+        </section>
+
+    </main>
 
     <footer>
-        <p>2026 Design Your Dream Home | All Rights Reserved</p>
+        <p>&copy; 2026 Design Your Dream Home | All Rights Reserved.</p>
     </footer>
+
+    <script src="js/script.js"></script>
+
 </body>
+
 </html>

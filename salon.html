@@ -1,319 +1,498 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Beauty Salon</title>
 
-<title>Luxury Beauty Salon</title>
-
-<link rel="stylesheet" href="css/salon.css">
-
+    <link
+        rel="stylesheet"
+        href="css/salon.css"
+    >
 </head>
 
 <body>
 
-<!-- =========================
-        NAVIGATION
-========================== -->
+    <nav class="navbar" aria-label="Main navigation">
 
-<nav class="navbar">
-
-    <div class="logo">
-        Beauty <span>Salon</span>
-    </div>
-
-    <ul class="nav-links">
-
-        <li><a href="#home">Home</a></li>
-
-        <li><a href="#services">Services</a></li>
-
-        <li><a href="#gallery">Gallery</a></li>
-
-        <li><a href="#appointment">Booking</a></li>
-
-        <li><a href="#contact">Contact</a></li>
-
-    </ul>
-
-</nav>
-
-
-<!-- =========================
-          HERO
-========================== -->
-
-<header id="home" class="hero">
-
-    <div class="hero-text">
-
-        <h1>Luxury Beauty Salon</h1>
-
-        <p>
-
-            Experience luxury beauty treatments,
-            professional hairstyling, premium makeup,
-            skincare and relaxing spa services.
-
-        </p>
-
-        <a href="#appointment" class="btn">
-
-            Book Appointment
-
+        <a href="#home" class="logo">
+            Beauty <span>Salon</span>
         </a>
 
-    </div>
+        <ul class="nav-links">
+            <li>
+                <a href="#home">Home</a>
+            </li>
 
+            <li>
+                <a href="#services">Services</a>
+            </li>
 
-    <div class="hero-image">
+            <li>
+                <a href="#gallery">Gallery</a>
+            </li>
 
-        <img src="images/makeup.jpg"
-        alt="Beauty Salon">
+            <li>
+                <a href="#appointment">Booking</a>
+            </li>
 
-    </div>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
 
-</header>
+    </nav>
 
-<!-- =========================
-        SERVICES
-========================== -->
 
-<section id="services">
+    <main>
 
-    <h2 class="section-title">Our Premium Services</h2>
+        <header id="home" class="hero">
 
-    <div class="services">
+            <div class="hero-text">
 
-        <div class="card">
-            <img src="images/hair-style.jpg" alt="Hair Style">
-            <h3>Hair Styling</h3>
-            <p>
-                Professional haircuts, styling and luxury hair treatments.
-            </p>
-        </div>
+                <h1>Luxury Beauty Salon</h1>
 
-        <div class="card">
-            <img src="images/makeup.jpg" alt="Makeup">
-            <h3>Professional Makeup</h3>
-            <p>
-                Bridal, party and luxury makeup by expert artists.
-            </p>
-        </div>
+                <p>
+                    Experience luxury beauty treatments,
+                    professional hairstyling, premium makeup,
+                    skincare and relaxing spa services.
+                </p>
 
-        <div class="card">
-            <img src="images/spa-treatment.jpg" alt="Spa">
-            <h3>Spa & Facial</h3>
-            <p>
-                Relaxing spa and premium skincare treatments.
-            </p>
-        </div>
+                <a
+                    href="#appointment"
+                    class="btn"
+                >
+                    Book Appointment
+                </a>
 
-    </div>
+            </div>
 
-</section>
+            <div class="hero-image">
 
+                <img
+                    src="images/makeup.jpg"
+                    alt="Professional beauty salon makeup service"
+                >
 
-<!-- =========================
-        GALLERY
-========================== -->
+            </div>
 
-<section id="gallery">
+        </header>
 
-    <h2 class="section-title">Our Gallery</h2>
 
-    <div class="gallery">
+        <section
+            id="services"
+            class="services-section"
+        >
 
-        <img src="images/hair-color.jpg" alt="Salon Image 1">
+            <h2 class="section-title">
+                Our Premium Services
+            </h2>
 
-        <img src="images/hair-wash.jpg" alt="Salon Image 2">
+            <div class="services">
 
-        <img src="images/hair-style.jpg" alt="Salon Image 3">
+                <article class="service-card">
 
-    </div>
+                    <img
+                        src="images/hair-style.jpg"
+                        alt="Professional hair styling"
+                    >
 
-</section>
+                    <h3>Hair Styling</h3>
 
-<!-- =========================
-      WORKING HOURS
-========================== -->
+                    <p>
+                        Professional haircuts, styling and
+                        luxury hair treatments.
+                    </p>
 
-<section id="hours">
+                </article>
 
-    <h2 class="section-title">
-        Working Hours
-    </h2>
 
-    <div class="hours-box">
+                <article class="service-card">
 
-        <div class="day">
-            <span>Monday</span>
-            <span>9:00 AM - 6:00 PM</span>
-        </div>
+                    <img
+                        src="images/makeup.jpg"
+                        alt="Professional makeup service"
+                    >
 
-        <div class="day">
-            <span>Tuesday</span>
-            <span>9:00 AM - 6:00 PM</span>
-        </div>
+                    <h3>Professional Makeup</h3>
 
-        <div class="day">
-            <span>Wednesday</span>
-            <span>9:00 AM - 6:00 PM</span>
-        </div>
+                    <p>
+                        Bridal, party and luxury makeup
+                        by expert artists.
+                    </p>
 
-        <div class="day">
-            <span>Thursday</span>
-            <span>9:00 AM - 6:00 PM</span>
-        </div>
+                </article>
 
-        <div class="day">
-            <span>Friday</span>
-            <span>9:00 AM - 6:00 PM</span>
-        </div>
 
-        <div class="day">
-            <span>Saturday</span>
-            <span>10:00 AM - 5:00 PM</span>
-        </div>
+                <article class="service-card">
 
-        <div class="day">
-            <span>Sunday</span>
-            <span>Closed</span>
-        </div>
+                    <img
+                        src="images/spa-treatment.jpg"
+                        alt="Spa and facial treatment"
+                    >
 
-    </div>
+                    <h3>Spa &amp; Facial</h3>
 
-</section>
-<!-- =========================
-        WHAT WE OFFER
-========================== -->
+                    <p>
+                        Relaxing spa and premium skincare
+                        treatments.
+                    </p>
 
-<section id="offers">
+                </article>
 
-    <h2 class="section-title">
-        What We Offer
-    </h2>
+            </div>
 
-    <div class="offers">
+        </section>
 
-        <div class="offer-card">
-            <h3>✨ Premium Hair Styling</h3>
-            <p>Modern haircuts and professional styling by expert stylists.</p>
-        </div>
 
-        <div class="offer-card">
-            <h3>💄 Bridal & Party Makeup</h3>
-            <p>Luxury makeup services for weddings, parties and special events.</p>
-        </div>
+        <section
+            id="gallery"
+            class="gallery-section"
+        >
 
-        <div class="offer-card">
-            <h3>🌿 Spa & Skin Care</h3>
-            <p>Relaxing spa treatments and healthy skincare solutions.</p>
-        </div>
+            <h2 class="section-title">
+                Our Gallery
+            </h2>
 
-        <div class="offer-card">
-            <h3>📅 Easy Online Booking</h3>
-            <p>Book your appointment anytime with our simple booking form.</p>
-        </div>
+            <div class="gallery">
 
-    </div>
+                <img
+                    src="images/hair-color.jpg"
+                    alt="Hair coloring service"
+                >
 
-</section>
+                <img
+                    src="images/hair-wash.jpg"
+                    alt="Professional hair washing service"
+                >
 
+                <img
+                    src="images/hair-style.jpg"
+                    alt="Salon hair styling"
+                >
 
-<!-- =========================
-      BOOK APPOINTMENT
-========================== -->
+            </div>
 
-<section id="appointment">
+        </section>
 
-    <h2 class="section-title">
-        Book Your Appointment
-    </h2>
 
-    <form class="booking-form">
+        <section
+            id="hours"
+            class="hours-section"
+        >
 
-        <input type="text"
-        placeholder="Your Name"
-        required>
+            <h2 class="section-title">
+                Working Hours
+            </h2>
 
-        <input type="email"
-        placeholder="Email Address"
-        required>
+            <div class="hours-box">
 
-        <input type="tel"
-        placeholder="Phone Number"
-        required>
+                <div class="day">
+                    <span>Monday</span>
+                    <span>9:00 AM - 6:00 PM</span>
+                </div>
 
-        <select>
+                <div class="day">
+                    <span>Tuesday</span>
+                    <span>9:00 AM - 6:00 PM</span>
+                </div>
 
-            <option>Select Service</option>
+                <div class="day">
+                    <span>Wednesday</span>
+                    <span>9:00 AM - 6:00 PM</span>
+                </div>
 
-            <option>Hair Styling</option>
+                <div class="day">
+                    <span>Thursday</span>
+                    <span>9:00 AM - 6:00 PM</span>
+                </div>
 
-            <option>Makeup</option>
+                <div class="day">
+                    <span>Friday</span>
+                    <span>9:00 AM - 6:00 PM</span>
+                </div>
 
-            <option>Spa & Facial</option>
+                <div class="day">
+                    <span>Saturday</span>
+                    <span>10:00 AM - 5:00 PM</span>
+                </div>
 
-        </select>
+                <div class="day">
+                    <span>Sunday</span>
+                    <span>Closed</span>
+                </div>
 
-        <input type="date" required>
+            </div>
 
-        <textarea
-        placeholder="Write your message">
-        </textarea>
+        </section>
 
-        <button type="submit">
 
-            Book Appointment
+        <section
+            id="offers"
+            class="offers-section"
+        >
 
-        </button>
+            <h2 class="section-title">
+                What We Offer
+            </h2>
 
-    </form>
+            <div class="offers">
 
-</section>
+                <article class="offer-card">
 
+                    <h3>
+                        ✨ Premium Hair Styling
+                    </h3>
 
-<!-- =========================
-         CONTACT
-========================== -->
+                    <p>
+                        Modern haircuts and professional
+                        styling by expert stylists.
+                    </p>
 
-<section id="contact">
+                </article>
 
-    <h2 class="section-title">
-        Contact Us
-    </h2>
 
-    <div class="contact-box">
+                <article class="offer-card">
 
-        <p>📧 info@beautysalon.com</p>
+                    <h3>
+                        💄 Bridal &amp; Party Makeup
+                    </h3>
 
-        <p>📞 +60 123 456 789</p>
+                    <p>
+                        Luxury makeup services for weddings,
+                        parties and special events.
+                    </p>
 
-        <p>📍 Kuala Lumpur, Malaysia</p>
+                </article>
 
-    </div>
 
-</section>
+                <article class="offer-card">
 
+                    <h3>
+                        🌿 Spa &amp; Skin Care
+                    </h3>
 
-<!-- =========================
-          FOOTER
-========================== -->
+                    <p>
+                        Relaxing spa treatments and healthy
+                        skincare solutions.
+                    </p>
 
-<footer>
+                </article>
 
-    <p>
 
-        © 2026 Luxury Beauty Salon.
-        All Rights Reserved.
+                <article class="offer-card">
 
-    </p>
+                    <h3>
+                        📅 Easy Online Booking
+                    </h3>
 
-</footer>
+                    <p>
+                        Book your appointment anytime with
+                        our simple booking form.
+                    </p>
 
-<script src="js/salon.js"></script>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section
+            id="appointment"
+            class="appointment-section"
+        >
+
+            <h2 class="section-title">
+                Book Your Appointment
+            </h2>
+
+            <form
+                class="booking-form"
+                id="bookingForm"
+            >
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter your phone number"
+                        autocomplete="tel"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="service">
+                        Select Service
+                    </label>
+
+                    <select
+                        id="service"
+                        name="service"
+                        required
+                    >
+
+                        <option value="">
+                            Select Service
+                        </option>
+
+                        <option value="hair-styling">
+                            Hair Styling
+                        </option>
+
+                        <option value="makeup">
+                            Makeup
+                        </option>
+
+                        <option value="spa-facial">
+                            Spa &amp; Facial
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="appointment-date">
+                        Appointment Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="appointment-date"
+                        name="appointment-date"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Write your message"
+                        rows="5"
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit">
+                    Book Appointment
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <section
+            id="contact"
+            class="contact-section"
+        >
+
+            <h2 class="section-title">
+                Contact Us
+            </h2>
+
+            <address class="contact-box">
+
+                <p>
+                    📧
+                    <a href="mailto:info@beautysalon.com">
+                        info@beautysalon.com
+                    </a>
+                </p>
+
+                <p>
+                    📞
+                    <a href="tel:+60123456789">
+                        +60 123 456 789
+                    </a>
+                </p>
+
+                <p>
+                    📍 Kuala Lumpur, Malaysia
+                </p>
+
+            </address>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            &copy; 2026 Luxury Beauty Salon.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="js/salon.js"></script>
 
 </body>
+
 </html>

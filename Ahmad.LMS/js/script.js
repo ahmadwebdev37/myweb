@@ -1,657 +1,232 @@
-/* ==================================================
-   Ahmad LMS
-   Professional LMS JavaScript
-================================================== */
-
-
-/* ==================================================
-   COURSE SETTINGS
-================================================== */
-
 const TOTAL_LESSONS = 7;
-
-
-/* ==================================================
-   COURSE NAMES
-================================================== */
-
-const COURSES = [
-    "html",
-    "css",
-    "javascript"
-];
-
-
-/* ==================================================
-   GET CURRENT COURSE
-================================================== */
+const COURSES = ["html", "css", "javascript"];
 
 function getCurrentCourse() {
+    const title = document.title.toLowerCase();
+    const path = window.location.pathname.toLowerCase();
 
-    const title =
-        document.title.toLowerCase();
-
-    const path =
-        window.location.pathname.toLowerCase();
-
-
-    if (
-        title.includes("html course") ||
-        path.includes("html-course")
-    ) {
-
+    if (title.includes("html course") || path.includes("html-course")) {
         return "html";
-
     }
 
-
-    if (
-        title.includes("css course") ||
-        path.includes("css-course")
-    ) {
-
+    if (title.includes("css course") || path.includes("css-course")) {
         return "css";
-
     }
-
 
     if (
         title.includes("javascript course") ||
         path.includes("javascript-course")
     ) {
-
         return "javascript";
-
     }
-
 
     return null;
 }
 
-
-/* ==================================================
-   STORAGE KEY
-================================================== */
-
 function getStorageKey(course) {
-
-    return (
-        "ahmadLMS_" +
-        course +
-        "_completedLessons"
-    );
-
+    return `ahmadLMS_${course}_completedLessons`;
 }
-
-
-/* ==================================================
-   GET COMPLETED LESSONS
-================================================== */
 
 function getCompletedLessons(course) {
-
     if (!course) {
-
         return [];
-
     }
 
-
-    const storageKey =
-        getStorageKey(course);
-
-
     try {
-
-        const saved =
-            localStorage.getItem(
-                storageKey
-            );
-
+        const saved = localStorage.getItem(getStorageKey(course));
 
         if (!saved) {
-
             return [];
-
         }
 
+        const lessons = JSON.parse(saved);
 
-        const parsed =
-            JSON.parse(saved);
+        if (!Array.isArray(lessons)) {
+            return [];
+        }
 
-
-        if (Array.isArray(parsed)) {
-
-            return parsed
+        return [...new Set(
+            lessons
                 .map(Number)
                 .filter(
-                    number =>
-                        number >= 1 &&
-                        number <= TOTAL_LESSONS
+                    lesson =>
+                        Number.isInteger(lesson) &&
+                        lesson >= 1 &&
+                        lesson <= TOTAL_LESSONS
                 )
-                .filter(
-                    (number, index, array) =>
-                        array.indexOf(number) === index
-                )
-                .sort(
-                    (a, b) => a - b
-                );
-
-        }
-
+        )].sort((a, b) => a - b);
     } catch (error) {
-
-        console.error(
-            "Unable to load course progress:",
-            error
-        );
-
+        console.error("Unable to load course progress:", error);
+        return [];
     }
-
-
-    return [];
-
 }
 
-
-/* ==================================================
-   SAVE COMPLETED LESSONS
-================================================== */
-
-function saveCompletedLessons(
-    course,
-    completedLessons
-) {
-
+function saveCompletedLessons(course, lessons) {
     if (!course) {
-
         return;
-
     }
-
-
-    const storageKey =
-        getStorageKey(course);
-
 
     try {
-
         localStorage.setItem(
-            storageKey,
-            JSON.stringify(
-                completedLessons
-            )
+            getStorageKey(course),
+            JSON.stringify(lessons)
         );
-
     } catch (error) {
-
-        console.error(
-            "Unable to save course progress:",
-            error
-        );
-
+        console.error("Unable to save course progress:", error);
     }
-
 }
-
-
-/* ==================================================
-   GET COURSE PERCENTAGE
-================================================== */
 
 function getCoursePercentage(course) {
-
-    const completedLessons =
-        getCompletedLessons(course);
-
+    const completed = getCompletedLessons(course);
 
     return Math.round(
-        (
-            completedLessons.length /
-            TOTAL_LESSONS
-        ) * 100
+        (completed.length / TOTAL_LESSONS) * 100
     );
-
 }
-
-
-/* ==================================================
-   UPDATE COURSE PROGRESS
-================================================== */
 
 function updateCourseProgress() {
+    const course = getCurrentCourse();
 
-    const currentCourse =
-        getCurrentCourse();
-
-
-    if (!currentCourse) {
-
+    if (!course) {
         return;
-
     }
 
+    const completed = getCompletedLessons(course);
+    const count = completed.length;
+    const percentage = getCoursePercentage(course);
 
-    const completedLessons =
-        getCompletedLessons(
-            currentCourse
-        );
-
-
-    const completedCount =
-        completedLessons.length;
-
-
-    const percentage =
-        getCoursePercentage(
-            currentCourse
-        );
-
-
-    /* ----------------------------------------------
-       Progress Bar
-    ---------------------------------------------- */
-
-    const progressBar =
-        document.getElementById(
-            "course-progress"
-        );
-
+    const progressBar = document.getElementById("course-progress");
 
     if (progressBar) {
-
-        progressBar.style.width =
-            percentage + "%";
-
-        progressBar.setAttribute(
-            "aria-valuenow",
-            percentage
-        );
-
+        progressBar.style.width = `${percentage}%`;
+        progressBar.setAttribute("aria-valuenow", percentage);
     }
 
-
-    /* ----------------------------------------------
-       Progress Text
-    ---------------------------------------------- */
-
-    const progressText =
-        document.getElementById(
-            "progress-text"
-        );
-
+    const progressText = document.getElementById("progress-text");
 
     if (progressText) {
-
         progressText.textContent =
-            completedCount +
-            " / " +
-            TOTAL_LESSONS +
-            " Lessons Completed";
-
+            `${count} / ${TOTAL_LESSONS} Lessons Completed`;
     }
-
-
-    /* ----------------------------------------------
-       Course Percentage Text
-    ---------------------------------------------- */
 
     const percentageText =
-        document.getElementById(
-            "course-percentage"
-        );
-
+        document.getElementById("course-percentage");
 
     if (percentageText) {
-
-        percentageText.textContent =
-            percentage + "%";
-
+        percentageText.textContent = `${percentage}%`;
     }
-
 }
-
-
-/* ==================================================
-   UPDATE LESSON BUTTONS
-================================================== */
 
 function updateLessonButtons() {
+    const course = getCurrentCourse();
 
-    const currentCourse =
-        getCurrentCourse();
-
-
-    if (!currentCourse) {
-
+    if (!course) {
         return;
-
     }
 
+    const completed = getCompletedLessons(course);
+    const lessons = document.querySelectorAll(".lesson");
 
-    const completedLessons =
-        getCompletedLessons(
-            currentCourse
+    lessons.forEach(lesson => {
+        const number = Number(
+            lesson.getAttribute("data-lesson")
         );
 
+        const button = lesson.querySelector(".complete-btn");
 
-    const lessonSections =
-        document.querySelectorAll(
-            ".lesson"
-        );
-
-
-    lessonSections.forEach(
-        function (lesson) {
-
-
-            const lessonNumber =
-                Number(
-                    lesson.getAttribute(
-                        "data-lesson"
-                    )
-                );
-
-
-            const button =
-                lesson.querySelector(
-                    ".complete-btn"
-                );
-
-
-            if (!button) {
-
-                return;
-
-            }
-
-
-            if (
-                completedLessons.includes(
-                    lessonNumber
-                )
-            ) {
-
-                button.textContent =
-                    "Completed ✓";
-
-                button.disabled =
-                    true;
-
-                button.classList.add(
-                    "completed"
-                );
-
-
-            } else {
-
-                button.textContent =
-                    "✓ Complete Lesson";
-
-                button.disabled =
-                    false;
-
-                button.classList.remove(
-                    "completed"
-                );
-
-            }
-
+        if (!button) {
+            return;
         }
-    );
 
+        const isCompleted = completed.includes(number);
+
+        button.textContent = isCompleted
+            ? "Completed ✓"
+            : "✓ Complete Lesson";
+
+        button.disabled = isCompleted;
+        button.classList.toggle("completed", isCompleted);
+    });
 }
 
-
-/* ==================================================
-   COMPLETE LESSON
-================================================== */
-
-function completeLesson(
-    lessonNumber
-) {
-
-    const currentCourse =
-        getCurrentCourse();
-
-
-    if (!currentCourse) {
-
-        return;
-
-    }
-
-
-    const number =
-        Number(
-            lessonNumber
-        );
-
+function completeLesson(lessonNumber) {
+    const course = getCurrentCourse();
+    const number = Number(lessonNumber);
 
     if (
+        !course ||
         !Number.isInteger(number) ||
         number < 1 ||
         number > TOTAL_LESSONS
     ) {
-
         return;
-
     }
 
+    const completed = getCompletedLessons(course);
 
-    let completedLessons =
-        getCompletedLessons(
-            currentCourse
-        );
-
-
-    /* ----------------------------------------------
-       Prevent Duplicate Completion
-    ---------------------------------------------- */
-
-    if (
-        completedLessons.includes(
-            number
-        )
-    ) {
-
+    if (completed.includes(number)) {
         return;
-
     }
 
+    completed.push(number);
+    completed.sort((a, b) => a - b);
 
-    /* ----------------------------------------------
-       Add Lesson
-    ---------------------------------------------- */
-
-    completedLessons.push(
-        number
-    );
-
-
-    completedLessons.sort(
-        (a, b) => a - b
-    );
-
-
-    /* ----------------------------------------------
-       Save
-    ---------------------------------------------- */
-
-    saveCompletedLessons(
-        currentCourse,
-        completedLessons
-    );
-
-
-    /* ----------------------------------------------
-       Update UI
-    ---------------------------------------------- */
+    saveCompletedLessons(course, completed);
 
     updateCourseProgress();
-
     updateLessonButtons();
-
     updateHomePageProgress();
 
-
-    /* ----------------------------------------------
-       Completion Message
-    ---------------------------------------------- */
-
-    if (
-        completedLessons.length ===
-        TOTAL_LESSONS
-    ) {
-
+    if (completed.length === TOTAL_LESSONS) {
         showNotification(
             "Course completed! 🎉 Congratulations!",
             "success"
         );
-
     } else {
-
         showNotification(
             "Lesson completed successfully! ✓",
             "success"
         );
-
     }
-
 }
 
-
-/* ==================================================
-   HOME PAGE COURSE PROGRESS
-================================================== */
-
-function updateHomeProgress(
-    course
-) {
-
-    const completedLessons =
-        getCompletedLessons(
-            course
-        );
-
-
-    const completedCount =
-        completedLessons.length;
-
-
-    const percentage =
-        getCoursePercentage(
-            course
-        );
-
-
-    /* ----------------------------------------------
-       Progress Bar
-    ---------------------------------------------- */
+function updateHomeProgress(course) {
+    const completed = getCompletedLessons(course);
+    const count = completed.length;
+    const percentage = getCoursePercentage(course);
 
     const progressBar =
-        document.getElementById(
-            course + "-progress"
-        );
-
+        document.getElementById(`${course}-progress`);
 
     if (progressBar) {
-
-        progressBar.style.width =
-            percentage + "%";
-
-        progressBar.setAttribute(
-            "aria-valuenow",
-            percentage
-        );
-
+        progressBar.style.width = `${percentage}%`;
+        progressBar.setAttribute("aria-valuenow", percentage);
     }
-
-
-    /* ----------------------------------------------
-       Progress Text
-    ---------------------------------------------- */
 
     const progressText =
-        document.getElementById(
-            course + "-progress-text"
-        );
-
+        document.getElementById(`${course}-progress-text`);
 
     if (progressText) {
-
         progressText.textContent =
-            completedCount +
-            " / " +
-            TOTAL_LESSONS +
-            " Lessons Completed";
-
+            `${count} / ${TOTAL_LESSONS} Lessons Completed`;
     }
-
 }
-
-
-/* ==================================================
-   UPDATE ALL HOME COURSE PROGRESS
-================================================== */
 
 function updateHomePageProgress() {
-
-    COURSES.forEach(
-        function (course) {
-
-            updateHomeProgress(
-                course
-            );
-
-        }
-    );
-
+    COURSES.forEach(updateHomeProgress);
 }
 
-
-/* ==================================================
-   CONTACT FORM
-================================================== */
-
 function initializeContactForm() {
+    const form = document.getElementById("contact-form");
 
-    const contactForm =
-        document.getElementById(
-            "contact-form"
-        );
-
-
-    if (!contactForm) {
-
+    if (!form) {
         return;
-
     }
 
-
-    const nameInput =
-        document.getElementById(
-            "name"
-        );
-
-
-    const emailInput =
-        document.getElementById(
-            "email"
-        );
-
-
-    const messageInput =
-        document.getElementById(
-            "message"
-        );
-
-
-    const status =
-        document.getElementById(
-            "contact-status"
-        );
-
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const messageInput = document.getElementById("message");
+    const status = document.getElementById("contact-status");
 
     if (
         !nameInput ||
@@ -659,495 +234,167 @@ function initializeContactForm() {
         !messageInput ||
         !status
     ) {
-
         return;
-
     }
 
+    form.addEventListener("submit", event => {
+        event.preventDefault();
 
-    contactForm.addEventListener(
-        "submit",
-        function (event) {
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
+
+        status.textContent = "";
+        status.className = "contact-status";
+
+        if (name.length < 2) {
+            showFormStatus(
+                status,
+                "Please enter your full name.",
+                "error"
+            );
+            nameInput.focus();
+            return;
+        }
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+            showFormStatus(
+                status,
+                "Please enter a valid email address.",
+                "error"
+            );
+            emailInput.focus();
+            return;
+        }
+
+        if (message.length < 10) {
+            showFormStatus(
+                status,
+                "Please write at least 10 characters.",
+                "error"
+            );
+            messageInput.focus();
+            return;
+        }
+
+        showFormStatus(
+            status,
+            "Message submitted successfully! 🎉",
+            "success"
+        );
+
+        form.reset();
+    });
+}
+
+function showFormStatus(element, message, type) {
+    if (!element) {
+        return;
+    }
+
+    element.textContent = message;
+    element.className = `contact-status ${type}`;
+}
+
+function showNotification(message, type = "success") {
+    document.querySelector(".lms-notification")?.remove();
+
+    const notification = document.createElement("div");
+
+    notification.className = `lms-notification ${type}`;
+    notification.setAttribute("role", "status");
+    notification.textContent = message;
+
+    Object.assign(notification.style, {
+        position: "fixed",
+        top: "25px",
+        right: "25px",
+        zIndex: "9999",
+        padding: "14px 20px",
+        borderRadius: "10px",
+        background: "#0f172a",
+        color: "#ffffff",
+        fontSize: "14px",
+        fontWeight: "700",
+        boxShadow: "0 12px 30px rgba(0,0,0,0.18)",
+        opacity: "0",
+        transform: "translateY(-10px)",
+        transition: "all 0.25s ease"
+    });
+
+    document.body.appendChild(notification);
+
+    requestAnimationFrame(() => {
+        notification.style.opacity = "1";
+        notification.style.transform = "translateY(0)";
+    });
+
+    setTimeout(() => {
+        notification.style.opacity = "0";
+        notification.style.transform = "translateY(-10px)";
+
+        setTimeout(() => {
+            notification.remove();
+        }, 250);
+    }, 2500);
+}
+
+function initializeCourseNavigation() {
+    const course = getCurrentCourse();
+
+    if (!course) {
+        return;
+    }
+
+    const navigation = document.querySelector(".course-navigation");
+
+    if (!navigation) {
+        return;
+    }
+
+    navigation.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {});
+    });
+}
+
+function initializeSmoothLinks() {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener("click", event => {
+            const targetId = link.getAttribute("href");
+
+            if (!targetId || targetId === "#") {
+                return;
+            }
+
+            const target = document.querySelector(targetId);
+
+            if (!target) {
+                return;
+            }
 
             event.preventDefault();
 
-
-            /* --------------------------------------
-               Get Values
-            -------------------------------------- */
-
-            const name =
-                nameInput.value.trim();
-
-
-            const email =
-                emailInput.value.trim();
-
-
-            const message =
-                messageInput.value.trim();
-
-
-            /* --------------------------------------
-               Reset Status
-            -------------------------------------- */
-
-            status.textContent =
-                "";
-
-            status.className =
-                "contact-status";
-
-
-            /* --------------------------------------
-               Name Validation
-            -------------------------------------- */
-
-            if (
-                name.length < 2
-            ) {
-
-                showFormStatus(
-                    status,
-                    "Please enter your full name.",
-                    "error"
-                );
-
-                nameInput.focus();
-
-                return;
-
-            }
-
-
-            /* --------------------------------------
-               Email Validation
-            -------------------------------------- */
-
-            const emailPattern =
-                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-
-            if (
-                !emailPattern.test(
-                    email
-                )
-            ) {
-
-                showFormStatus(
-                    status,
-                    "Please enter a valid email address.",
-                    "error"
-                );
-
-                emailInput.focus();
-
-                return;
-
-            }
-
-
-            /* --------------------------------------
-               Message Validation
-            -------------------------------------- */
-
-            if (
-                message.length < 10
-            ) {
-
-                showFormStatus(
-                    status,
-                    "Please write at least 10 characters.",
-                    "error"
-                );
-
-                messageInput.focus();
-
-                return;
-
-            }
-
-
-            /* --------------------------------------
-               Successful Submission
-            -------------------------------------- */
-
-            showFormStatus(
-                status,
-                "Message submitted successfully! 🎉",
-                "success"
-            );
-
-
-            /* --------------------------------------
-               Reset Form
-            -------------------------------------- */
-
-            contactForm.reset();
-
-        }
-    );
-
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+    });
 }
-
-
-/* ==================================================
-   CONTACT FORM STATUS
-================================================== */
-
-function showFormStatus(
-    element,
-    message,
-    type
-) {
-
-    if (!element) {
-
-        return;
-
-    }
-
-
-    element.textContent =
-        message;
-
-
-    element.className =
-        "contact-status " +
-        type;
-
-}
-
-
-/* ==================================================
-   NOTIFICATION SYSTEM
-================================================== */
-
-function showNotification(
-    message,
-    type = "success"
-) {
-
-    const existing =
-        document.querySelector(
-            ".lms-notification"
-        );
-
-
-    if (existing) {
-
-        existing.remove();
-
-    }
-
-
-    const notification =
-        document.createElement(
-            "div"
-        );
-
-
-    notification.className =
-        "lms-notification " +
-        type;
-
-
-    notification.setAttribute(
-        "role",
-        "status"
-    );
-
-
-    notification.textContent =
-        message;
-
-
-    notification.style.position =
-        "fixed";
-
-
-    notification.style.top =
-        "25px";
-
-
-    notification.style.right =
-        "25px";
-
-
-    notification.style.zIndex =
-        "9999";
-
-
-    notification.style.padding =
-        "14px 20px";
-
-
-    notification.style.borderRadius =
-        "10px";
-
-
-    notification.style.background =
-        "#0f172a";
-
-
-    notification.style.color =
-        "#ffffff";
-
-
-    notification.style.fontSize =
-        "14px";
-
-
-    notification.style.fontWeight =
-        "700";
-
-
-    notification.style.boxShadow =
-        "0 12px 30px rgba(0,0,0,0.18)";
-
-
-    notification.style.opacity =
-        "0";
-
-
-    notification.style.transform =
-        "translateY(-10px)";
-
-
-    notification.style.transition =
-        "all 0.25s ease";
-
-
-    document.body.appendChild(
-        notification
-    );
-
-
-    requestAnimationFrame(
-        function () {
-
-            notification.style.opacity =
-                "1";
-
-            notification.style.transform =
-                "translateY(0)";
-
-        }
-    );
-
-
-    setTimeout(
-        function () {
-
-            notification.style.opacity =
-                "0";
-
-            notification.style.transform =
-                "translateY(-10px)";
-
-
-            setTimeout(
-                function () {
-
-                    notification.remove();
-
-                },
-                250
-            );
-
-        },
-        2500
-    );
-
-}
-
-
-/* ==================================================
-   COURSE NAVIGATION
-================================================== */
-
-function initializeCourseNavigation() {
-
-    const currentCourse =
-        getCurrentCourse();
-
-
-    if (!currentCourse) {
-
-        return;
-
-    }
-
-
-    const courseNavigation =
-        document.querySelector(
-            ".course-navigation"
-        );
-
-
-    if (!courseNavigation) {
-
-        return;
-
-    }
-
-
-    const navigationLinks =
-        courseNavigation.querySelectorAll(
-            "a"
-        );
-
-
-    navigationLinks.forEach(
-        function (link) {
-
-            link.addEventListener(
-                "click",
-                function () {
-
-                    /*
-                       Navigation is intentionally
-                       handled by the HTML links.
-                    */
-
-                }
-            );
-
-        }
-    );
-
-}
-
-
-/* ==================================================
-   SMOOTH INTERNAL LINKS
-================================================== */
-
-function initializeSmoothLinks() {
-
-    const links =
-        document.querySelectorAll(
-            'a[href^="#"]'
-        );
-
-
-    links.forEach(
-        function (link) {
-
-            link.addEventListener(
-                "click",
-                function (event) {
-
-                    const targetId =
-                        link.getAttribute(
-                            "href"
-                        );
-
-
-                    if (
-                        !targetId ||
-                        targetId === "#"
-                    ) {
-
-                        return;
-
-                    }
-
-
-                    const target =
-                        document.querySelector(
-                            targetId
-                        );
-
-
-                    if (!target) {
-
-                        return;
-
-                    }
-
-
-                    event.preventDefault();
-
-
-                    target.scrollIntoView(
-                        {
-                            behavior: "smooth",
-                            block: "start"
-                        }
-                    );
-
-
-                }
-            );
-
-        }
-    );
-
-}
-
-
-/* ==================================================
-   INITIALIZE LMS
-================================================== */
 
 function initializeLMS() {
-
-    /* ----------------------------------------------
-       Course Page
-    ---------------------------------------------- */
-
     updateCourseProgress();
-
     updateLessonButtons();
-
-
-    /* ----------------------------------------------
-       Home Page
-    ---------------------------------------------- */
-
     updateHomePageProgress();
-
-
-    /* ----------------------------------------------
-       Contact Form
-    ---------------------------------------------- */
-
     initializeContactForm();
-
-
-    /* ----------------------------------------------
-       Course Navigation
-    ---------------------------------------------- */
-
     initializeCourseNavigation();
-
-
-    /* ----------------------------------------------
-       Smooth Links
-    ---------------------------------------------- */
-
     initializeSmoothLinks();
-
 }
 
-
-/* ==================================================
-   PAGE READY
-================================================== */
-
-if (
-    document.readyState ===
-    "loading"
-) {
-
-    document.addEventListener(
-        "DOMContentLoaded",
-        initializeLMS
-    );
-
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeLMS);
 } else {
-
     initializeLMS();
-
 }

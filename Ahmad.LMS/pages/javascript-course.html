@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -20,47 +19,61 @@
         content="Ahmad LMS"
     >
 
-    <title>JavaScript Course - Ahmad LMS</title>
+    <title>JavaScript Course | Ahmad LMS</title>
 
     <link
         rel="stylesheet"
         href="../css/course.css"
     >
-
 </head>
-
 
 <body>
 
+<header class="course-header">
 
-<!-- ==================================================
-     COURSE HEADER
-================================================== -->
+    <div class="course-header-content">
 
-<header>
+        <span class="course-label">
+            AHMAD LMS
+        </span>
 
-    <h1>
-        JavaScript Course
-    </h1>
+        <h1>
+            JavaScript Course
+        </h1>
 
-    <p>
-        Learn JavaScript from beginner to practical level
-        with simple and practical lessons.
-    </p>
+        <p>
+            Learn JavaScript from beginner to practical level
+            with clear lessons, practical examples and
+            interactive exercises.
+        </p>
+
+    </div>
 
 </header>
 
 
-
-<!-- ==================================================
-     COURSE PROGRESS
-================================================== -->
-
 <div class="course-progress-box">
 
-    <h3>
-        Course Progress
-    </h3>
+    <div class="progress-header">
+
+        <div>
+            <span class="section-label">
+                YOUR PROGRESS
+            </span>
+
+            <h2>
+                Course Progress
+            </h2>
+        </div>
+
+        <span
+            id="progress-text"
+            class="progress-text"
+        >
+            0 / 7 Lessons Completed
+        </span>
+
+    </div>
 
     <div
         class="progress-bar"
@@ -70,31 +83,19 @@
         aria-valuemax="100"
         aria-valuenow="0"
     >
-
         <div id="course-progress"></div>
-
     </div>
-
-    <p id="progress-text">
-        0 / 7 Lessons Completed
-    </p>
 
 </div>
 
 
-
-<!-- ==================================================
-     MAIN COURSE CONTENT
-================================================== -->
-
 <main>
 
+    <section class="course-intro">
 
-    <!-- ==================================================
-         COURSE INTRODUCTION
-    ================================================== -->
-
-    <section>
+        <span class="section-label">
+            COURSE OVERVIEW
+        </span>
 
         <h2>
             About This Course
@@ -116,19 +117,18 @@
     </section>
 
 
-
-    <!-- ==================================================
-         LESSON 1
-    ================================================== -->
-
     <section
         class="lesson"
         id="lesson-1"
         data-lesson="1"
     >
 
+        <span class="lesson-label">
+            LESSON 01
+        </span>
+
         <h2>
-            Lesson 1: What is JavaScript?
+            What is JavaScript?
         </h2>
 
         <p>
@@ -138,28 +138,25 @@
 
         <p>
             HTML provides structure, CSS provides design,
-            and JavaScript can provide behavior and
+            and JavaScript provides behavior and
             interaction.
         </p>
-
 
         <h3>
             A Simple JavaScript Example
         </h3>
 
-        <pre>&lt;script&gt;
+        <pre><code>&lt;script&gt;
 
     alert("Hello World!");
 
-&lt;/script&gt;</pre>
-
+&lt;/script&gt;</code></pre>
 
         <h3>
             Using JavaScript in an HTML File
         </h3>
 
-        <pre>&lt;script src="js/script.js"&gt;&lt;/script&gt;</pre>
-
+        <pre><code>&lt;script src="js/script.js"&gt;&lt;/script&gt;</code></pre>
 
         <p>
             The
@@ -168,58 +165,36 @@
             HTML document.
         </p>
 
-
         <h3>
             What Can JavaScript Do?
         </h3>
 
         <ul>
-
-            <li>
-                Change HTML content.
-            </li>
-
-            <li>
-                Change CSS styles.
-            </li>
-
-            <li>
-                Respond to user actions.
-            </li>
-
-            <li>
-                Validate forms.
-            </li>
-
-            <li>
-                Create interactive web applications.
-            </li>
-
+            <li>Change HTML content.</li>
+            <li>Change CSS styles.</li>
+            <li>Respond to user actions.</li>
+            <li>Validate forms.</li>
+            <li>Create interactive web applications.</li>
         </ul>
 
+        <div class="lesson-actions">
 
-        <button
-            class="complete-btn"
-            onclick="completeLesson(1)"
-        >
-            ✓ Complete Lesson
-        </button>
+            <button
+                class="complete-btn"
+                type="button"
+                onclick="completeLesson(1)"
+            >
+                ✓ Complete Lesson
+            </button>
 
+            <a href="#lesson-2">
+                Next Lesson →
+            </a>
 
-        <br><br>
-
-
-        <a href="#lesson-2">
-            Next Lesson →
-        </a>
+        </div>
 
     </section>
 
-
-
-    <!-- ==================================================
-         LESSON 2
-    ================================================== -->
 
     <section
         class="lesson"
@@ -227,8 +202,12 @@
         data-lesson="2"
     >
 
+        <span class="lesson-label">
+            LESSON 02
+        </span>
+
         <h2>
-            Lesson 2: Variables and Data Types
+            Variables and Data Types
         </h2>
 
         <p>
@@ -236,17 +215,15 @@
             a JavaScript program can use later.
         </p>
 
-
         <h3>
             Creating Variables
         </h3>
 
-        <pre>let name = "Ahmad";
+        <pre><code>let name = "Ahmad";
 
 const age = 25;
 
-let country = "Pakistan";</pre>
-
+let country = "Pakistan";</code></pre>
 
         <p>
             Modern JavaScript commonly uses
@@ -256,76 +233,66 @@ let country = "Pakistan";</pre>
             for declaring variables.
         </p>
 
-
         <h3>
             Strings
         </h3>
 
-        <pre>let name = "Ahmad";</pre>
+        <pre><code>let name = "Ahmad";</code></pre>
 
         <p>
             A string represents text.
         </p>
 
-
         <h3>
             Numbers
         </h3>
 
-        <pre>let age = 25;
+        <pre><code>let age = 25;
 
-let price = 99.99;</pre>
-
+let price = 99.99;</code></pre>
 
         <h3>
             Boolean Values
         </h3>
 
-        <pre>let isStudent = true;
+        <pre><code>let isStudent = true;
 
-let isCompleted = false;</pre>
-
+let isCompleted = false;</code></pre>
 
         <h3>
             Simple Example
         </h3>
 
-        <pre>let name = "Ahmad";
+        <pre><code>let name = "Ahmad";
 let course = "JavaScript";
 
 console.log(
     name + " is learning " + course
-);</pre>
-
+);</code></pre>
 
         <p>
             Variables are fundamental building blocks
             of JavaScript programs.
         </p>
 
+        <div class="lesson-actions">
 
-        <button
-            class="complete-btn"
-            onclick="completeLesson(2)"
-        >
-            ✓ Complete Lesson
-        </button>
+            <button
+                class="complete-btn"
+                type="button"
+                onclick="completeLesson(2)"
+            >
+                ✓ Complete Lesson
+            </button>
 
+            <a href="#lesson-3">
+                Next Lesson →
+            </a>
 
-        <br><br>
-
-
-        <a href="#lesson-3">
-            Next Lesson →
-        </a>
+        </div>
 
     </section>
 
-
-
-    <!-- ==================================================
-         LESSON 3
-    ================================================== -->
 
     <section
         class="lesson"
@@ -333,8 +300,12 @@ console.log(
         data-lesson="3"
     >
 
+        <span class="lesson-label">
+            LESSON 03
+        </span>
+
         <h2>
-            Lesson 3: Conditions and Operators
+            Conditions and Operators
         </h2>
 
         <p>
@@ -342,36 +313,33 @@ console.log(
             based on different situations.
         </p>
 
-
         <h3>
             Comparison Operators
         </h3>
 
-        <pre>let age = 20;
+        <pre><code>let age = 20;
 
 console.log(age &gt;= 18);
 
-console.log(age === 20);</pre>
-
+console.log(age === 20);</code></pre>
 
         <h3>
             If Statement
         </h3>
 
-        <pre>let age = 20;
+        <pre><code>let age = 20;
 
 if (age &gt;= 18) {
 
     console.log("You are an adult.");
 
-}</pre>
-
+}</code></pre>
 
         <h3>
             If / Else
         </h3>
 
-        <pre>let age = 16;
+        <pre><code>let age = 16;
 
 if (age &gt;= 18) {
 
@@ -381,14 +349,13 @@ if (age &gt;= 18) {
 
     console.log("Access denied.");
 
-}</pre>
-
+}</code></pre>
 
         <h3>
             Else If
         </h3>
 
-        <pre>let score = 80;
+        <pre><code>let score = 80;
 
 if (score &gt;= 90) {
 
@@ -402,75 +369,40 @@ if (score &gt;= 90) {
 
     console.log("Keep practicing");
 
-}</pre>
-
+}</code></pre>
 
         <h3>
             Common Operators
         </h3>
 
         <ul>
-
-            <li>
-                <strong>+</strong>
-                Addition
-            </li>
-
-            <li>
-                <strong>-</strong>
-                Subtraction
-            </li>
-
-            <li>
-                <strong>*</strong>
-                Multiplication
-            </li>
-
-            <li>
-                <strong>/</strong>
-                Division
-            </li>
-
-            <li>
-                <strong>===</strong>
-                Strict equality
-            </li>
-
-            <li>
-                <strong>&gt;</strong>
-                Greater than
-            </li>
-
-            <li>
-                <strong>&lt;</strong>
-                Less than
-            </li>
-
+            <li><strong>+</strong> Addition</li>
+            <li><strong>-</strong> Subtraction</li>
+            <li><strong>*</strong> Multiplication</li>
+            <li><strong>/</strong> Division</li>
+            <li><strong>===</strong> Strict equality</li>
+            <li><strong>&gt;</strong> Greater than</li>
+            <li><strong>&lt;</strong> Less than</li>
         </ul>
 
+        <div class="lesson-actions">
 
-        <button
-            class="complete-btn"
-            onclick="completeLesson(3)"
-        >
-            ✓ Complete Lesson
-        </button>
+            <button
+                class="complete-btn"
+                type="button"
+                onclick="completeLesson(3)"
+            >
+                ✓ Complete Lesson
+            </button>
 
+            <a href="#lesson-4">
+                Next Lesson →
+            </a>
 
-        <br><br>
-
-
-        <a href="#lesson-4">
-            Next Lesson →
-        </a>
+        </div>
 
     </section>
 
-
-
-    <!-- ==================================================
-         LESSON 4
-    ================================================== -->
 
     <section
         class="lesson"
@@ -478,8 +410,12 @@ if (score &gt;= 90) {
         data-lesson="4"
     >
 
+        <span class="lesson-label">
+            LESSON 04
+        </span>
+
         <h2>
-            Lesson 4: Functions
+            Functions
         </h2>
 
         <p>
@@ -487,43 +423,39 @@ if (score &gt;= 90) {
             to perform a specific task.
         </p>
 
-
         <h3>
             Basic Function
         </h3>
 
-        <pre>function greet() {
+        <pre><code>function greet() {
 
     console.log("Hello Ahmad!");
 
-}</pre>
-
+}</code></pre>
 
         <h3>
             Calling a Function
         </h3>
 
-        <pre>greet();</pre>
-
+        <pre><code>greet();</code></pre>
 
         <h3>
             Function Parameters
         </h3>
 
-        <pre>function greet(name) {
+        <pre><code>function greet(name) {
 
     console.log("Hello " + name);
 
 }
 
-greet("Ahmad");</pre>
-
+greet("Ahmad");</code></pre>
 
         <h3>
             Returning a Value
         </h3>
 
-        <pre>function add(a, b) {
+        <pre><code>function add(a, b) {
 
     return a + b;
 
@@ -531,56 +463,37 @@ greet("Ahmad");</pre>
 
 let result = add(10, 20);
 
-console.log(result);</pre>
-
+console.log(result);</code></pre>
 
         <h3>
             Why Use Functions?
         </h3>
 
         <ul>
-
-            <li>
-                Reuse code.
-            </li>
-
-            <li>
-                Organize programs.
-            </li>
-
-            <li>
-                Reduce repetition.
-            </li>
-
-            <li>
-                Make code easier to maintain.
-            </li>
-
+            <li>Reuse code.</li>
+            <li>Organize programs.</li>
+            <li>Reduce repetition.</li>
+            <li>Make code easier to maintain.</li>
         </ul>
 
+        <div class="lesson-actions">
 
-        <button
-            class="complete-btn"
-            onclick="completeLesson(4)"
-        >
-            ✓ Complete Lesson
-        </button>
+            <button
+                class="complete-btn"
+                type="button"
+                onclick="completeLesson(4)"
+            >
+                ✓ Complete Lesson
+            </button>
 
+            <a href="#lesson-5">
+                Next Lesson →
+            </a>
 
-        <br><br>
-
-
-        <a href="#lesson-5">
-            Next Lesson →
-        </a>
+        </div>
 
     </section>
 
-
-
-    <!-- ==================================================
-         LESSON 5
-    ================================================== -->
 
     <section
         class="lesson"
@@ -588,8 +501,12 @@ console.log(result);</pre>
         data-lesson="5"
     >
 
+        <span class="lesson-label">
+            LESSON 05
+        </span>
+
         <h2>
-            Lesson 5: Arrays and Objects
+            Arrays and Objects
         </h2>
 
         <p>
@@ -597,38 +514,34 @@ console.log(result);</pre>
             store multiple pieces of information.
         </p>
 
-
         <h3>
             Arrays
         </h3>
 
-        <pre>let courses = [
+        <pre><code>let courses = [
     "HTML",
     "CSS",
     "JavaScript"
 ];
 
-console.log(courses[0]);</pre>
-
+console.log(courses[0]);</code></pre>
 
         <p>
             Array indexes normally start from
             <strong>0</strong>.
         </p>
 
-
         <h3>
             Adding an Item
         </h3>
 
-        <pre>courses.push("GitHub");</pre>
-
+        <pre><code>courses.push("GitHub");</code></pre>
 
         <h3>
             Objects
         </h3>
 
-        <pre>let student = {
+        <pre><code>let student = {
 
     name: "Ahmad",
 
@@ -636,27 +549,25 @@ console.log(courses[0]);</pre>
 
     course: "JavaScript"
 
-};</pre>
-
+};</code></pre>
 
         <h3>
             Accessing Object Data
         </h3>
 
-        <pre>console.log(
+        <pre><code>console.log(
     student.name
 );
 
 console.log(
     student.course
-);</pre>
-
+);</code></pre>
 
         <h3>
             Practical Example
         </h3>
 
-        <pre>const user = {
+        <pre><code>const user = {
 
     name: "Ahmad",
 
@@ -668,31 +579,26 @@ console.log(
 
 console.log(
     user.name
-);</pre>
+);</code></pre>
 
+        <div class="lesson-actions">
 
-        <button
-            class="complete-btn"
-            onclick="completeLesson(5)"
-        >
-            ✓ Complete Lesson
-        </button>
+            <button
+                class="complete-btn"
+                type="button"
+                onclick="completeLesson(5)"
+            >
+                ✓ Complete Lesson
+            </button>
 
+            <a href="#lesson-6">
+                Next Lesson →
+            </a>
 
-        <br><br>
-
-
-        <a href="#lesson-6">
-            Next Lesson →
-        </a>
+        </div>
 
     </section>
 
-
-
-    <!-- ==================================================
-         LESSON 6
-    ================================================== -->
 
     <section
         class="lesson"
@@ -700,8 +606,12 @@ console.log(
         data-lesson="6"
     >
 
+        <span class="lesson-label">
+            LESSON 06
+        </span>
+
         <h2>
-            Lesson 6: DOM and Events
+            DOM and Events
         </h2>
 
         <p>
@@ -709,39 +619,35 @@ console.log(
             JavaScript to interact with HTML elements.
         </p>
 
-
         <h3>
             Selecting an Element
         </h3>
 
-        <pre>const title =
-    document.getElementById("title");</pre>
-
+        <pre><code>const title =
+    document.getElementById("title");</code></pre>
 
         <h3>
             Changing Text
         </h3>
 
-        <pre>const title =
+        <pre><code>const title =
     document.getElementById("title");
 
 title.textContent =
-    "Welcome to Ahmad LMS";</pre>
-
+    "Welcome to Ahmad LMS";</code></pre>
 
         <h3>
             Changing CSS
         </h3>
 
-        <pre>title.style.color =
-    "blue";</pre>
-
+        <pre><code>title.style.color =
+    "blue";</code></pre>
 
         <h3>
             Button Click Event
         </h3>
 
-        <pre>const button =
+        <pre><code>const button =
     document.getElementById("myButton");
 
 button.addEventListener(
@@ -751,31 +657,31 @@ button.addEventListener(
         alert("Button clicked!");
 
     }
-);</pre>
-
+);</code></pre>
 
         <h3>
             Practical Example
         </h3>
 
-        <button
-            id="demo-button"
-            type="button"
-        >
-            Click Me
-        </button>
+        <div class="demo-box">
 
-        <p
-            id="demo-message"
-            style="
-                margin-top: 15px;
-                font-weight: 700;
-                color: #2563eb;
-            "
-        >
-            Click the button to see JavaScript in action.
-        </p>
+            <button
+                id="demo-button"
+                type="button"
+                class="demo-button"
+            >
+                Click Me
+            </button>
 
+            <p
+                id="demo-message"
+                class="demo-message"
+                aria-live="polite"
+            >
+                Click the button to see JavaScript in action.
+            </p>
+
+        </div>
 
         <p>
             JavaScript events are important because they
@@ -783,29 +689,24 @@ button.addEventListener(
             such as clicks, typing and form submissions.
         </p>
 
+        <div class="lesson-actions">
 
-        <button
-            class="complete-btn"
-            onclick="completeLesson(6)"
-        >
-            ✓ Complete Lesson
-        </button>
+            <button
+                class="complete-btn"
+                type="button"
+                onclick="completeLesson(6)"
+            >
+                ✓ Complete Lesson
+            </button>
 
+            <a href="#lesson-7">
+                Next Lesson →
+            </a>
 
-        <br><br>
-
-
-        <a href="#lesson-7">
-            Next Lesson →
-        </a>
+        </div>
 
     </section>
 
-
-
-    <!-- ==================================================
-         LESSON 7
-    ================================================== -->
 
     <section
         class="lesson"
@@ -813,8 +714,12 @@ button.addEventListener(
         data-lesson="7"
     >
 
+        <span class="lesson-label">
+            LESSON 07
+        </span>
+
         <h2>
-            Lesson 7: Form Validation and Practical JavaScript
+            Form Validation and Practical JavaScript
         </h2>
 
         <p>
@@ -823,34 +728,31 @@ button.addEventListener(
             processed.
         </p>
 
-
         <h3>
             Basic Form Validation
         </h3>
 
-        <pre>const name =
+        <pre><code>const name =
     document.getElementById("name").value;
 
 if (name.trim() === "") {
 
     alert("Please enter your name.");
 
-}</pre>
-
+}</code></pre>
 
         <h3>
             Email Validation Concept
         </h3>
 
-        <pre>const email =
+        <pre><code>const email =
     document.getElementById("email").value;
 
 if (!email.includes("@")) {
 
     alert("Enter a valid email.");
 
-}</pre>
-
+}</code></pre>
 
         <h3>
             Combining HTML, CSS and JavaScript
@@ -858,11 +760,10 @@ if (!email.includes("@")) {
 
         <p>
             A modern website often uses all three technologies
-            together:
+            together.
         </p>
 
         <ul>
-
             <li>
                 <strong>HTML</strong>
                 creates the structure.
@@ -877,9 +778,7 @@ if (!email.includes("@")) {
                 <strong>JavaScript</strong>
                 adds interaction and functionality.
             </li>
-
         </ul>
-
 
         <h3>
             Practical Example
@@ -887,37 +786,41 @@ if (!email.includes("@")) {
 
         <form
             id="practice-form"
+            class="practice-form"
         >
 
-            <label for="practice-name">
-                Your Name
-            </label>
+            <div class="form-field">
 
-            <input
-                type="text"
-                id="practice-name"
-                placeholder="Enter your name"
-            >
+                <label for="practice-name">
+                    Your Name
+                </label>
 
+                <input
+                    type="text"
+                    id="practice-name"
+                    name="practice-name"
+                    placeholder="Enter your name"
+                    autocomplete="name"
+                    minlength="2"
+                    required
+                >
+
+            </div>
 
             <button
                 type="submit"
+                class="demo-button"
             >
                 Test JavaScript
             </button>
 
         </form>
 
-
         <p
             id="practice-result"
-            style="
-                margin-top: 15px;
-                font-weight: 700;
-                text-align: center;
-            "
+            class="practice-result"
+            aria-live="polite"
         ></p>
-
 
         <h3>
             Final Challenge
@@ -929,15 +832,14 @@ if (!email.includes("@")) {
             JavaScript to make the button interactive.
         </p>
 
-
         <p>
             Congratulations! You have reached the final
             lesson of the JavaScript course.
         </p>
 
-
         <button
             class="complete-btn"
+            type="button"
             onclick="completeLesson(7)"
         >
             ✓ Complete Lesson
@@ -946,12 +848,11 @@ if (!email.includes("@")) {
     </section>
 
 
+    <section class="course-summary">
 
-    <!-- ==================================================
-         WHAT YOU WILL LEARN
-    ================================================== -->
-
-    <section>
+        <span class="section-label">
+            COURSE OUTCOMES
+        </span>
 
         <h2>
             What You Will Learn
@@ -963,72 +864,37 @@ if (!email.includes("@")) {
             JavaScript can make websites interactive.
         </p>
 
-
         <ul>
-
-            <li>
-                Understand what JavaScript is.
-            </li>
-
-            <li>
-                Create and use variables.
-            </li>
-
-            <li>
-                Understand basic data types.
-            </li>
-
-            <li>
-                Use conditions and operators.
-            </li>
-
-            <li>
-                Create and use functions.
-            </li>
-
-            <li>
-                Work with arrays and objects.
-            </li>
-
-            <li>
-                Understand DOM manipulation.
-            </li>
-
-            <li>
-                Handle user events.
-            </li>
-
-            <li>
-                Perform basic form validation.
-            </li>
-
-            <li>
-                Combine HTML, CSS and JavaScript.
-            </li>
-
+            <li>Understand what JavaScript is.</li>
+            <li>Create and use variables.</li>
+            <li>Understand basic data types.</li>
+            <li>Use conditions and operators.</li>
+            <li>Create and use functions.</li>
+            <li>Work with arrays and objects.</li>
+            <li>Understand DOM manipulation.</li>
+            <li>Handle user events.</li>
+            <li>Perform basic form validation.</li>
+            <li>Combine HTML, CSS and JavaScript.</li>
         </ul>
 
     </section>
 
 
-
-    <!-- ==================================================
-         COURSE NAVIGATION
-    ================================================== -->
-
     <section class="course-navigation">
+
+        <span class="section-label">
+            CONTINUE LEARNING
+        </span>
 
         <h2>
             Course Navigation
         </h2>
-
 
         <div class="navigation-buttons">
 
             <a href="../index.html">
                 ← Back to Courses
             </a>
-
 
             <a href="html-course.html">
                 Back to HTML Course
@@ -1038,14 +904,8 @@ if (!email.includes("@")) {
 
     </section>
 
-
 </main>
 
-
-
-<!-- ==================================================
-     FOOTER
-================================================== -->
 
 <footer>
 
@@ -1060,116 +920,51 @@ if (!email.includes("@")) {
 </footer>
 
 
-
-<!-- ==================================================
-     JAVASCRIPT
-================================================== -->
-
-<script
-    src="../js/script.js"
-></script>
-
-
-<!-- ==================================================
-     JAVASCRIPT COURSE DEMOS
-================================================== -->
+<script src="../js/script.js"></script>
 
 <script>
+    const demoButton = document.getElementById("demo-button");
+    const demoMessage = document.getElementById("demo-message");
 
-    /* ==============================================
-       Lesson 6 Demo Button
-    ============================================== */
-
-    const demoButton =
-        document.getElementById("demo-button");
-
-    const demoMessage =
-        document.getElementById("demo-message");
-
-
-    if (
-        demoButton &&
-        demoMessage
-    ) {
-
-        demoButton.addEventListener(
-            "click",
-            function () {
-
-                demoMessage.textContent =
-                    "Great! JavaScript detected your click. 🎉";
-
-            }
-        );
-
+    if (demoButton && demoMessage) {
+        demoButton.addEventListener("click", () => {
+            demoMessage.textContent =
+                "Great! JavaScript detected your click. 🎉";
+        });
     }
 
+    const practiceForm = document.getElementById("practice-form");
+    const practiceName = document.getElementById("practice-name");
+    const practiceResult = document.getElementById("practice-result");
 
-    /* ==============================================
-       Lesson 7 Practice Form
-    ============================================== */
+    if (practiceForm && practiceName && practiceResult) {
+        practiceForm.addEventListener("submit", (event) => {
+            event.preventDefault();
 
-    const practiceForm =
-        document.getElementById("practice-form");
+            const name = practiceName.value.trim();
 
-    const practiceName =
-        document.getElementById("practice-name");
-
-    const practiceResult =
-        document.getElementById("practice-result");
-
-
-    if (
-        practiceForm &&
-        practiceName &&
-        practiceResult
-    ) {
-
-        practiceForm.addEventListener(
-            "submit",
-            function (event) {
-
-                event.preventDefault();
-
-
-                const name =
-                    practiceName.value.trim();
-
-
-                if (
-                    name.length < 2
-                ) {
-
-                    practiceResult.textContent =
-                        "Please enter at least 2 characters.";
-
-                    practiceResult.style.color =
-                        "#dc2626";
-
-                    return;
-
-                }
-
-
+            if (name.length < 2) {
                 practiceResult.textContent =
-                    "Hello " +
-                    name +
-                    "! JavaScript is working correctly. ✓";
+                    "Please enter at least 2 characters.";
 
+                practiceResult.className =
+                    "practice-result error";
 
-                practiceResult.style.color =
-                    "#059669";
+                practiceName.focus();
 
-
-                practiceForm.reset();
-
+                return;
             }
-        );
 
+            practiceResult.textContent =
+                `Hello ${name}! JavaScript is working correctly. ✓`;
+
+            practiceResult.className =
+                "practice-result success";
+
+            practiceForm.reset();
+        });
     }
-
 </script>
-
 
 </body>
 

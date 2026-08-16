@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Review your ShopEasy shopping cart and proceed to checkout."
+    >
+
     <title>Shopping Cart - ShopEasy</title>
 
     <link rel="stylesheet" href="css/style.css">
@@ -10,86 +17,122 @@
 
 <body>
 
-<header>
+    <header>
+        <div class="logo">
+            <a href="index.html" aria-label="ShopEasy Home">
+                <h2>ShopEasy</h2>
+            </a>
+        </div>
 
-    <div class="logo">
-        <h2>ShopEasy</h2>
-    </div>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="wishlist.html">Wishlist</a></li>
-            <li><a href="cart.html">Cart</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
-    </nav>
+                <li>
+                    <a href="wishlist.html">Wishlist</a>
+                </li>
 
-    <div class="icons">
+                <li>
+                    <a
+                        href="cart.html"
+                        aria-current="page"
+                    >
+                        Cart
+                    </a>
+                </li>
 
-        <a href="wishlist.html">
-            ❤️ Wishlist (<span id="wishlist-count">0</span>)
-        </a>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+            </ul>
+        </nav>
 
-        <a href="cart.html">
-            🛒 Cart (<span id="cart-count">0</span>)
-        </a>
+        <div class="icons">
+            <a href="wishlist.html">
+                ❤️ Wishlist
+                (<span id="wishlist-count">0</span>)
+            </a>
 
-    </div>
+            <a href="cart.html">
+                🛒 Cart
+                (<span id="cart-count">0</span>)
+            </a>
+        </div>
+    </header>
 
-</header>
+    <main>
 
-<section class="cart-page">
+        <section
+            class="cart-page"
+            aria-labelledby="cart-title"
+        >
 
-    <h1>🛒 My Shopping Cart</h1>
+            <h1 id="cart-title">
+                🛒 My Shopping Cart
+            </h1>
 
-    <div id="cart-items">
+            <div id="cart-items"></div>
 
-    </div>
+            <div id="emptyCart">
+                <h2>
+                    Your Cart is Empty
+                </h2>
 
-    <div id="emptyCart">
+                <a
+                    href="index.html"
+                    class="btn"
+                >
+                    Continue Shopping
+                </a>
+            </div>
 
-        <h2>Your Cart is Empty</h2>
+        </section>
 
-        <a href="index.html" class="btn">
-            Continue Shopping
-        </a>
+        <section
+            class="cart-summary"
+            aria-labelledby="summary-title"
+        >
 
-    </div>
-    </section>
+            <h2 id="summary-title">
+                Cart Summary
+            </h2>
 
-    <section class="cart-summary">
+            <p>
+                <span>Subtotal</span>
+                <span id="subtotal">$0</span>
+            </p>
 
-        <h2>Cart Summary</h2>
+            <p>
+                <span>Shipping</span>
+                <span>Free</span>
+            </p>
 
-        <p>
-            Subtotal
-            <span id="subtotal">$0</span>
-        </p>
+            <h3>
+                <span>Total</span>
+                <span id="total">$0</span>
+            </h3>
 
-        <p>
-            Shipping
-            <span>Free</span>
-        </p>
+            <a
+                href="checkout.html"
+                class="btn checkout-btn"
+            >
+                Proceed to Checkout
+            </a>
 
-        <h3>
-            Total
-            <span id="total">$0</span>
-        </h3>
+        </section>
 
-        <a href="checkout.html" class="btn checkout-btn">
-    Proceed to Checkout
-</a>
-
-    </section>
+    </main>
 
     <footer>
-
-        <p>© 2026 ShopEasy. All Rights Reserved.</p>
-
+        <p>
+            © 2026 ShopEasy. All Rights Reserved.
+        </p>
     </footer>
 
     <script src="js/script.js"></script>
 
 </body>
+
 </html>

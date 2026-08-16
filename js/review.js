@@ -1,458 +1,213 @@
-/* =========================================================
-   AHMAD ALI PORTFOLIO
-   PROFESSIONAL REVIEW SYSTEM
-   review.js
-   ========================================================= */
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
 
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    onSnapshot,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.16.0/firebase-firestore.js";
 
-/* =========================================================
-   01. STORAGE SETTINGS
-   ========================================================= */
+const firebaseConfig = {
+    apiKey: "AIzaSyC0S0QLmZTHtCEF_Z9hvCIzB_x7NsORtx0",
+    authDomain: "ahmad-portfolio-92bbb.firebaseapp.com",
+    projectId: "ahmad-portfolio-92bbb",
+    storageBucket: "ahmad-portfolio-92bbb.firebasestorage.app",
+    messagingSenderId: "572123930275",
+    appId: "1:572123930275:web:4ac22d1b7c7f088b87a916"
+};
 
-const REVIEW_STORAGE_KEY = "portfolioReviews";
-
-
-/* =========================================================
-   02. GET REVIEWS FROM LOCAL STORAGE
-   ========================================================= */
-
-function getReviews() {
-
-    try {
-
-        const savedReviews =
-            JSON.parse(
-                localStorage.getItem(
-                    REVIEW_STORAGE_KEY
-                )
-            );
-
-        if (Array.isArray(savedReviews)) {
-
-            return savedReviews;
-        }
-
-    } catch (error) {
-
-        console.error(
-            "Unable to load portfolio reviews.",
-            error
-        );
-    }
-
-    return [];
-}
-
-
-/* =========================================================
-   03. SAVE REVIEWS
-   ========================================================= */
-
-function saveReviews(reviews) {
-
-    try {
-
-        localStorage.setItem(
-            REVIEW_STORAGE_KEY,
-            JSON.stringify(reviews)
-        );
-
-    } catch (error) {
-
-        console.error(
-            "Unable to save portfolio reviews.",
-            error
-        );
-    }
-}
-
-
-/* =========================================================
-   04. SAFE TEXT
-   ========================================================= */
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const reviewsCollection = collection(db, "reviews");
 
 function escapeHTML(text) {
-
-    const div =
-        document.createElement("div");
-
+    const div = document.createElement("div");
     div.textContent = text;
-
     return div.innerHTML;
 }
 
+function showReviews(reviews) {
+    const reviewList = document.getElementById("reviewList");
 
-/* =========================================================
-   05. UPDATE HOME RATING
-   ========================================================= */
-
-function updateHomeRating() {
-
-    const averageRating =
-        document.getElementById(
-            "averageRating"
-        );
-
-    const totalReviews =
-        document.getElementById(
-            "totalReviews"
-        );
-
-
-    if (
-        !averageRating ||
-        !totalReviews
-    ) {
-
-        return;
-    }
-
-
-    const reviews =
-        getReviews();
-
-
-    totalReviews.textContent =
-        reviews.length;
-
-
-    if (reviews.length === 0) {
-
-        averageRating.textContent =
-            "0.0";
-
-        return;
-    }
-
-
-    let totalRating = 0;
-
-
-    reviews.forEach(
-        function (review) {
-
-            totalRating +=
-                Number(review.rating);
-
-        }
-    );
-
-
-    const average =
-        totalRating /
-        reviews.length;
-
-
-    averageRating.textContent =
-        average.toFixed(1);
-}
-
-
-/* =========================================================
-   06. DISPLAY REVIEWS
-   ========================================================= */
-
-function showReviews() {
-
-    const reviewList =
-        document.getElementById(
-            "reviewList"
-        );
-
-
-    if (!reviewList) {
-
-        return;
-    }
-
-
-    const reviews =
-        getReviews();
-
+    if (!reviewList) return;
 
     reviewList.innerHTML = "";
 
-
-    if (reviews.length === 0) {
-
+    if (!reviews.length) {
         reviewList.innerHTML = `
-
             <div class="review-card">
-
-                <h3>
-                    No Reviews Yet
-                </h3>
-
-                <p>
-                    Be the first visitor to leave
-                    a review for Ahmad's portfolio.
-                </p>
-
+                <h3>No Reviews Yet</h3>
+                <p>Be the first visitor to leave a review.</p>
             </div>
-
         `;
-
         return;
     }
 
+    reviews.sort((a, b) => {
+        const dateA = a.createdAt?.toMillis?.() || 0;
+        const dateB = b.createdAt?.toMillis?.() || 0;
+        return dateB - dateA;
+    });
 
-    reviews.forEach(
-        function (review) {
+    reviews.forEach((review) => {
+        const card = document.createElement("div");
+        card.className = "review-card";
 
-            const reviewCard =
-                document.createElement(
-                    "div"
-                );
+        const name = escapeHTML(review.name || "Anonymous");
+        const message = escapeHTML(review.message || "");
+        const rating = Number(review.rating || 0);
+        const stars = "⭐".repeat(Math.max(0, Math.min(5, rating)));
 
+        card.innerHTML = `
+            <h3>${name}</h3>
+            <p>${stars} ${rating}/5</p>
+            <p>${message}</p>
+        `;
 
-            reviewCard.className =
-                "review-card";
+        reviewList.appendChild(card);
+    });
+}
 
+function updateHomeRating(reviews) {
+    const averageRating = document.getElementById("averageRating");
+    const totalReviews = document.getElementById("totalReviews");
 
-            const name =
-                escapeHTML(
-                    review.name
-                );
+    if (!averageRating || !totalReviews) return;
 
+    totalReviews.textContent = reviews.length;
 
-            const message =
-                escapeHTML(
-                    review.message
-                );
+    if (!reviews.length) {
+        averageRating.textContent = "—";
+        return;
+    }
 
+    const total = reviews.reduce(
+        (sum, review) => sum + Number(review.rating || 0),
+        0
+    );
 
-            const rating =
-                Number(review.rating);
+    averageRating.textContent =
+        (total / reviews.length).toFixed(1);
+}
 
+function loadReviews() {
+    onSnapshot(
+        reviewsCollection,
+        (snapshot) => {
+            const reviews = [];
 
-            reviewCard.innerHTML = `
+            snapshot.forEach((doc) => {
+                reviews.push({
+                    id: doc.id,
+                    ...doc.data()
+                });
+            });
 
-                <h3>
-                    ${name}
-                </h3>
+            showReviews(reviews);
+            updateHomeRating(reviews);
+        },
+        (error) => {
+            console.error(error);
 
-                <p>
-                    ⭐ ${rating}/5
-                </p>
+            const reviewList =
+                document.getElementById("reviewList");
 
-                <p>
-                    ${message}
-                </p>
-
-            `;
-
-
-            reviewList.appendChild(
-                reviewCard
-            );
-
+            if (reviewList) {
+                reviewList.innerHTML = `
+                    <div class="review-card">
+                        <h3>Unable to load reviews</h3>
+                        <p>Please try again later.</p>
+                    </div>
+                `;
+            }
         }
     );
 }
 
+function initReviewForm() {
+    const reviewForm =
+        document.getElementById("reviewForm");
 
-/* =========================================================
-   07. REVIEW FORM
-   ========================================================= */
+    if (!reviewForm) return;
 
-const reviewForm =
-    document.getElementById(
-        "reviewForm"
-    );
+    reviewForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
 
+        const nameInput =
+            document.getElementById("name");
 
-if (reviewForm) {
+        const ratingInput =
+            document.getElementById("rating");
 
+        const messageInput =
+            document.getElementById("message");
 
-    reviewForm.addEventListener(
-        "submit",
-        function (event) {
+        if (!nameInput || !ratingInput || !messageInput) {
+            return;
+        }
 
-            event.preventDefault();
+        const name = nameInput.value.trim();
+        const rating = Number(ratingInput.value);
+        const message = messageInput.value.trim();
 
+        if (name.length < 2) {
+            alert("Please enter your name.");
+            nameInput.focus();
+            return;
+        }
 
-            /* =========================
-               GET INPUTS
-            ========================= */
+        if (rating < 1 || rating > 5) {
+            alert("Please select a rating between 1 and 5.");
+            ratingInput.focus();
+            return;
+        }
 
-            const nameInput =
-                document.getElementById(
-                    "name"
-                );
+        if (message.length < 5) {
+            alert("Please write a short review.");
+            messageInput.focus();
+            return;
+        }
 
+        const button =
+            reviewForm.querySelector(
+                "button[type='submit']"
+            );
 
-            const ratingInput =
-                document.getElementById(
-                    "rating"
-                );
+        if (button) {
+            button.disabled = true;
+            button.textContent = "Submitting...";
+        }
 
-
-            const messageInput =
-                document.getElementById(
-                    "message"
-                );
-
-
-            if (
-                !nameInput ||
-                !ratingInput ||
-                !messageInput
-            ) {
-
-                return;
-            }
-
-
-            const name =
-                nameInput.value.trim();
-
-
-            const rating =
-                ratingInput.value;
-
-
-            const message =
-                messageInput.value.trim();
-
-
-            /* =========================
-               VALIDATION
-            ========================= */
-
-            if (name.length < 2) {
-
-                alert(
-                    "Please enter your name."
-                );
-
-                nameInput.focus();
-
-                return;
-            }
-
-
-            if (
-                rating === "" ||
-                Number(rating) < 1 ||
-                Number(rating) > 5
-            ) {
-
-                alert(
-                    "Please select a rating between 1 and 5."
-                );
-
-                ratingInput.focus();
-
-                return;
-            }
-
-
-            if (message.length < 5) {
-
-                alert(
-                    "Please write a short review."
-                );
-
-                messageInput.focus();
-
-                return;
-            }
-
-
-            /* =========================
-               CREATE REVIEW
-            ========================= */
-
-            const newReview = {
-
+        try {
+            await addDoc(reviewsCollection, {
                 name: name,
-
-                rating: Number(rating),
-
+                rating: rating,
                 message: message,
-
-                date:
-                    new Date()
-                    .toISOString()
-
-            };
-
-
-            /* =========================
-               GET OLD REVIEWS
-            ========================= */
-
-            const reviews =
-                getReviews();
-
-
-            /* =========================
-               ADD NEW REVIEW
-            ========================= */
-
-            reviews.unshift(
-                newReview
-            );
-
-
-            /* =========================
-               SAVE
-            ========================= */
-
-            saveReviews(
-                reviews
-            );
-
-
-            /* =========================
-               RESET FORM
-            ========================= */
+                createdAt: serverTimestamp()
+            });
 
             reviewForm.reset();
 
-
-            /* =========================
-               UPDATE PAGE
-            ========================= */
-
-            showReviews();
-
-            updateHomeRating();
-
-
-            /* =========================
-               SUCCESS
-            ========================= */
+            alert(
+                "Thank you! Your review has been submitted successfully."
+            );
+        } catch (error) {
+            console.error(error);
 
             alert(
-                "🎉 Thank you! Your review has been submitted successfully."
+                "Your review could not be submitted. Please try again."
             );
-
+        } finally {
+            if (button) {
+                button.disabled = false;
+                button.textContent = "Submit Review →";
+            }
         }
-    );
+    });
 }
 
-
-/* =========================================================
-   08. PAGE LOAD
-   ========================================================= */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-        showReviews();
-
-        updateHomeRating();
-
-    }
-);
-
-
-/* =========================================================
-   09. ALSO RUN IMMEDIATELY
-   ========================================================= */
-
-showReviews();
-
-updateHomeRating();
+document.addEventListener("DOMContentLoaded", () => {
+    initReviewForm();
+    loadReviews();
+});

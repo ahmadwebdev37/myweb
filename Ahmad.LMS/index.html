@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -12,7 +11,7 @@
 
     <meta
         name="description"
-        content="Ahmad LMS - A professional learning platform for learning HTML, CSS and JavaScript."
+        content="Ahmad LMS — Learn HTML, CSS and JavaScript through structured lessons, practical exercises and real-world projects."
     >
 
     <meta
@@ -26,71 +25,42 @@
         rel="stylesheet"
         href="css/style.css"
     >
-
 </head>
 
-
 <body>
-
-
-<!-- ==================================================
-     HEADER
-================================================== -->
 
 <header class="site-header">
 
     <div class="container header-content">
 
-        <div class="brand">
+        <a
+            href="#home"
+            class="brand-link"
+            aria-label="Ahmad LMS Home"
+        >
+            <span class="brand-mark">A</span>
 
-            <a
-                href="#home"
-                class="brand-link"
-                aria-label="Ahmad LMS Home"
-            >
+            <span class="brand-text">
 
-                <span class="brand-mark">
-                    A
+                <span class="brand-name">
+                    Ahmad LMS
                 </span>
 
-                <div class="brand-text">
+                <span class="brand-tagline">
+                    Learn. Build. Grow.
+                </span>
 
-                    <span class="brand-name">
-                        Ahmad LMS
-                    </span>
-
-                    <span class="brand-tagline">
-                        Learn. Build. Grow.
-                    </span>
-
-                </div>
-
-            </a>
-
-        </div>
-
+            </span>
+        </a>
 
         <nav
             class="main-navigation"
             aria-label="Main navigation"
         >
-
-            <a href="#home">
-                Home
-            </a>
-
-            <a href="#courses">
-                Courses
-            </a>
-
-            <a href="#about">
-                About
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
+            <a href="#home">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
         </nav>
 
     </div>
@@ -98,1152 +68,865 @@
 </header>
 
 
-
-<!-- ==================================================
-     MAIN CONTENT
-================================================== -->
-
 <main>
 
+    <section
+        id="home"
+        class="hero-section"
+    >
 
-<!-- ==================================================
-     HERO SECTION
-================================================== -->
+        <div class="container hero-content">
 
-<section
-    id="home"
-    class="hero-section"
->
+            <div class="hero-text">
 
-    <div class="container hero-content">
-
-
-        <div class="hero-text">
-
-            <span class="hero-badge">
-                Professional Web Development Learning
-            </span>
-
-            <h1>
-                Build Your Future
-                <span>
-                    With Web Development
+                <span class="hero-badge">
+                    Professional Web Development Learning
                 </span>
-            </h1>
 
-            <p class="hero-description">
+                <h1>
+                    Build Your Future
+                    <span>With Web Development</span>
+                </h1>
 
-                Learn HTML, CSS and JavaScript through
-                structured lessons, practical examples
-                and real-world projects.
+                <p class="hero-description">
+                    Learn HTML, CSS and JavaScript through
+                    structured lessons, practical exercises
+                    and real-world projects.
+                </p>
 
-            </p>
+                <div class="hero-actions">
 
+                    <a
+                        href="#courses"
+                        class="btn btn-primary"
+                    >
+                        Explore Courses
+                        <span aria-hidden="true">→</span>
+                    </a>
 
-            <div class="hero-actions">
+                    <a
+                        href="#about"
+                        class="btn btn-secondary"
+                    >
+                        Learn More
+                    </a>
 
-                <a
-                    href="#courses"
-                    class="btn btn-primary"
-                >
-                    Explore Courses
-                    <span aria-hidden="true">
-                        →
-                    </span>
-                </a>
+                </div>
 
+                <div class="hero-highlights">
 
-                <a
-                    href="#about"
-                    class="btn btn-secondary"
-                >
-                    Learn More
-                </a>
+                    <div class="hero-highlight">
+                        <strong>3+</strong>
+                        <span>Professional Courses</span>
+                    </div>
+
+                    <div class="hero-highlight">
+                        <strong>20+</strong>
+                        <span>Practical Lessons</span>
+                    </div>
+
+                    <div class="hero-highlight">
+                        <strong>100%</strong>
+                        <span>Practical Learning</span>
+                    </div>
+
+                </div>
 
             </div>
 
 
-            <div class="hero-highlights">
+            <div class="hero-visual">
 
-                <div class="hero-highlight">
+                <div class="developer-card">
 
-                    <strong>
-                        3+
-                    </strong>
+                    <div class="developer-card-top">
 
-                    <span>
-                        Professional Courses
-                    </span>
+                        <span class="status-dot"></span>
+
+                        <span>Ahmad Web Dev</span>
+
+                        <span
+                            class="window-dots"
+                            aria-hidden="true"
+                        >
+                            • • •
+                        </span>
+
+                    </div>
+
+                    <div class="developer-code">
+
+                        <p>
+                            <span class="code-purple">const</span>
+                            developer =
+                            <span class="code-green">"Ahmad"</span>;
+                        </p>
+
+                        <p>
+                            <span class="code-purple">const</span>
+                            skills = [
+                            <span class="code-green">"HTML"</span>,
+                            <span class="code-green">"CSS"</span>,
+                            <span class="code-green">"JavaScript"</span>
+                            ];
+                        </p>
+
+                        <p>
+                            developer.<span class="code-blue">build</span>(
+                            <span class="code-green">"Modern Websites"</span>
+                            );
+                        </p>
+
+                    </div>
+
+                    <div class="developer-stats">
+
+                        <div>
+                            <strong>03</strong>
+                            <span>Courses</span>
+                        </div>
+
+                        <div>
+                            <strong>07</strong>
+                            <span>Lessons</span>
+                        </div>
+
+                        <div>
+                            <strong>∞</strong>
+                            <span>Practice</span>
+                        </div>
+
+                    </div>
 
                 </div>
 
+            </div>
 
-                <div class="hero-highlight">
+        </div>
 
-                    <strong>
-                        20+
-                    </strong>
-
-                    <span>
-                        Practical Lessons
-                    </span>
-
-                </div>
+    </section>
 
 
-                <div class="hero-highlight">
+    <section class="intro-section">
 
-                    <strong>
-                        100%
-                    </strong>
+        <div class="container">
 
-                    <span>
+            <div class="section-heading centered">
+
+                <span class="section-label">
+                    LEARNING PLATFORM
+                </span>
+
+                <h2>
+                    Everything You Need to Start Building
+                </h2>
+
+                <p>
+                    Ahmad LMS provides a practical and structured
+                    path for learning the foundations of modern
+                    web development.
+                </p>
+
+            </div>
+
+            <div class="feature-grid">
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        &lt;/&gt;
+                    </div>
+
+                    <h3>
                         Practical Learning
-                    </span>
+                    </h3>
 
-                </div>
+                    <p>
+                        Understand concepts through practical
+                        examples and real website structures.
+                    </p>
+
+                </article>
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        ✓
+                    </div>
+
+                    <h3>
+                        Track Your Progress
+                    </h3>
+
+                    <p>
+                        Complete lessons and track your learning
+                        progress as you move through each course.
+                    </p>
+
+                </article>
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">
+                        ⚡
+                    </div>
+
+                    <h3>
+                        Build Real Skills
+                    </h3>
+
+                    <p>
+                        Turn fundamental concepts into practical
+                        skills through hands-on web development.
+                    </p>
+
+                </article>
 
             </div>
 
         </div>
 
+    </section>
 
 
-        <div class="hero-visual">
+    <section
+        id="courses"
+        class="courses-section"
+    >
 
-            <div class="developer-card">
+        <div class="container">
 
-                <div class="developer-card-top">
+            <div class="section-heading centered">
 
-                    <span class="status-dot"></span>
+                <span class="section-label">
+                    OUR COURSES
+                </span>
 
-                    <span>
-                        Ahmad Web Dev
-                    </span>
+                <h2>
+                    Master the Core of Web Development
+                </h2>
 
-                    <span class="window-dots">
-                        • • •
-                    </span>
+                <p>
+                    Start with the fundamentals and build
+                    your skills step by step.
+                </p>
 
-                </div>
+            </div>
 
 
-                <div class="developer-code">
+            <div class="course-grid">
+
+                <article class="course-card">
+
+                    <div class="course-card-header">
+
+                        <span class="course-number">
+                            01
+                        </span>
+
+                        <span class="course-level">
+                            Beginner
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="course-icon html-icon"
+                        aria-hidden="true"
+                    >
+                        HTML
+                    </div>
+
+                    <h3>
+                        HTML Course
+                    </h3>
 
                     <p>
-                        <span class="code-purple">
-                            const
+                        Learn the structure and foundation
+                        of modern web pages using HTML.
+                    </p>
+
+                    <ul class="course-features">
+
+                        <li>HTML structure</li>
+                        <li>Headings and paragraphs</li>
+                        <li>Links and images</li>
+                        <li>Lists, tables and forms</li>
+
+                    </ul>
+
+                    <div class="home-progress">
+
+                        <div class="progress-header">
+
+                            <span>Your Progress</span>
+
+                            <span id="html-progress-text">
+                                0 / 7 Lessons Completed
+                            </span>
+
+                        </div>
+
+                        <div
+                            class="home-progress-bar"
+                            role="progressbar"
+                            aria-label="HTML course progress"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            aria-valuenow="0"
+                        >
+                            <div id="html-progress"></div>
+                        </div>
+
+                    </div>
+
+                    <a
+                        href="pages/html-course.html"
+                        class="course-button"
+                    >
+                        Start HTML Course
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </article>
+
+
+                <article class="course-card">
+
+                    <div class="course-card-header">
+
+                        <span class="course-number">
+                            02
                         </span>
 
-                        developer
-                        =
-                        <span class="code-green">
-                            "Ahmad"
-                        </span>;
-                    </p>
+                        <span class="course-level">
+                            Beginner
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="course-icon css-icon"
+                        aria-hidden="true"
+                    >
+                        CSS
+                    </div>
+
+                    <h3>
+                        CSS Course
+                    </h3>
 
                     <p>
-                        <span class="code-purple">
-                            const
-                        </span>
-
-                        skills
-                        =
-                        [
-                        <span class="code-green">
-                            "HTML"
-                        </span>,
-                        <span class="code-green">
-                            "CSS"
-                        </span>,
-                        <span class="code-green">
-                            "JavaScript"
-                        </span>
-                        ];
+                        Learn how to create beautiful,
+                        responsive and professional websites.
                     </p>
 
-                    <p>
-                        developer.
-                        <span class="code-blue">
-                            build
-                        </span>(
-                        <span class="code-green">
-                            "Modern Websites"
-                        </span>
-                        );
-                    </p>
+                    <ul class="course-features">
 
-                </div>
+                        <li>CSS fundamentals</li>
+                        <li>Colors and typography</li>
+                        <li>Layout and positioning</li>
+                        <li>Responsive design</li>
+
+                    </ul>
+
+                    <div class="home-progress">
+
+                        <div class="progress-header">
+
+                            <span>Your Progress</span>
+
+                            <span id="css-progress-text">
+                                0 / 7 Lessons Completed
+                            </span>
+
+                        </div>
+
+                        <div
+                            class="home-progress-bar"
+                            role="progressbar"
+                            aria-label="CSS course progress"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            aria-valuenow="0"
+                        >
+                            <div id="css-progress"></div>
+                        </div>
+
+                    </div>
+
+                    <a
+                        href="pages/css-course.html"
+                        class="course-button"
+                    >
+                        Start CSS Course
+                        <span aria-hidden="true">→</span>
+                    </a>
+
+                </article>
 
 
-                <div class="developer-stats">
+                <article class="course-card">
 
-                    <div>
+                    <div class="course-card-header">
 
-                        <strong>
+                        <span class="course-number">
                             03
-                        </strong>
+                        </span>
 
-                        <span>
-                            Courses
+                        <span class="course-level">
+                            Beginner
                         </span>
 
                     </div>
 
+                    <div
+                        class="course-icon js-icon"
+                        aria-hidden="true"
+                    >
+                        JS
+                    </div>
 
-                    <div>
+                    <h3>
+                        JavaScript Course
+                    </h3>
 
-                        <strong>
-                            07
-                        </strong>
+                    <p>
+                        Learn JavaScript fundamentals and
+                        create interactive web experiences.
+                    </p>
 
-                        <span>
-                            Lessons
-                        </span>
+                    <ul class="course-features">
+
+                        <li>JavaScript basics</li>
+                        <li>Variables and functions</li>
+                        <li>Events and interaction</li>
+                        <li>Practical JavaScript</li>
+
+                    </ul>
+
+                    <div class="home-progress">
+
+                        <div class="progress-header">
+
+                            <span>Your Progress</span>
+
+                            <span id="javascript-progress-text">
+                                0 / 7 Lessons Completed
+                            </span>
+
+                        </div>
+
+                        <div
+                            class="home-progress-bar"
+                            role="progressbar"
+                            aria-label="JavaScript course progress"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            aria-valuenow="0"
+                        >
+                            <div id="javascript-progress"></div>
+                        </div>
 
                     </div>
 
+                    <a
+                        href="pages/javascript-course.html"
+                        class="course-button"
+                    >
+                        Start JavaScript Course
+                        <span aria-hidden="true">→</span>
+                    </a>
 
-                    <div>
-
-                        <strong>
-                            ∞
-                        </strong>
-
-                        <span>
-                            Practice
-                        </span>
-
-                    </div>
-
-                </div>
+                </article>
 
             </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
+    <section class="process-section">
 
-<!-- ==================================================
-     TRUST / INTRODUCTION
-================================================== -->
+        <div class="container">
 
-<section class="intro-section">
+            <div class="section-heading centered">
 
-    <div class="container">
+                <span class="section-label">
+                    HOW IT WORKS
+                </span>
 
-        <div class="section-heading centered">
-
-            <span class="section-label">
-                LEARNING PLATFORM
-            </span>
-
-            <h2>
-                Everything You Need to Start Building
-            </h2>
-
-            <p>
-                Ahmad LMS provides a clear and practical
-                path for learning the foundations of modern
-                web development.
-            </p>
-
-        </div>
-
-
-        <div class="feature-grid">
-
-
-            <article class="feature-card">
-
-                <div class="feature-icon">
-                    &lt;/&gt;
-                </div>
-
-                <h3>
-                    Practical Learning
-                </h3>
+                <h2>
+                    A Simple Path to Better Skills
+                </h2>
 
                 <p>
-                    Learn concepts through practical
-                    examples and real website structures.
+                    Follow a structured learning process
+                    designed to keep you moving forward.
                 </p>
 
-            </article>
+            </div>
 
+            <div class="process-grid">
 
-            <article class="feature-card">
+                <div class="process-step">
 
-                <div class="feature-icon">
-                    ✓
-                </div>
-
-                <h3>
-                    Track Your Progress
-                </h3>
-
-                <p>
-                    Complete lessons and keep track of
-                    your learning progress automatically.
-                </p>
-
-            </article>
-
-
-            <article class="feature-card">
-
-                <div class="feature-icon">
-                    ⚡
-                </div>
-
-                <h3>
-                    Build Real Skills
-                </h3>
-
-                <p>
-                    Move from basic concepts toward
-                    practical web development projects.
-                </p>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ==================================================
-     COURSES SECTION
-================================================== -->
-
-<section
-    id="courses"
-    class="courses-section"
->
-
-    <div class="container">
-
-
-        <div class="section-heading centered">
-
-            <span class="section-label">
-                OUR COURSES
-            </span>
-
-            <h2>
-                Master the Core of Web Development
-            </h2>
-
-            <p>
-                Start with the fundamentals and build
-                your skills step by step.
-            </p>
-
-        </div>
-
-
-
-        <div class="course-grid">
-
-
-            <!-- ======================================
-                 HTML COURSE
-            ======================================= -->
-
-            <article class="course-card">
-
-                <div class="course-card-header">
-
-                    <span class="course-number">
+                    <span class="process-number">
                         01
                     </span>
 
-                    <span class="course-level">
-                        Beginner
-                    </span>
+                    <h3>Learn</h3>
+
+                    <p>
+                        Understand each concept through
+                        clear and practical lessons.
+                    </p>
 
                 </div>
 
+                <div class="process-line"></div>
 
-                <div class="course-icon html-icon">
-                    HTML
-                </div>
+                <div class="process-step">
 
-
-                <h3>
-                    HTML Course
-                </h3>
-
-                <p>
-                    Learn the structure and foundation
-                    of modern web pages using HTML.
-                </p>
-
-
-                <ul class="course-features">
-
-                    <li>
-                        HTML structure
-                    </li>
-
-                    <li>
-                        Headings and paragraphs
-                    </li>
-
-                    <li>
-                        Links and images
-                    </li>
-
-                    <li>
-                        Lists, tables and forms
-                    </li>
-
-                </ul>
-
-
-                <div class="home-progress">
-
-                    <div class="progress-header">
-
-                        <span>
-                            Your Progress
-                        </span>
-
-                        <span id="html-progress-text">
-                            0 / 7 Lessons Completed
-                        </span>
-
-                    </div>
-
-
-                    <div
-                        class="home-progress-bar"
-                        role="progressbar"
-                        aria-label="HTML course progress"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                        aria-valuenow="0"
-                    >
-
-                        <div
-                            id="html-progress"
-                        ></div>
-
-                    </div>
-
-                </div>
-
-
-                <a
-                    href="pages/html-course.html"
-                    class="course-button"
-                >
-                    Start HTML Course
-                    <span aria-hidden="true">
-                        →
-                    </span>
-                </a>
-
-            </article>
-
-
-
-            <!-- ======================================
-                 CSS COURSE
-            ======================================= -->
-
-            <article class="course-card">
-
-                <div class="course-card-header">
-
-                    <span class="course-number">
+                    <span class="process-number">
                         02
                     </span>
 
-                    <span class="course-level">
-                        Beginner
-                    </span>
+                    <h3>Practice</h3>
+
+                    <p>
+                        Write code and apply what
+                        you have learned.
+                    </p>
 
                 </div>
 
+                <div class="process-line"></div>
 
-                <div class="course-icon css-icon">
-                    CSS
-                </div>
+                <div class="process-step">
 
-
-                <h3>
-                    CSS Course
-                </h3>
-
-                <p>
-                    Learn how to create beautiful,
-                    responsive and professional websites.
-                </p>
-
-
-                <ul class="course-features">
-
-                    <li>
-                        CSS fundamentals
-                    </li>
-
-                    <li>
-                        Colors and typography
-                    </li>
-
-                    <li>
-                        Layout and positioning
-                    </li>
-
-                    <li>
-                        Responsive design
-                    </li>
-
-                </ul>
-
-
-                <div class="home-progress">
-
-                    <div class="progress-header">
-
-                        <span>
-                            Your Progress
-                        </span>
-
-                        <span id="css-progress-text">
-                            0 / 7 Lessons Completed
-                        </span>
-
-                    </div>
-
-
-                    <div
-                        class="home-progress-bar"
-                        role="progressbar"
-                        aria-label="CSS course progress"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                        aria-valuenow="0"
-                    >
-
-                        <div
-                            id="css-progress"
-                        ></div>
-
-                    </div>
-
-                </div>
-
-
-                <a
-                    href="pages/css-course.html"
-                    class="course-button"
-                >
-                    Start CSS Course
-                    <span aria-hidden="true">
-                        →
-                    </span>
-                </a>
-
-            </article>
-
-
-
-            <!-- ======================================
-                 JAVASCRIPT COURSE
-            ======================================= -->
-
-            <article class="course-card">
-
-                <div class="course-card-header">
-
-                    <span class="course-number">
+                    <span class="process-number">
                         03
                     </span>
 
-                    <span class="course-level">
-                        Beginner
+                    <h3>Build</h3>
+
+                    <p>
+                        Turn your knowledge into
+                        practical web projects.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section
+        id="about"
+        class="about-section"
+    >
+
+        <div class="container about-content">
+
+            <div class="about-visual">
+
+                <div class="about-card">
+
+                    <span class="about-card-label">
+                        AHMAD WEB DEV
                     </span>
 
+                    <h3>
+                        Learn.
+                        <br>
+                        Build.
+                        <br>
+                        Improve.
+                    </h3>
+
+                    <div class="about-card-line"></div>
+
+                    <p>
+                        Practical web development
+                        education for aspiring developers.
+                    </p>
+
                 </div>
 
-
-                <div class="course-icon js-icon">
-                    JS
-                </div>
+            </div>
 
 
-                <h3>
-                    JavaScript Course
-                </h3>
+            <div class="about-text">
+
+                <span class="section-label">
+                    ABOUT AHMAD LMS
+                </span>
+
+                <h2>
+                    A Practical Approach to Web Development
+                </h2>
 
                 <p>
-                    Learn JavaScript fundamentals and
-                    create interactive web experiences.
+                    Ahmad LMS is a learning platform focused
+                    on making web development easier to
+                    understand and practical to learn.
                 </p>
 
+                <p>
+                    The platform provides structured courses
+                    covering HTML, CSS and JavaScript, helping
+                    learners understand the fundamentals and
+                    gradually apply their knowledge to real
+                    projects.
+                </p>
 
-                <ul class="course-features">
+                <div class="about-points">
 
-                    <li>
-                        JavaScript basics
-                    </li>
+                    <div class="about-point">
+                        <span aria-hidden="true">✓</span>
+                        <p>Structured learning path</p>
+                    </div>
 
-                    <li>
-                        Variables and functions
-                    </li>
+                    <div class="about-point">
+                        <span aria-hidden="true">✓</span>
+                        <p>Practical coding examples</p>
+                    </div>
 
-                    <li>
-                        Events and interaction
-                    </li>
+                    <div class="about-point">
+                        <span aria-hidden="true">✓</span>
+                        <p>Progress tracking</p>
+                    </div>
 
-                    <li>
-                        Practical JavaScript
-                    </li>
+                    <div class="about-point">
+                        <span aria-hidden="true">✓</span>
+                        <p>Responsive learning experience</p>
+                    </div>
 
-                </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
-                <div class="home-progress">
+    <section
+        id="contact"
+        class="contact-section"
+    >
 
-                    <div class="progress-header">
+        <div class="container">
 
-                        <span>
-                            Your Progress
+            <div class="section-heading centered">
+
+                <span class="section-label">
+                    GET IN TOUCH
+                </span>
+
+                <h2>
+                    Have a Question?
+                </h2>
+
+                <p>
+                    Send a message and get in touch
+                    about courses, lessons or the platform.
+                </p>
+
+            </div>
+
+
+            <div class="contact-wrapper">
+
+                <div class="contact-info">
+
+                    <span class="contact-label">
+                        CONTACT AHMAD LMS
+                    </span>
+
+                    <h3>
+                        Let's Start a Conversation
+                    </h3>
+
+                    <p>
+                        Whether you have a question about
+                        a course, learning path or the
+                        platform, feel free to send a message.
+                    </p>
+
+                    <div class="contact-detail">
+
+                        <span
+                            class="contact-detail-icon"
+                            aria-hidden="true"
+                        >
+                            @
                         </span>
 
-                        <span id="javascript-progress-text">
-                            0 / 7 Lessons Completed
-                        </span>
+                        <div>
+                            <strong>Email</strong>
+
+                            <p>
+                                Available through the
+                                contact form
+                            </p>
+                        </div>
 
                     </div>
 
 
-                    <div
-                        class="home-progress-bar"
-                        role="progressbar"
-                        aria-label="JavaScript course progress"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                        aria-valuenow="0"
+                    <div class="contact-detail">
+
+                        <span
+                            class="contact-detail-icon"
+                            aria-hidden="true"
+                        >
+                            ✓
+                        </span>
+
+                        <div>
+                            <strong>Learning Support</strong>
+
+                            <p>
+                                Questions about courses
+                                and lessons
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-form-wrapper">
+
+                    <form
+                        id="contact-form"
+                        class="contact-form"
+                        novalidate
                     >
 
-                        <div
-                            id="javascript-progress"
-                        ></div>
+                        <div class="form-group">
 
-                    </div>
+                            <label for="name">
+                                Your Name
+                            </label>
 
-                </div>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                minlength="2"
+                                required
+                            >
 
+                        </div>
 
-                <a
-                    href="pages/javascript-course.html"
-                    class="course-button"
-                >
-                    Start JavaScript Course
-                    <span aria-hidden="true">
-                        →
-                    </span>
-                </a>
 
-            </article>
+                        <div class="form-group">
 
-        </div>
+                            <label for="email">
+                                Email Address
+                            </label>
 
-    </div>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                                required
+                            >
 
-</section>
+                        </div>
 
 
+                        <div class="form-group">
 
-<!-- ==================================================
-     LEARNING PROCESS
-================================================== -->
+                            <label for="message">
+                                Your Message
+                            </label>
 
-<section class="process-section">
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="6"
+                                placeholder="Write your message here..."
+                                minlength="10"
+                                required
+                            ></textarea>
 
-    <div class="container">
+                        </div>
 
 
-        <div class="section-heading centered">
-
-            <span class="section-label">
-                HOW IT WORKS
-            </span>
-
-            <h2>
-                A Simple Path to Better Skills
-            </h2>
-
-            <p>
-                Follow a structured learning process
-                designed to keep you moving forward.
-            </p>
-
-        </div>
-
-
-
-        <div class="process-grid">
-
-
-            <div class="process-step">
-
-                <span class="process-number">
-                    01
-                </span>
-
-                <h3>
-                    Learn
-                </h3>
-
-                <p>
-                    Understand the concept through
-                    clear and simple lessons.
-                </p>
-
-            </div>
-
-
-            <div class="process-line"></div>
-
-
-            <div class="process-step">
-
-                <span class="process-number">
-                    02
-                </span>
-
-                <h3>
-                    Practice
-                </h3>
-
-                <p>
-                    Write code and practice what
-                    you have learned.
-                </p>
-
-            </div>
-
-
-            <div class="process-line"></div>
-
-
-            <div class="process-step">
-
-                <span class="process-number">
-                    03
-                </span>
-
-                <h3>
-                    Build
-                </h3>
-
-                <p>
-                    Turn your knowledge into
-                    practical web projects.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ==================================================
-     ABOUT SECTION
-================================================== -->
-
-<section
-    id="about"
-    class="about-section"
->
-
-    <div class="container about-content">
-
-
-        <div class="about-visual">
-
-            <div class="about-card">
-
-                <span class="about-card-label">
-                    AHMAD WEB DEV
-                </span>
-
-                <h3>
-                    Learn.
-                    <br>
-                    Build.
-                    <br>
-                    Improve.
-                </h3>
-
-                <div class="about-card-line"></div>
-
-                <p>
-                    Practical web development
-                    education for the next generation
-                    of developers.
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="about-text">
-
-            <span class="section-label">
-                ABOUT AHMAD LMS
-            </span>
-
-            <h2>
-                A Practical Approach to Web Development
-            </h2>
-
-            <p>
-                Ahmad LMS is a learning platform focused
-                on making web development easier to
-                understand and more practical to learn.
-            </p>
-
-            <p>
-                The platform provides structured courses
-                covering HTML, CSS and JavaScript, helping
-                learners understand the fundamentals and
-                gradually turn their knowledge into real
-                projects.
-            </p>
-
-
-            <div class="about-points">
-
-                <div class="about-point">
-
-                    <span>
-                        ✓
-                    </span>
-
-                    <p>
-                        Structured learning path
-                    </p>
-
-                </div>
-
-
-                <div class="about-point">
-
-                    <span>
-                        ✓
-                    </span>
-
-                    <p>
-                        Practical coding examples
-                    </p>
-
-                </div>
-
-
-                <div class="about-point">
-
-                    <span>
-                        ✓
-                    </span>
-
-                    <p>
-                        Progress tracking
-                    </p>
-
-                </div>
-
-
-                <div class="about-point">
-
-                    <span>
-                        ✓
-                    </span>
-
-                    <p>
-                        Responsive learning experience
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ==================================================
-     CONTACT SECTION
-================================================== -->
-
-<section
-    id="contact"
-    class="contact-section"
->
-
-    <div class="container">
-
-
-        <div class="section-heading centered">
-
-            <span class="section-label">
-                GET IN TOUCH
-            </span>
-
-            <h2>
-                Have a Question?
-            </h2>
-
-            <p>
-                Send a message and we will be happy
-                to hear from you.
-            </p>
-
-        </div>
-
-
-
-        <div class="contact-wrapper">
-
-
-            <div class="contact-info">
-
-                <span class="contact-label">
-                    CONTACT AHMAD LMS
-                </span>
-
-                <h3>
-                    Let's Start a Conversation
-                </h3>
-
-                <p>
-                    Whether you have a question about
-                    a course, learning path or the
-                    platform, feel free to send us
-                    a message.
-                </p>
-
-
-                <div class="contact-detail">
-
-                    <span class="contact-detail-icon">
-                        @
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            Email
-                        </strong>
-
-                        <p>
-                            Available through the
-                            contact form
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="contact-detail">
-
-                    <span class="contact-detail-icon">
-                        ✓
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            Learning Support
-                        </strong>
-
-                        <p>
-                            Questions about courses
-                            and lessons
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- ======================================
-                 CONTACT FORM
-            ======================================= -->
-
-            <div class="contact-form-wrapper">
-
-                <form
-                    id="contact-form"
-                    class="contact-form"
-                    novalidate
-                >
-
-
-                    <div class="form-group">
-
-                        <label for="name">
-                            Your Name
-                        </label>
-
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Enter your full name"
-                            autocomplete="name"
-                            required
-                            minlength="2"
+                        <button
+                            type="submit"
+                            class="form-submit-button"
                         >
-
-                    </div>
-
-
-
-                    <div class="form-group">
-
-                        <label for="email">
-                            Email Address
-                        </label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Enter your email address"
-                            autocomplete="email"
-                            required
-                        >
-
-                    </div>
+                            Send Message
+                            <span aria-hidden="true">→</span>
+                        </button>
 
 
+                        <p
+                            id="contact-status"
+                            class="contact-status"
+                            aria-live="polite"
+                        ></p>
 
-                    <div class="form-group">
+                    </form>
 
-                        <label for="message">
-                            Your Message
-                        </label>
-
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="6"
-                            placeholder="Write your message here..."
-                            required
-                            minlength="10"
-                        ></textarea>
-
-                    </div>
-
-
-
-                    <button
-                        type="submit"
-                        class="form-submit-button"
-                    >
-
-                        Send Message
-
-                        <span aria-hidden="true">
-                            →
-                        </span>
-
-                    </button>
-
-
-                    <p
-                        id="contact-status"
-                        class="contact-status"
-                        aria-live="polite"
-                    ></p>
-
-
-                </form>
+                </div>
 
             </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
+    <section class="cta-section">
 
-<!-- ==================================================
-     CALL TO ACTION
-================================================== -->
+        <div class="container cta-content">
 
-<section class="cta-section">
-
-    <div class="container cta-content">
-
-        <span class="section-label">
-            START TODAY
-        </span>
-
-        <h2>
-            Ready to Build Your Web Development Skills?
-        </h2>
-
-        <p>
-            Choose a course and start learning
-            step by step.
-        </p>
-
-        <a
-            href="#courses"
-            class="btn btn-light"
-        >
-            Start Learning
-            <span aria-hidden="true">
-                →
+            <span class="section-label">
+                START TODAY
             </span>
-        </a>
 
-    </div>
+            <h2>
+                Ready to Build Your Web Development Skills?
+            </h2>
 
-</section>
+            <p>
+                Choose a course and start learning
+                step by step.
+            </p>
 
+            <a
+                href="#courses"
+                class="btn btn-light"
+            >
+                Start Learning
+                <span aria-hidden="true">→</span>
+            </a>
+
+        </div>
+
+    </section>
 
 </main>
 
 
-
-<!-- ==================================================
-     FOOTER
-================================================== -->
-
 <footer class="site-footer">
 
     <div class="container footer-content">
-
 
         <div class="footer-brand">
 
@@ -1262,25 +945,15 @@
         </div>
 
 
-        <div class="footer-links">
-
-            <a href="#home">
-                Home
-            </a>
-
-            <a href="#courses">
-                Courses
-            </a>
-
-            <a href="#about">
-                About
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
-        </div>
+        <nav
+            class="footer-links"
+            aria-label="Footer navigation"
+        >
+            <a href="#home">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
 
         <div class="footer-bottom">
@@ -1300,13 +973,7 @@
 </footer>
 
 
-
-<!-- ==================================================
-     JAVASCRIPT
-================================================== -->
-
 <script src="js/script.js"></script>
-
 
 </body>
 

@@ -2,129 +2,164 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <meta
+        name="description"
+        content="Create a new ShopEasy account."
+    >
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - ShopEasy</title>
 
-<title>Create Account - ShopEasy</title>
+    <link rel="stylesheet" href="css/style.css">
 
-<link rel="stylesheet" href="css/style.css">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 </head>
 
 <body>
 
-<!-- Header -->
+    <header>
+        <div class="logo">
+            <a
+                href="index.html"
+                aria-label="ShopEasy Home"
+            >
+                ShopEasy
+            </a>
+        </div>
 
-<header>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
 
-<div class="logo">
+                <li>
+                    <a href="wishlist.html">Wishlist</a>
+                </li>
 
-<a href="index.html">ShopEasy</a>
+                <li>
+                    <a href="cart.html">Cart</a>
+                </li>
 
-</div>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-<nav>
+    <main>
+        <section
+            class="register-section"
+            aria-labelledby="register-title"
+        >
 
-<ul>
+            <div class="register-container">
 
-<li><a href="index.html">Home</a></li>
+                <h1 id="register-title">
+                    Create Account
+                </h1>
 
-<li><a href="wishlist.html">Wishlist</a></li>
+                <p>
+                    Create your new ShopEasy account
+                </p>
 
-<li><a href="cart.html">Cart</a></li>
+                <form id="registerForm">
 
-<li><a href="login.html">Login</a></li>
+                    <div class="input-box">
+                        <label for="fullName">
+                            Full Name
+                        </label>
 
-</ul>
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
 
-</nav>
+                    <div class="input-box">
+                        <label for="registerEmail">
+                            Email Address
+                        </label>
 
-</header>
+                        <input
+                            type="email"
+                            id="registerEmail"
+                            name="email"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
 
-<!-- Register Section -->
+                    <div class="input-box">
+                        <label for="registerPassword">
+                            Password
+                        </label>
 
-<section class="register-section">
+                        <input
+                            type="password"
+                            id="registerPassword"
+                            name="password"
+                            placeholder="Create a password"
+                            autocomplete="new-password"
+                            required
+                        >
+                    </div>
 
-<div class="register-container">
+                    <div class="input-box">
+                        <label for="confirmPassword">
+                            Confirm Password
+                        </label>
 
-<h1>Create Account</h1>
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            placeholder="Confirm your password"
+                            autocomplete="new-password"
+                            required
+                        >
+                    </div>
 
-<p>Create your new ShopEasy account</p>
+                    <button
+                        type="submit"
+                        class="btn"
+                    >
+                        Create Account
+                    </button>
 
-<form id="registerForm">
+                    <p class="register-text">
+                        Already have an account?
 
-<div class="input-box">
+                        <a href="login.html">
+                            Login Here
+                        </a>
+                    </p>
 
-<label>Full Name</label>
+                </form>
 
-<input
-type="text"
-id="fullName"
-placeholder="Enter your full name"
-required>
+            </div>
+        </section>
+    </main>
 
-</div>
+    <footer>
+        <p>
+            © 2026 ShopEasy. All Rights Reserved.
+        </p>
+    </footer>
 
-<div class="input-box">
-
-<label>Email Address</label>
-
-<input
-type="email"
-id="registerEmail"
-placeholder="Enter your email"
-required>
-
-</div>
-
-<div class="input-box">
-
-<label>Password</label>
-
-<input
-type="password"
-id="registerPassword"
-placeholder="Create a password"
-required>
-
-</div>
-
-<div class="input-box">
-
-<label>Confirm Password</label>
-
-<input
-type="password"
-id="confirmPassword"
-placeholder="Confirm your password"
-required>
-
-</div>
-
-<button type="submit" class="btn">
-Create Account
-</button>
-
-<p class="register-text">
-Already have an account?
-<a href="login.html">Login Here</a>
-</p>
-
-</form>
-
-</div>
-
-</section>
-<footer>
-    <p>© 2026 ShopEasy. All Rights Reserved.</p>
-</footer>
-
-<script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
+
 </html>

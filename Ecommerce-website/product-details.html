@@ -1,81 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details</title>
+
+    <meta
+        name="description"
+        content="View detailed information about ShopEasy wireless headphones."
+    >
+
+    <title>Wireless Headphones - ShopEasy</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<header>
+    <header>
+        <div class="logo">
+            <a href="index.html" aria-label="ShopEasy Home">
+                <h2>ShopEasy</h2>
+            </a>
+        </div>
 
-    <div class="logo">
-        <h2>ShopEasy</h2>
-    </div>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">Categories</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+                <li>
+                    <a href="shop.html">Shop</a>
+                </li>
 
-</header>
+                <li>
+                    <a href="categories.html">Categories</a>
+                </li>
 
-<section class="product-details">
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="product-image">
+    <main>
 
-        <img src="images/product1.jpg" alt="Wireless Headphones">
+        <section
+            class="product-details"
+            aria-labelledby="product-title"
+        >
 
-    </div>
+            <div class="product-image">
+                <img
+                    src="images/product1.jpg"
+                    alt="Wireless Headphones"
+                >
+            </div>
 
-    <div class="product-info">
+            <div class="product-info">
 
-        <h1>Wireless Headphones</h1>
+                <h1 id="product-title">
+                    Wireless Headphones
+                </h1>
 
-        <h3>⭐⭐⭐⭐⭐ (4.9)</h3>
+                <h3 aria-label="Rated 4.9 out of 5 stars">
+                    ⭐⭐⭐⭐⭐ (4.9)
+                </h3>
 
-        <h2>$49</h2>
+                <h2>
+                    $49
+                </h2>
 
+                <p>
+                    Enjoy premium sound quality with these wireless
+                    headphones. Long battery life, deep bass,
+                    comfortable design, and Bluetooth 5.3 connectivity.
+                </p>
+
+                <button type="button">
+                    Add to Cart
+                </button>
+
+                <button type="button">
+                    Add to Wishlist
+                </button>
+
+            </div>
+        </section>
+
+        <section
+            class="description"
+            aria-labelledby="description-title"
+        >
+
+            <h2 id="description-title">
+                Product Description
+            </h2>
+
+            <p>
+                These wireless headphones provide crystal-clear sound,
+                active noise cancellation, soft ear cushions,
+                and up to 40 hours of battery life.
+                Perfect for music, gaming, work, and travel.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
         <p>
-            Enjoy premium sound quality with these wireless headphones.
-            Long battery life, deep bass, comfortable design,
-            and Bluetooth 5.3 connectivity.
+            © 2026 ShopEasy. All Rights Reserved.
         </p>
+    </footer>
 
-        <button>Add to Cart</button>
-
-        <button>Add to Wishlist</button>
-
-    </div>
-
-</section>
-
-<section class="description">
-
-    <h2>Product Description</h2>
-
-    <p>
-        These wireless headphones provide crystal-clear sound,
-        active noise cancellation, soft ear cushions,
-        and up to 40 hours of battery life.
-        Perfect for music, gaming, work, and travel.
-    </p>
-
-</section>
-
-<footer>
-
-    <p>© 2026 ShopEasy. All Rights Reserved.</p>
-
-</footer>
-
-<script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
+
 </html>

@@ -1,621 +1,532 @@
-// =========================================
-// ShopEasy Professional Script v1.0
-// Part 1
-// =========================================
-
-// Product Database
-
 const products = [
-{
-id: "1",
-name: "Wireless Headphones",
-price: 49,
-image: "images/product1.jpg"
-},
-{
-id: "2",
-name: "Smart Watch",
-price: 79,
-image: "images/product2.jpg"
-},
-{
-id: "3",
-name: "Running Shoes",
-price: 59,
-image: "images/product3.jpg"
-},
-{
-id: "4",
-name: "Backpack",
-price: 39,
-image: "images/product4.jpg"
-}
+    {
+        id: "1",
+        name: "Wireless Headphones",
+        price: 49,
+        image: "images/product1.jpg"
+    },
+    {
+        id: "2",
+        name: "Smart Watch",
+        price: 79,
+        image: "images/product2.jpg"
+    },
+    {
+        id: "3",
+        name: "Running Shoes",
+        price: 59,
+        image: "images/product3.jpg"
+    },
+    {
+        id: "4",
+        name: "Backpack",
+        price: 39,
+        image: "images/product4.jpg"
+    }
 ];
 
-// Local Storage
+const getStorage = (key, fallback = []) => {
+    try {
+        return JSON.parse(localStorage.getItem(key)) ?? fallback;
+    } catch {
+        return fallback;
+    }
+};
 
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-cart = cart.filter(function(item){
+const setStorage = (key, value) => {
+    localStorage.setItem(key, JSON.stringify(value));
+};
 
-return item &&
-item.id &&
-item.name &&
-item.price !== undefined &&
-item.image &&
-item.qty !== undefined;
+let cart = getStorage("cart");
+let wishlist = getStorage("wishlist");
+let orders = getStorage("orders");
+let reviews = getStorage("reviews");
 
-});
+cart = cart.filter(item =>
+    item &&
+    item.id &&
+    item.name &&
+    item.price !== undefined &&
+    item.image &&
+    item.qty !== undefined
+);
 
-localStorage.setItem("cart", JSON.stringify(cart));
+wishlist = wishlist.filter(id =>
+    products.some(product => product.id === id)
+);
 
-let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-
-// Counters
+setStorage("cart", cart);
+setStorage("wishlist", wishlist);
 
 const cartCounter = document.getElementById("cart-count");
 const wishlistCounter = document.getElementById("wishlist-count");
 
-function updateCounters(){
+function updateCounters() {
+    if (cartCounter) {
+        cartCounter.textContent = cart.length;
+    }
 
-if(cartCounter){
-cartCounter.textContent = cart.length;
+    if (wishlistCounter) {
+        wishlistCounter.textContent = wishlist.length;
+    }
 }
 
-if(wishlistCounter){
-wishlistCounter.textContent = wishlist.length;
+function getProduct(id) {
+    return products.find(product => product.id === id);
 }
 
+function findCartItem(id) {
+    return cart.find(item => item.id === id);
+}
+
+function saveCart() {
+    setStorage("cart", cart);
+    updateCounters();
+}
+
+function saveWishlist() {
+    setStorage("wishlist", wishlist);
+    updateCounters();
 }
 
 updateCounters();
-
-// Search
 
 const searchInput = document.getElementById("searchInput");
 const searchBtn = document.getElementById("searchBtn");
+const noResults = document.getElementById("noResults");
 
-function searchProducts(){
+function searchProducts() {
+    if (!searchInput) {
+        return;
+    }
 
-if(!searchInput) return;
+    const searchValue = searchInput.value.toLowerCase().trim();
+    const productCards = document.querySelectorAll(".product-card");
 
-const value = searchInput.value.toLowerCase().trim();
+    let visibleProducts = 0;
 
-document.querySelectorAll(".product-card").forEach(function(card){
+    productCards.forEach(card => {
+        const productName = card.dataset.name?.toLowerCase() || "";
+        const isVisible = productName.includes(searchValue);
 
-const name = card.dataset.name.toLowerCase();
+        card.style.display = isVisible ? "" : "none";
 
-card.style.display = name.includes(value) ? "" : "none";
+        if (isVisible) {
+            visibleProducts++;
+        }
+    });
 
-});
-
+    if (noResults) {
+        noResults.style.display =
+            visibleProducts === 0 ? "block" : "none";
+    }
 }
 
-if(searchBtn){
-searchBtn.addEventListener("click", searchProducts);
+if (searchBtn) {
+    searchBtn.addEventListener("click", searchProducts);
 }
 
-if(searchInput){
-searchInput.addEventListener("keyup", searchProducts);
-}
-// =====================================
-// Final Part 2
-// Add To Cart & Wishlist
-// =====================================
-
-// Add To Cart
-
-document.querySelectorAll(".add-to-cart").forEach(function(button){
-
-button.addEventListener("click",function(){
-
-const id=this.dataset.id;
-
-const product=products.find(function(item){
-
-return item.id===id;
-
-});
-
-const exists=cart.find(function(item){
-
-return item.id===id;
-
-});
-
-if(exists){
-
-alert("Product already in Cart!");
-
-return;
-
+if (searchInput) {
+    searchInput.addEventListener("input", searchProducts);
 }
 
-cart.push({
+function addToCart(id) {
+    const product = getProduct(id);
 
-id:product.id,
+    if (!product) {
+        return;
+    }
 
-name:product.name,
+    if (findCartItem(id)) {
+        alert("Product already in Cart!");
+        return;
+    }
 
-price:product.price,
+    cart.push({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        qty: 1
+    });
 
-image:product.image,
+    saveCart();
 
-qty:1
-
-});
-
-localStorage.setItem("cart",JSON.stringify(cart));
-
-updateCounters();
-
-alert("Product added to Cart!");
-
-});
-
-});
-
-// Wishlist
-
-document.querySelectorAll(".wishlist-btn").forEach(function(button){
-
-button.addEventListener("click",function(){
-
-const id=this.dataset.id;
-
-if(wishlist.includes(id)){
-
-alert("Already in Wishlist!");
-
-return;
-
+    alert("Product added to Cart!");
 }
 
-wishlist.push(id);
-
-localStorage.setItem("wishlist",JSON.stringify(wishlist));
-
-updateCounters();
-
-alert("Added to Wishlist!");
-
+document.querySelectorAll(".add-to-cart").forEach(button => {
+    button.addEventListener("click", () => {
+        addToCart(button.dataset.id);
+    });
 });
 
+function addToWishlist(id) {
+    const product = getProduct(id);
+
+    if (!product) {
+        return;
+    }
+
+    if (wishlist.includes(id)) {
+        alert("Already in Wishlist!");
+        return;
+    }
+
+    wishlist.push(id);
+    saveWishlist();
+
+    alert("Added to Wishlist!");
+}
+
+document.querySelectorAll(".wishlist-btn").forEach(button => {
+    button.addEventListener("click", () => {
+        addToWishlist(button.dataset.id);
+    });
 });
-// =====================================
-// Final Part 3
-// Wishlist Page
-// =====================================
 
 const wishlistItems = document.getElementById("wishlist-items");
 const emptyWishlist = document.getElementById("emptyWishlist");
 
-if (wishlistItems) {
+function renderWishlist() {
+    if (!wishlistItems) {
+        return;
+    }
 
     wishlistItems.innerHTML = "";
 
     if (wishlist.length === 0) {
-
         if (emptyWishlist) {
             emptyWishlist.style.display = "block";
         }
 
-    } else {
-
-        if (emptyWishlist) {
-            emptyWishlist.style.display = "none";
-        }
-
-        wishlist.forEach(function(id){
-
-            const product = products.find(function(item){
-                return item.id === id;
-            });
-
-            if(product){
-
-                wishlistItems.innerHTML += `
-                <div class="cart-item">
-
-                    <img src="${product.image}" alt="${product.name}">
-
-                    <div>
-
-                        <h3>${product.name}</h3>
-
-                        <p>$${product.price}</p>
-
-                        <button class="move-to-cart" data-id="${product.id}">
-                            Move To Cart
-                        </button>
-
-                        <button class="remove-wishlist" data-id="${product.id}">
-                            Remove
-                        </button>
-
-                    </div>
-
-                </div>
-                `;
-
-            }
-
-        });
-
+        return;
     }
 
+    if (emptyWishlist) {
+        emptyWishlist.style.display = "none";
+    }
+
+    wishlist.forEach(id => {
+        const product = getProduct(id);
+
+        if (!product) {
+            return;
+        }
+
+        wishlistItems.insertAdjacentHTML(
+            "beforeend",
+            `
+            <div class="cart-item">
+                <img src="${product.image}" alt="${product.name}">
+
+                <div>
+                    <h3>${product.name}</h3>
+                    <p>$${product.price}</p>
+
+                    <button
+                        class="move-to-cart"
+                        data-id="${product.id}">
+                        Move To Cart
+                    </button>
+
+                    <button
+                        class="remove-wishlist"
+                        data-id="${product.id}">
+                        Remove
+                    </button>
+                </div>
+            </div>
+            `
+        );
+    });
 }
 
-// Remove Wishlist
+function removeFromWishlist(id) {
+    wishlist = wishlist.filter(itemId => itemId !== id);
 
-document.addEventListener("click",function(e){
+    saveWishlist();
+    renderWishlist();
+}
 
-    if(e.target.classList.contains("remove-wishlist")){
+function moveToCart(id) {
+    const product = getProduct(id);
 
-        const id = e.target.dataset.id;
-
-        wishlist = wishlist.filter(function(item){
-
-            return item !== id;
-
-        });
-
-        localStorage.setItem("wishlist",JSON.stringify(wishlist));
-
-        updateCounters();
-
-        location.reload();
-
+    if (!product) {
+        return;
     }
 
-});
-
-// Move To Cart
-
-document.addEventListener("click",function(e){
-
-    if(e.target.classList.contains("move-to-cart")){
-
-        const id = e.target.dataset.id;
-
-        const product = products.find(function(item){
-
-            return item.id === id;
-
+    if (!findCartItem(id)) {
+        cart.push({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            image: product.image,
+            qty: 1
         });
 
-        const exists = cart.find(function(item){
-
-            return item.id === id;
-
-        });
-
-        if(!exists){
-
-            cart.push({
-
-                id:product.id,
-                name:product.name,
-                price:product.price,
-                image:product.image,
-                qty:1
-
-            });
-
-            localStorage.setItem("cart",JSON.stringify(cart));
-
-        }
-
-        wishlist = wishlist.filter(function(item){
-
-            return item !== id;
-
-        });
-
-        localStorage.setItem("wishlist",JSON.stringify(wishlist));
-
-        updateCounters();
-
-        window.location.href="cart.html";
-
+        saveCart();
     }
 
-});
-// =====================================
-// Final Part 4
-// Dynamic Cart
-// =====================================
+    wishlist = wishlist.filter(itemId => itemId !== id);
+
+    saveWishlist();
+
+    window.location.href = "cart.html";
+}
+
+renderWishlist();
 
 const cartItems = document.getElementById("cart-items");
-const subtotal = document.getElementById("subtotal");
-const total = document.getElementById("total");
+const subtotalElement = document.getElementById("subtotal");
+const totalElement = document.getElementById("total");
 const emptyCart = document.getElementById("emptyCart");
 
-function renderCart(){
-
-if(!cartItems) return;
-
-cartItems.innerHTML="";
-
-let grandTotal=0;
-
-if(cart.length===0){
-
-if(emptyCart){
-emptyCart.style.display="block";
+function calculateCartTotal() {
+    return cart.reduce((total, item) => {
+        return total + item.price * item.qty;
+    }, 0);
 }
 
-if(subtotal){
-subtotal.textContent="$0";
+function renderCart() {
+    if (!cartItems) {
+        return;
+    }
+
+    cartItems.innerHTML = "";
+
+    if (cart.length === 0) {
+        if (emptyCart) {
+            emptyCart.style.display = "block";
+        }
+
+        if (subtotalElement) {
+            subtotalElement.textContent = "$0";
+        }
+
+        if (totalElement) {
+            totalElement.textContent = "$0";
+        }
+
+        return;
+    }
+
+    if (emptyCart) {
+        emptyCart.style.display = "none";
+    }
+
+    cart.forEach(item => {
+        cartItems.insertAdjacentHTML(
+            "beforeend",
+            `
+            <div class="cart-item">
+                <img src="${item.image}" alt="${item.name}">
+
+                <div>
+                    <h3>${item.name}</h3>
+                    <p>$${item.price}</p>
+
+                    <div class="quantity-box">
+                        <button
+                            class="minus-btn"
+                            data-id="${item.id}">
+                            -
+                        </button>
+
+                        <span class="quantity">
+                            ${item.qty}
+                        </span>
+
+                        <button
+                            class="plus-btn"
+                            data-id="${item.id}">
+                            +
+                        </button>
+                    </div>
+
+                    <button
+                        class="remove-cart"
+                        data-id="${item.id}">
+                        Remove
+                    </button>
+                </div>
+            </div>
+            `
+        );
+    });
+
+    const total = calculateCartTotal();
+
+    if (subtotalElement) {
+        subtotalElement.textContent = `$${total}`;
+    }
+
+    if (totalElement) {
+        totalElement.textContent = `$${total}`;
+    }
 }
 
-if(total){
-total.textContent="$0";
+function updateQuantity(id, change) {
+    const item = findCartItem(id);
+
+    if (!item) {
+        return;
+    }
+
+    item.qty += change;
+
+    if (item.qty < 1) {
+        item.qty = 1;
+    }
+
+    saveCart();
+    renderCart();
 }
 
-return;
+function removeFromCart(id) {
+    cart = cart.filter(item => item.id !== id);
 
-}
-
-if(emptyCart){
-emptyCart.style.display="none";
-}
-
-cart.forEach(function(item){
-    if(
-!item ||
-!item.id ||
-!item.name ||
-item.price === undefined ||
-!item.image ||
-item.qty === undefined
-){
-return;
-}
-
-grandTotal += item.price * item.qty;
-
-cartItems.innerHTML += `
-
-<div class="cart-item">
-
-<img src="${item.image}" alt="${item.name}">
-
-<div>
-
-<h3>${item.name}</h3>
-
-<p>$${item.price}</p>
-
-<div class="quantity-box">
-
-<button class="minus-btn" data-id="${item.id}">-</button>
-
-<span class="quantity">${item.qty}</span>
-
-<button class="plus-btn" data-id="${item.id}">+</button>
-
-</div>
-
-<button class="remove-cart" data-id="${item.id}">
-Remove
-</button>
-
-</div>
-
-</div>
-
-`;
-
-});
-
-subtotal.textContent="$"+grandTotal;
-total.textContent="$"+grandTotal;
-
+    saveCart();
+    renderCart();
 }
 
 renderCart();
 
-// ================================
-// Quantity
-// ================================
+document.addEventListener("click", event => {
+    const target = event.target;
 
-document.addEventListener("click",function(e){
+    if (target.classList.contains("plus-btn")) {
+        updateQuantity(target.dataset.id, 1);
+    }
 
-if(e.target.classList.contains("plus-btn")){
+    if (target.classList.contains("minus-btn")) {
+        updateQuantity(target.dataset.id, -1);
+    }
 
-const id=e.target.dataset.id;
+    if (target.classList.contains("remove-cart")) {
+        removeFromCart(target.dataset.id);
+    }
 
-cart.forEach(function(item){
+    if (target.classList.contains("remove-wishlist")) {
+        removeFromWishlist(target.dataset.id);
+    }
 
-if(item.id===id){
-
-item.qty++;
-
-}
-
+    if (target.classList.contains("move-to-cart")) {
+        moveToCart(target.dataset.id);
+    }
 });
 
-localStorage.setItem("cart",JSON.stringify(cart));
+function placeOrder() {
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
 
-renderCart();
+    const order = {
+        id: Date.now(),
+        date: new Date().toLocaleString(),
+        items: [...cart],
+        total: calculateCartTotal()
+    };
 
-updateCounters();
+    orders.push(order);
 
+    setStorage("orders", orders);
+
+    cart = [];
+
+    saveCart();
+    renderCart();
+
+    alert("🎉 Order placed successfully!");
+
+    window.location.href = "orders.html";
 }
 
-if(e.target.classList.contains("minus-btn")){
-
-const id=e.target.dataset.id;
-
-cart.forEach(function(item){
-
-if(item.id===id && item.qty>1){
-
-item.qty--;
-
-}
-
+document.addEventListener("click", event => {
+    if (event.target.classList.contains("checkout-btn")) {
+        event.preventDefault();
+        placeOrder();
+    }
 });
-
-localStorage.setItem("cart",JSON.stringify(cart));
-
-renderCart();
-
-}
-
-});
-// =====================================
-// Final Part 5
-// Remove Cart + Checkout
-// =====================================
-
-document.addEventListener("click", function(e){
-
-// Remove Cart Item
-
-if(e.target.classList.contains("remove-cart")){
-
-const id = e.target.dataset.id;
-
-cart = cart.filter(function(item){
-
-return item.id !== id;
-
-});
-
-localStorage.setItem("cart", JSON.stringify(cart));
-
-updateCounters();
-
-renderCart();
-
-}
-
-// Checkout
-
-if(e.target.classList.contains("checkout-btn")){
-
-if(cart.length===0){
-
-alert("Your cart is empty!");
-
-return;
-
-}
-
-let orders = JSON.parse(localStorage.getItem("orders")) || [];
-
-const order = {
-
-    id: Date.now(),
-
-    date: new Date().toLocaleString(),
-
-    items: [...cart],
-
-    total: cart.reduce(function(total,item){
-
-        return total + (item.price * item.qty);
-
-    },0)
-
-};
-
-orders.push(order);
-
-localStorage.setItem("orders", JSON.stringify(orders));
-
-alert("🎉 Order placed successfully!");
-
-cart = [];
-
-localStorage.setItem("cart", JSON.stringify(cart));
-
-updateCounters();
-
-renderCart();
-
-window.location.href = "orders.html";
-
-}
-
-});
-
-// =====================================
-// Auto Update
-// =====================================
-
-updateCounters();
-
-if(typeof renderCart==="function"){
-
-renderCart();
-
-}
-
-console.log("✅ ShopEasy Professional Script Loaded Successfully");
-// =====================================
-// LOGIN
-// =====================================
 
 const loginForm = document.getElementById("loginForm");
 
 if (loginForm) {
+    loginForm.addEventListener("submit", event => {
+        event.preventDefault();
 
-loginForm.addEventListener("submit", function(e){
+        const email = document
+            .getElementById("loginEmail")
+            .value
+            .trim();
 
-e.preventDefault();
+        const password = document
+            .getElementById("loginPassword")
+            .value
+            .trim();
 
-const email = document.getElementById("loginEmail").value.trim();
-const password = document.getElementById("loginPassword").value.trim();
+        const savedUser = getStorage("user", null);
 
-const savedUser = JSON.parse(localStorage.getItem("user"));
+        if (!savedUser) {
+            alert("Please create an account first!");
+            return;
+        }
 
-if(!savedUser){
-alert("Please create an account first!");
-return;
+        if (
+            email === savedUser.email &&
+            password === savedUser.password
+        ) {
+            localStorage.setItem("isLoggedIn", "true");
+
+            alert("✅ Login Successful!");
+
+            window.location.href = "index.html";
+            return;
+        }
+
+        alert("❌ Invalid Email or Password!");
+    });
 }
-
-if(email === savedUser.email && password === savedUser.password){
-
-localStorage.setItem("isLoggedIn","true");
-
-alert("✅ Login Successful!");
-
-window.location.href="index.html";
-
-}else{
-
-alert("❌ Invalid Email or Password!");
-
-}
-
-});
-
-}
-// =====================================
-// REGISTER
-// =====================================
 
 const registerForm = document.getElementById("registerForm");
 
 if (registerForm) {
+    registerForm.addEventListener("submit", event => {
+        event.preventDefault();
 
-    registerForm.addEventListener("submit", function (e) {
+        const fullName = document
+            .getElementById("fullName")
+            .value
+            .trim();
 
-        e.preventDefault();
+        const email = document
+            .getElementById("registerEmail")
+            .value
+            .trim();
 
-        const fullName = document.getElementById("fullName").value.trim();
-        const email = document.getElementById("registerEmail").value.trim();
-        const password = document.getElementById("registerPassword").value.trim();
-        const confirmPassword = document.getElementById("confirmPassword").value.trim();
+        const password = document
+            .getElementById("registerPassword")
+            .value
+            .trim();
 
-        if (fullName === "" || email === "" || password === "" || confirmPassword === "") {
+        const confirmPassword = document
+            .getElementById("confirmPassword")
+            .value
+            .trim();
+
+        if (
+            !fullName ||
+            !email ||
+            !password ||
+            !confirmPassword
+        ) {
             alert("Please fill in all fields!");
             return;
         }
 
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!emailPattern.test(email)) {
             alert("Please enter a valid email!");
@@ -629,208 +540,163 @@ if (registerForm) {
 
         const user = {
             name: fullName,
-            email: email,
-            password: password
+            email,
+            password
         };
 
-        localStorage.setItem("user", JSON.stringify(user));
+        setStorage("user", user);
 
         alert("🎉 Account created successfully!");
 
         window.location.href = "login.html";
+    });
+}
 
+function updateUserNavigation() {
+    const userLinks = document.querySelectorAll("#userName");
+    const logoutButtons = document.querySelectorAll("#logoutBtn");
+
+    const isLoggedIn =
+        localStorage.getItem("isLoggedIn") === "true";
+
+    const savedUser = getStorage("user", null);
+
+    userLinks.forEach(userLink => {
+        if (isLoggedIn && savedUser) {
+            userLink.textContent = `👋 ${savedUser.name}`;
+            userLink.href = "profile.html";
+        } else {
+            userLink.textContent = "👤 Login";
+            userLink.href = "login.html";
+        }
     });
 
+    logoutButtons.forEach(logoutButton => {
+        logoutButton.style.display =
+            isLoggedIn && savedUser
+                ? "inline-block"
+                : "none";
+    });
 }
 
-// =====================================
-// USER NAME + LOGOUT SYSTEM
-// =====================================
+updateUserNavigation();
 
-const userName = document.getElementById("userName");
-const logoutBtn = document.getElementById("logoutBtn");
-
-const isLoggedIn = localStorage.getItem("isLoggedIn");
-const savedUser = JSON.parse(localStorage.getItem("user"));
-
-if (userName) {
-
-    if (isLoggedIn === "true" && savedUser) {
-
-        userName.innerHTML = "👋 " + savedUser.name;
-        userName.href = "#";
-
-        if (logoutBtn) {
-            logoutBtn.style.display = "inline-block";
-        }
-
-    } else {
-
-        userName.innerHTML = "👤 Login";
-        userName.href = "login.html";
-
-        if (logoutBtn) {
-            logoutBtn.style.display = "none";
-        }
-
-    }
-
-}
-
-if (logoutBtn) {
-
-    logoutBtn.addEventListener("click", function (e) {
-
-        e.preventDefault();
+document.querySelectorAll("#logoutBtn").forEach(logoutButton => {
+    logoutButton.addEventListener("click", event => {
+        event.preventDefault();
 
         localStorage.removeItem("isLoggedIn");
 
         alert("✅ Logged out successfully!");
 
         window.location.href = "login.html";
-
     });
-
-}
-// =====================================
-// USER PROFILE
-// =====================================
+});
 
 const profileName = document.getElementById("profileName");
 const profileEmail = document.getElementById("profileEmail");
 
-if (profileName && profileEmail) {
-
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    const savedUser = JSON.parse(localStorage.getItem("user"));
-
-    // اگر لاگ اِن نہیں ہے تو Login Page پر بھیج دو
-    if (isLoggedIn !== "true" || !savedUser) {
-
-        alert("Please login first!");
-
-        window.location.href = "login.html";
-
-    } else {
-
-        // پروفائل کی معلومات دکھاؤ
-        profileName.textContent = savedUser.name;
-        profileEmail.textContent = savedUser.email;
-
+function loadProfile() {
+    if (!profileName || !profileEmail) {
+        return;
     }
 
+    const isLoggedIn =
+        localStorage.getItem("isLoggedIn") === "true";
+
+    const savedUser = getStorage("user", null);
+
+    if (!isLoggedIn || !savedUser) {
+        alert("Please login first!");
+        window.location.href = "login.html";
+        return;
+    }
+
+    profileName.textContent = savedUser.name;
+    profileEmail.textContent = savedUser.email;
 }
-// =====================================
-// Protected Pages
-// =====================================
+
+loadProfile();
 
 const protectedPages = [
     "cart.html",
     "wishlist.html",
     "checkout.html",
-    "profile.html"
+    "profile.html",
+    "orders.html",
+    "rating.html"
 ];
 
-const currentPage = window.location.pathname.split("/").pop();
+const currentPage =
+    window.location.pathname.split("/").pop();
 
-if (protectedPages.includes(currentPage)) {
+const isLoggedIn =
+    localStorage.getItem("isLoggedIn") === "true";
 
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-
-    if (isLoggedIn !== "true") {
-
-        alert("🔒 Please login first!");
-
-        window.location.href = "login.html";
-
-    }
-
+if (
+    protectedPages.includes(currentPage) &&
+    !isLoggedIn
+) {
+    alert("🔒 Please login first!");
+    window.location.href = "login.html";
 }
-// =====================================
-// Protected Pages - Part 2
-// =====================================
-
-const protectedUserName = document.getElementById("userName");
-
-if (protectedUserName) {
-
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    const savedUser = JSON.parse(localStorage.getItem("user"));
-
-    if (isLoggedIn === "true" && savedUser) {
-
-        protectedUserName.innerHTML = "👋 " + savedUser.name;
-        protectedUserName.href = "profile.html";
-
-    } else {
-
-        protectedUserName.innerHTML = "👤 Login";
-        protectedUserName.href = "login.html";
-
-    }
-
-}
-// =====================================
-// ORDER HISTORY
-// =====================================
 
 const ordersList = document.getElementById("ordersList");
 const noOrders = document.getElementById("noOrders");
 
-let orders = JSON.parse(localStorage.getItem("orders")) || [];
-
-if (ordersList) {
+function renderOrders() {
+    if (!ordersList) {
+        return;
+    }
 
     ordersList.innerHTML = "";
 
     if (orders.length === 0) {
-
         if (noOrders) {
             noOrders.style.display = "block";
         }
 
-    } else {
-
-        if (noOrders) {
-            noOrders.style.display = "none";
-        }
-
-        orders.forEach(function(order){
-
-            let productsHTML = "";
-
-            order.items.forEach(function(item){
-
-                productsHTML += `
-                    <p><strong>${item.name}</strong> × ${item.qty}</p>
-                `;
-
-            });
-
-            ordersList.innerHTML += `
-
-                <div class="order-card">
-
-                    <h3>📦 Order #${order.id}</h3>
-
-                    <p><strong>Date:</strong> ${order.date}</p>
-
-                    ${productsHTML}
-
-                    <p><strong>Total:</strong> $${order.total}</p>
-
-                </div>
-
-            `;
-
-        });
-
+        return;
     }
 
+    if (noOrders) {
+        noOrders.style.display = "none";
+    }
+
+    orders.forEach(order => {
+        const productsHTML = order.items
+            .map(item => `
+                <p>
+                    <strong>${item.name}</strong>
+                    × ${item.qty}
+                </p>
+            `)
+            .join("");
+
+        ordersList.insertAdjacentHTML(
+            "beforeend",
+            `
+            <div class="order-card">
+                <h3>📦 Order #${order.id}</h3>
+
+                <p>
+                    <strong>Date:</strong>
+                    ${order.date}
+                </p>
+
+                ${productsHTML}
+
+                <p>
+                    <strong>Total:</strong>
+                    $${order.total}
+                </p>
+            </div>
+            `
+        );
+    });
 }
-// =====================================
-// PRODUCT RATING & REVIEWS
-// =====================================
+
+renderOrders();
 
 const stars = document.querySelectorAll(".stars span");
 const reviewText = document.getElementById("reviewText");
@@ -839,122 +705,94 @@ const reviewsList = document.getElementById("reviewsList");
 
 let selectedRating = 0;
 
-let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+stars.forEach(star => {
+    star.addEventListener("click", () => {
+        selectedRating = Number(star.dataset.star);
 
-// Star Rating
+        stars.forEach(item => {
+            const rating =
+                Number(item.dataset.star);
 
-stars.forEach(function(star){
-
-    star.addEventListener("click", function(){
-
-        selectedRating = Number(this.dataset.star);
-
-        stars.forEach(function(item){
-
-            if(Number(item.dataset.star) <= selectedRating){
-                item.classList.add("active");
-            }else{
-                item.classList.remove("active");
-            }
-
+            item.classList.toggle(
+                "active",
+                rating <= selectedRating
+            );
         });
-
     });
-
 });
 
-// Show Reviews
-
-function displayReviews(){
-
-    if(!reviewsList) return;
+function displayReviews() {
+    if (!reviewsList) {
+        return;
+    }
 
     reviewsList.innerHTML = "";
 
-    reviews.forEach(function(review){
+    reviews.forEach(review => {
+        const ratingStars =
+            "⭐".repeat(review.rating);
 
-        let ratingStars = "";
+        reviewsList.insertAdjacentHTML(
+            "beforeend",
+            `
+            <div class="review-card">
+                <h3>${review.name}</h3>
 
-        for(let i = 1; i <= review.rating; i++){
+                <div class="rating">
+                    ${ratingStars}
+                </div>
 
-            ratingStars += "⭐";
-
-        }
-
-        reviewsList.innerHTML += `
-
-        <div class="review-card">
-
-            <h3>${review.name}</h3>
-
-            <div class="rating">
-                ${ratingStars}
+                <p>${review.text}</p>
             </div>
-
-            <p>${review.text}</p>
-
-        </div>
-
-        `;
-
+            `
+        );
     });
-
 }
 
 displayReviews();
 
-// Submit Review
-
-if(submitReview){
-
-    submitReview.addEventListener("click", function(){
-
-        if(selectedRating === 0){
-
+if (submitReview) {
+    submitReview.addEventListener("click", () => {
+        if (selectedRating === 0) {
             alert("Please select a rating!");
-
             return;
-
         }
 
-        if(reviewText.value.trim() === ""){
-
+        if (!reviewText || !reviewText.value.trim()) {
             alert("Please write a review!");
-
             return;
-
         }
 
-        const savedUser = JSON.parse(localStorage.getItem("user"));
+        const savedUser = getStorage("user", null);
 
         const review = {
-
-            name: savedUser ? savedUser.name : "Guest",
-
+            name: savedUser
+                ? savedUser.name
+                : "Guest",
             rating: selectedRating,
-
             text: reviewText.value.trim()
-
         };
 
         reviews.push(review);
 
-        localStorage.setItem("reviews", JSON.stringify(reviews));
+        setStorage("reviews", reviews);
 
         reviewText.value = "";
-
         selectedRating = 0;
 
-        stars.forEach(function(star){
-
+        stars.forEach(star => {
             star.classList.remove("active");
-
         });
 
         displayReviews();
 
         alert("⭐ Review submitted successfully!");
-
     });
-
 }
+
+updateCounters();
+updateUserNavigation();
+renderWishlist();
+renderCart();
+renderOrders();
+displayReviews();

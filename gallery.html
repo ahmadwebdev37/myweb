@@ -1,42 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery</title>
+    <meta
+        name="description"
+        content="Explore our modern house designs, luxury home projects, 2D floor plans and 3D architectural concepts."
+    >
+
+    <title>Gallery | Design Your Dream Home</title>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header>
-        <div class="logo">
-            <h1>Design Your Dream Home</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="request-design.html">Request Design</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
 
+<body>
+
+    <header class="site-header">
+        <div class="logo">
+            <a href="index.html">Design Your Dream Home</a>
+        </div>
+
+        <nav class="site-nav" aria-label="Main navigation">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="request-design.html">Request Design</a>
+                </li>
+                <li>
+                    <a href="gallery.html" aria-current="page">Gallery</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
             </ul>
         </nav>
     </header>
-    <section class="service-box">
-        <h2>Our Design Gallery</h2>
-        <div class="service-box">
-            <h3>Modern House Design</h3>
-            <p>Here we will show our latest 2D floor plans and 3D house designs.</p>
-        </div>
-        <div class="service-box">
-            <h3>Luxury Home Projects</h3>
-            <p>Beautiful exterior and interior design ideas for your dream home.</p>
-        </div>
-    </section>
 
-    <footer>
-        <p>2026 Design Your Dream Home | All Rights Reserved.</p>
+    <main>
+        <section class="gallery">
+            <div class="gallery-header">
+                <h1>Our Design Gallery</h1>
+
+                <p>
+                    Explore our latest 2D floor plans, 3D house designs,
+                    modern exteriors and interior concepts.
+                </p>
+            </div>
+
+            <div class="gallery-grid">
+                <article class="gallery-card">
+                    <div class="gallery-card__content">
+                        <h2>Modern House Design</h2>
+
+                        <p>
+                            Explore modern 2D floor plans and 3D house designs
+                            created for contemporary living.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="gallery-card">
+                    <div class="gallery-card__content">
+                        <h2>Luxury Home Projects</h2>
+
+                        <p>
+                            Discover elegant exterior and interior design ideas
+                            created to bring your dream home to life.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            &copy; 2026 Design Your Dream Home. All Rights Reserved.
+        </p>
     </footer>
-    
+
+    <script src="js/script.js"></script>
+
 </body>
+
 </html>

@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="View and manage your ShopEasy wishlist."
+    >
+
     <title>Wishlist - ShopEasy</title>
 
     <link rel="stylesheet" href="css/style.css">
@@ -10,67 +17,87 @@
 
 <body>
 
-    <!-- Header -->
-
     <header>
-
         <div class="logo">
-            <h2>ShopEasy</h2>
+            <a href="index.html" aria-label="ShopEasy Home">
+                <h2>ShopEasy</h2>
+            </a>
         </div>
 
-        <nav>
+        <nav aria-label="Main navigation">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="wishlist.html">Wishlist</a></li>
-                <li><a href="cart.html">Cart</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a
+                        href="wishlist.html"
+                        aria-current="page"
+                    >
+                        Wishlist
+                    </a>
+                </li>
+
+                <li>
+                    <a href="cart.html">Cart</a>
+                </li>
+
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
             </ul>
         </nav>
 
         <div class="icons">
-
             <a href="wishlist.html">
-                ❤️ Wishlist (<span id="wishlist-count">0</span>)
+                ❤️ Wishlist
+                (<span id="wishlist-count">0</span>)
             </a>
 
             <a href="cart.html">
-                🛒 Cart (<span id="cart-count">0</span>)
+                🛒 Cart
+                (<span id="cart-count">0</span>)
             </a>
-
         </div>
-
     </header>
 
-    <!-- Wishlist -->
+    <main>
+        <section
+            class="cart-page"
+            aria-labelledby="wishlist-title"
+        >
 
-    <section class="cart-page">
+            <h1 id="wishlist-title">
+                ❤️ My Wishlist
+            </h1>
 
-        <h1>❤️ My Wishlist</h1>
+            <div id="wishlist-items"></div>
 
-        <div id="wishlist-items">
+            <div id="emptyWishlist">
+                <h2>
+                    Your Wishlist is Empty
+                </h2>
 
-        </div>
+                <a
+                    href="index.html"
+                    class="btn"
+                >
+                    Continue Shopping
+                </a>
+            </div>
 
-        <div id="emptyWishlist">
-
-            <h2>Your Wishlist is Empty</h2>
-
-            <a href="index.html" class="btn">
-                Continue Shopping
-            </a>
-
-        </div>
         </section>
-
-    <!-- Footer -->
+    </main>
 
     <footer>
-
-        <p>© 2026 ShopEasy. All Rights Reserved.</p>
-
+        <p>
+            © 2026 ShopEasy. All Rights Reserved.
+        </p>
     </footer>
 
     <script src="js/script.js"></script>
 
 </body>
+
 </html>
