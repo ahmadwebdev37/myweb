@@ -21,20 +21,27 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const reviewsCollection = collection(db, "reviews");
 
-function escapeHTML(text) {
-    const div = document.createElement("div");
-    div.textContent = text;
-    return div.innerHTML;
-}
+const escapeHTML = (value) => {
+    const element = document.createElement("div");
+    element.textContent = value;
+    return element.innerHTML;
+};
 
-function showReviews(reviews) {
+const formatStars = (rating) => {
+    const value = Math.max(0, Math.min(5, Number(rating) || 0));
+    return "⭐".repeat(value);
+};
+
+const showReviews = (reviews) => {
     const reviewList = document.getElementById("reviewList");
 
-    if (!reviewList) return;
+    if (!reviewList) {
+        return;
+    }
 
     reviewList.innerHTML = "";
 
-    if (!reviews.length) {
+    if (reviews.length === 0) {
         reviewList.innerHTML = `
             <div class="review-card">
                 <h3>No Reviews Yet</h3>
@@ -44,20 +51,21 @@ function showReviews(reviews) {
         return;
     }
 
-    reviews.sort((a, b) => {
+    const sortedReviews = [...reviews].sort((a, b) => {
         const dateA = a.createdAt?.toMillis?.() || 0;
         const dateB = b.createdAt?.toMillis?.() || 0;
+
         return dateB - dateA;
     });
 
-    reviews.forEach((review) => {
+    sortedReviews.forEach((review) => {
         const card = document.createElement("div");
         card.className = "review-card";
 
         const name = escapeHTML(review.name || "Anonymous");
         const message = escapeHTML(review.message || "");
-        const rating = Number(review.rating || 0);
-        const stars = "⭐".repeat(Math.max(0, Math.min(5, rating)));
+        const rating = Number(review.rating) || 0;
+        const stars = formatStars(rating);
 
         card.innerHTML = `
             <h3>${name}</h3>
@@ -67,51 +75,51 @@ function showReviews(reviews) {
 
         reviewList.appendChild(card);
     });
-}
+};
 
-function updateHomeRating(reviews) {
+const updateHomeRating = (reviews) => {
     const averageRating = document.getElementById("averageRating");
     const totalReviews = document.getElementById("totalReviews");
 
-    if (!averageRating || !totalReviews) return;
+    if (totalReviews) {
+        totalReviews.textContent = reviews.length;
+    }
 
-    totalReviews.textContent = reviews.length;
+    if (!averageRating) {
+        return;
+    }
 
-    if (!reviews.length) {
+    if (reviews.length === 0) {
         averageRating.textContent = "—";
         return;
     }
 
-    const total = reviews.reduce(
-        (sum, review) => sum + Number(review.rating || 0),
+    const totalRating = reviews.reduce(
+        (total, review) => total + (Number(review.rating) || 0),
         0
     );
 
-    averageRating.textContent =
-        (total / reviews.length).toFixed(1);
-}
+    averageRating.textContent = (
+        totalRating / reviews.length
+    ).toFixed(1);
+};
 
-function loadReviews() {
-    onSnapshot(
+const loadReviews = () => {
+    return onSnapshot(
         reviewsCollection,
         (snapshot) => {
-            const reviews = [];
-
-            snapshot.forEach((doc) => {
-                reviews.push({
-                    id: doc.id,
-                    ...doc.data()
-                });
-            });
+            const reviews = snapshot.docs.map((document) => ({
+                id: document.id,
+                ...document.data()
+            }));
 
             showReviews(reviews);
             updateHomeRating(reviews);
         },
         (error) => {
-            console.error(error);
+            console.error("Failed to load reviews:", error);
 
-            const reviewList =
-                document.getElementById("reviewList");
+            const reviewList = document.getElementById("reviewList");
 
             if (reviewList) {
                 reviewList.innerHTML = `
@@ -123,25 +131,24 @@ function loadReviews() {
             }
         }
     );
-}
+};
 
-function initReviewForm() {
-    const reviewForm =
-        document.getElementById("reviewForm");
+const initReviewForm = () => {
+    const reviewForm = document.getElementById("reviewForm");
 
-    if (!reviewForm) return;
+    if (!reviewForm) {
+        return;
+    }
 
     reviewForm.addEventListener("submit", async (event) => {
         event.preventDefault();
 
-        const nameInput =
-            document.getElementById("name");
-
-        const ratingInput =
-            document.getElementById("rating");
-
-        const messageInput =
-            document.getElementById("message");
+        const nameInput = document.getElementById("name");
+        const ratingInput = document.getElementById("rating");
+        const messageInput = document.getElementById("message");
+        const submitButton = reviewForm.querySelector(
+            "button[type='submit']"
+        );
 
         if (!nameInput || !ratingInput || !messageInput) {
             return;
@@ -169,21 +176,16 @@ function initReviewForm() {
             return;
         }
 
-        const button =
-            reviewForm.querySelector(
-                "button[type='submit']"
-            );
-
-        if (button) {
-            button.disabled = true;
-            button.textContent = "Submitting...";
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Submitting...";
         }
 
         try {
             await addDoc(reviewsCollection, {
-                name: name,
-                rating: rating,
-                message: message,
+                name,
+                rating,
+                message,
                 createdAt: serverTimestamp()
             });
 
@@ -193,19 +195,19 @@ function initReviewForm() {
                 "Thank you! Your review has been submitted successfully."
             );
         } catch (error) {
-            console.error(error);
+            console.error("Failed to submit review:", error);
 
             alert(
                 "Your review could not be submitted. Please try again."
             );
         } finally {
-            if (button) {
-                button.disabled = false;
-                button.textContent = "Submit Review →";
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = "Submit Review →";
             }
         }
     });
-}
+};
 
 document.addEventListener("DOMContentLoaded", () => {
     initReviewForm();
