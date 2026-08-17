@@ -1583,3 +1583,74 @@ body.dark-mode .rating-total strong {
         margin-top: 5px;
     }
 }
+.contact-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    padding: 9px 16px;
+    margin-bottom: 22px;
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 10px;
+    background: linear-gradient(
+        135deg,
+        rgba(56, 189, 248, 0.14),
+        rgba(14, 165, 233, 0.05)
+    );
+    color: #38bdf8;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    line-height: 1;
+    box-shadow:
+        0 8px 24px rgba(14, 165, 233, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.contact-label::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #38bdf8;
+    box-shadow:
+        0 0 8px rgba(56, 189, 248, 0.9),
+        0 0 16px rgba(56, 189, 248, 0.5);
+    animation: contactPulse 2s ease-in-out infinite;
+}
+
+.contact-label::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid rgba(56, 189, 248, 0.12);
+    pointer-events: none;
+}
+
+@keyframes contactPulse {
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.55;
+        transform: scale(0.78);
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-label {
+        padding: 8px 13px;
+        margin-bottom: 18px;
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+    }
+
+    .contact-label::before {
+        width: 6px;
+        height: 6px;
+    }
+}
